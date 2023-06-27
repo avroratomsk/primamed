@@ -1,51 +1,31 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
+import { isMobile, bodyLockToggle } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
+// const searchBtn = document.querySelector('.header__search');
+// if (searchBtn) {
+//   let searcBlock = document.querySelector('.search');
+//   searchBtn.addEventListener('click', function (e) {
+//     searcBlock.classList.add('_active');
+//     bodyLockToggle();
+//   })
+// }
 
-let btnHideContentMenu = document.querySelector('.header-utp__btn');
-if (btnHideContentMenu) {
-    btnHideContentMenu.addEventListener('click', openHideContentMenu)
+// const searchInput = document.querySelector('.search__input');
+// if (searchInput) {
+//   searchInput.addEventListener('input', function (e) {
+//     if (e.target.value != '') {
+//       document.querySelector('.search__delete').style.display = 'block';
+//     } else {
+//       document.querySelector('.search__delete').style.display = 'none';
+//     }
+//   });
+// }
 
-    function openHideContentMenu() {
-        this.classList.toggle('_active');
-        document.querySelector('.hidden-content').classList.toggle('_active')
-    }
-}
-
-const btnBurger = document.querySelector('.header-utp__burger');
-if (btnBurger) {
-    btnBurger.addEventListener('click', () => {
-        document.querySelector('.mega-menu').classList.add('_show-menu')
-    })
-}
-
-const btnCloseMenu = document.querySelector('.mega-menu__close');
-if (btnCloseMenu) {
-    btnCloseMenu.addEventListener('click', () => {
-        document.querySelector('.mega-menu').classList.remove('_show-menu')
-    })
-}
-
-let tabTrigger = document.querySelectorAll('.tab__trigger');
-if (tabTrigger.length > 0) {
-    tabTrigger.forEach(trigger => {
-        trigger.addEventListener('click', switchActiveClass)
-    })
-
-    function switchActiveClass() {
-        let dataAttr = this.dataset.id;
-        let tabContent = document.querySelectorAll('.tab');
-
-        if (tabContent.length > 0) {
-            tabContent.forEach(tab => {
-                if (dataAttr === tab.dataset.id) {
-                    tab.classList.add('_active')
-                } else {
-                    tab.classList.remove('_active')
-                }
-            })
-        }
-    }
-} 
+// const clearBtn = document.querySelector('.search__delete');
+// if (clearBtn) {
+//   clearBtn.addEventListener('click', function (e) {
+//     document.querySelector('.search__input').value = '';
+//   })
+// }

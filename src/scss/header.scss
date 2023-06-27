@@ -1,194 +1,160 @@
 .header {
+
   &__container {
   }
 
-  &__top--body {
-    display: flex;
-    align-items: center;
-    padding: 30px 0px;
-  }
-
-  &__logo {
-    img{
-      max-width: 100%;
-      width: 320px;
-    }
-  }
-
-  &__action {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &__phone {
-  }
-
-  &__phone--content {
-    display: flex;
-    align-items: center;
-    svg{
-      width: 25px;
-      height: 25px;
-      fill: $blue;
-      margin-right: 10px;
-    }
-
-    a{
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 150%;
-      transition: $animation_speed;
-
-      @media(hover:hover){
-        &:hover{
-          color: $accent;
-        }
-      }
-    }
-  }
-
-  &__timework {
-    margin-top: 10px;
-    color: $accent;
-    font-weight: 700;
-  }
-
-  &__btn{
-    width: 245px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $blue;
-    border-radius: 45px;
-    margin-left: 60px;
-    box-shadow: 0px 20px 20px -10px rgba($color: $mainColor, $alpha: .2);
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 600;
-    transition: $animation_speed;
-
-    @media(hover:hover){
-      &:hover{
-        background-color: rgba($color: $blue, $alpha: .98);
-        box-shadow: 0px 10px 10px -10px rgba($color: $mainColor, $alpha: .5);
-      }
-    }
-  }
-
-  &__bottom{
-    background-color: #f8f8f8;
-    position: sticky;
-  }
-
-  &__bottom--body {
+  &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid rgba($color: $mainColor, $alpha: .08);
   }
 
   &__menu {
   }
 
-  &__account {
+  &__action {
     display: flex;
   }
 
-  &__address{
+  &__search {
+    margin-right: 20px;
+    padding: 10px 0px;
+    i{
+      font-size: 17px;
+    }
+  }
+
+  &__btn--action {
+  }
+
+  &__eye{
     display: flex;
     align-items: center;
-    margin-right: 3vw;
-    svg{
-      width: 25px;
-      height: 25px;
-      fill: $blue;
-      margin-right: 10px;
+    padding: 10px 0px;
+
+    i{
+     margin-right: 10px;
+      font-size: 17px;
     }
 
     span{
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
-  &__mail{
+  &__login {
     display: flex;
     align-items: center;
-
-    svg{
-      width: 25px;
-      height: 25px;
-      fill: $blue;
-      margin-right: 5px;
-    }
-
-    a{
-      color: $blue;
-      font-weight: 600;
-      text-decoration: underline;
+    padding: 10px 0px;
+    margin-right: 20px;
+    i{
+     
+      font-size: 17px;
     }
   }
-}
 
-.menu {
-  flex: 1 1 auto;
-
-  &__list {
-    display: flex;
-  }
-
-  &__item {
-    position: relative;
+  &__bottom {
+    padding: 20px 0px;
     display: flex;
     align-items: center;
+  }
 
-    &:not(:last-child){
-      margin-right: 25px;
-    }
+  &__logo {
+    max-width: 300px;
+    margin-right: 5vw;
 
     img{
-      width: 10px;
-      height: 10px;
-      margin-top: 2px;
-      margin-left: 5px;
+      max-width: 100%;
     }
   }
 
-  &__link {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 30px 0px;
-    transform: $animation_speed;
+  &__menu {
+    flex: 1 1 auto;
+  }
 
-    @media(hover:hover){
-      &:hover{
-        color: $blue;
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+
+    a:first-child{
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    a:nth-child(2){
+      font-size: 16px;
+      font-weight: 600;
+      color: $accent;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      i{
+        margin-right: 10px;
       }
     }
   }
+
+  &__info {
+    font-size: 12px;
+    text-align: right;
+    font-weight: 600;
+    color: $accent;
+  }
+
+  &__btn {
+    width: 150px;
+    height: 40px;
+    background-color: $accent;
+  }
 }
-.submenu {
- 
+.menu {
   &__list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 290px;
-    padding: 20px;
-    background-color: #ffffff;
+    display: flex;
   }
 
   &__item {
     &:not(:last-child){
-      
+      margin-right: 20px;
     }
   }
 
   &__link {
     display: block;
-    padding: 10px 0px;
-    font-size: 14px;
-    font-weight: 600;
+    padding: 15px 0px;
+    font-size: 13px;
+    transition: $animation_speed;
+
+    @media (hover: hover) {
+      &:hover{
+        color: $accent;
+      }
+    }
   }
 }
+
+.menu-bottom {
+margin-right: 30px;
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child){
+      margin-right: 27px;
+    }
+  }
+
+  &__link {
+    padding: 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+
+
+
 

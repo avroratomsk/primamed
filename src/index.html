@@ -8,54 +8,56 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
-      <div class="utp">
-        <div class="utp__body">
-          <div class="utp__thumb--slider">
-            <div class="swiper utp__thumb">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+
+      <div class="about">
+        <div class="about__container">
+          <div class="about__body">
+            <div class="about__col about-action">
+              <div class="about-action__hotline">
+                <div class="about-action__hotline--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                    <path id="вопрос.svg" class="cls-1"
+                      d="M406.5,729.5H389.239l-6.464,4.04a0.835,0.835,0,0,1-.442.126,0.823,0.823,0,0,1-.4-0.1,0.832,0.832,0,0,1-.43-0.729v-22.5a2.5,2.5,0,0,1,2.5-2.5h22.5a2.5,2.5,0,0,1,2.5,2.5V727A2.5,2.5,0,0,1,406.5,729.5Zm0.833-19.167a0.833,0.833,0,0,0-.833-0.833H384a0.833,0.833,0,0,0-.833.833v21l5.391-3.369a0.835,0.835,0,0,1,.442-0.127h17.5a0.833,0.833,0,0,0,.833-0.833V710.333Zm-5,12.5H389a0.833,0.833,0,0,1,0-1.666h13.333A0.833,0.833,0,1,1,402.333,722.833Zm-2.5-6.666H389a0.834,0.834,0,0,1,0-1.667h10.833A0.834,0.834,0,1,1,399.833,716.167Zm-0.393-9.462a15.284,15.284,0,0,0-9.19-3.038c-7.689,0-13.274,4.123-14.8,10.833H376.5a0.832,0.832,0,0,1,.833.833v13.334a0.832,0.832,0,0,1-.833.833H374a5.006,5.006,0,0,1-5-5v-5a5.006,5.006,0,0,1,4.741-4.993C375.317,706.772,381.58,702,390.25,702a16.943,16.943,0,0,1,10.185,3.367A0.834,0.834,0,0,1,399.44,706.705ZM370.667,719.5v5A3.336,3.336,0,0,0,374,727.833h1.667V716.167H374A3.336,3.336,0,0,0,370.667,719.5Zm15,14.166h6.666a4.169,4.169,0,0,1,3.681,2.218,15.37,15.37,0,0,0,6.687-5.207,0.833,0.833,0,0,1,1.345.984,17.034,17.034,0,0,1-7.561,5.832c0.009,0.112.015,0.226,0.015,0.34A4.171,4.171,0,0,1,392.333,742h-6.666A4.167,4.167,0,1,1,385.667,733.666Zm0,6.667h6.666a2.5,2.5,0,0,0,2.424-3.113c-0.01-.029-0.018-0.058-0.025-0.087a2.5,2.5,0,0,0-2.4-1.8h-6.666A2.5,2.5,0,0,0,385.667,740.333Z"
+                      transform="translate(-369 -702)" />
+                  </svg>
+                </div>
+                <p class="about-action__title">Горячая линия</p>
+                <p class="about-action__subtitle">Круглосуточный call-center</p>
+                <a href="tel:+79999999999" class="about-action__phone">8 (999) 999-99-99</a>
+              </div>
+              <p class="about-action__info">
+                По телефону вы можете бесплатно получить консультацию дежурного врача по любым вопросам
+              </p>
+              <div class="about-action__form">
+                <p class="about-action__title">Выезд врача на дом</p>
+                <p class="about-action__subtitle">мы перезвоним Вам в течении 6-ти минут</p>
+                <form action="">
+                  <input type="tel" name="phone" id="phone" placeholder="+7 (___)___-__-__*">
+                  <div class="about-action__checkbox">
+                    <input type="checkbox" name="politic" id="politic" checked>
+                    <label for="politic">Я согласен(а) на обработку <a href="#">персональных данных</a></label>
+                  </div>
+                  <button type="submit" class="about-action__submit">Отправить</button>
+                </form>
+              </div>
+            </div>
+            <div class="about__col about-info">
+              <h2 class="about-info__title">О компании</h2>
+              <p class="about-info__text">
+                Прима-Мед — медицинская клиника, оказывающая своим клиентам платные медицинские услуги. Медицинский
+                центр предлагает широкий спектр медицинских обследований и процедур, начиная от общих осмотров и
+                заканчивая специализированным лечением. Клиника также предоставляет профилактические услуги, такие как
+                вакцинация.
+              </p>
+              <div class="about-info__images">
+                <div class="about-info__image">
                   <img src="@img/image.webp" alt="">
                 </div>
-                <div class="swiper-slide">
-                  <img src="@img/image.webp" alt="">
-                </div>
-                <div class="swiper-slide">
+                <div class="about-info__image">
                   <img src="@img/image.webp" alt="">
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-          <div class="utp__content--slider">
-            <div class="utp__container">
-              <img src="@img/pattern.webp" alt="" class="utp__pattern">
-              <div class="swiper utp__content">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <h2 class="utp__title _title">Многопрофильный <br> <span>медицинский центр</span></h2>
-                    <p class="utp__subtitle _subtitle">
-                      С Вами работают думающие и отзывчивые врачи, <br>для которых важна Ваша ситуация
-                    </p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h2 class="utp__title _title">Многопрофильный <br> медицинский центр</h2>
-                    <p class="utp__subtitle _subtitle">
-                      С Вами работают думающие и отзывчивые врачи, для которых важна Ваша ситуация
-                    </p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h2 class="utp__title _title">Многопрофильный <br> медицинский центр</h2>
-                    <p class="utp__subtitle _subtitle">
-                      С Вами работают думающие и отзывчивые врачи, <br> для которых важна Ваша ситуация
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-paginations">
-              <div class="swiper-pagination-bullet _active"></div>
-              <div class="swiper-pagination-bullet"></div>
-              <div class="swiper-pagination-bullet"></div>
+              <a href="#" class="about-info__link">Узнать больше о центре</a>
             </div>
           </div>
         </div>
