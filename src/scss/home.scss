@@ -1,3 +1,23 @@
+.note {
+  background-color: rgba($color: $blue, $alpha: 1);
+  padding: 8px 0px;
+  text-align: center;
+  background-image: url(../img/bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+}
+
+
 
 .about {
   margin: 80px 0px;
