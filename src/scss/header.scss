@@ -79,6 +79,7 @@
 
   &__bottom{
     background-color: #f8f8f8;
+    position: sticky;
   }
 
   &__bottom--body {
@@ -140,6 +141,7 @@
     position: relative;
     display: flex;
     align-items: center;
+
     &:not(:last-child){
       margin-right: 25px;
     }

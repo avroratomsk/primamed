@@ -390,6 +390,7 @@ body::after {
 
 .header__bottom {
   background-color: #f8f8f8;
+  position: sticky;
 }
 
 .header__bottom--body {
@@ -509,6 +510,74 @@ body::after {
   padding: 10px 0px;
   font-size: 14px;
   font-weight: 600;
+}
+
+.utp__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+  grid-template-columns: repeat(2, 50%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.utp__content--slider {
+  margin-left: -100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.utp__title {
+  color: #000;
+  font-size: 50px;
+  text-transform: uppercase;
+  line-height: 130%;
+}
+
+.utp__title span {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.utp__subtitle {
+  margin-top: 15px;
+  font-size: 17px;
+  line-height: 140%;
+  font-weight: 600;
+  color: rgba(68, 68, 68, 0.7);
+}
+
+.utp .swiper-slide img {
+  max-width: 100%;
+}
+
+.utp .swiper-paginations {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+}
+
+.utp .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #294f99;
+  margin: 0px 5px;
+}
+
+.utp .swiper-pagination-bullet._active {
+  opacity: 1;
 }
 
 /* *******************

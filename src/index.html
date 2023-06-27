@@ -8,12 +8,63 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
-
+      <div class="utp">
+        <div class="utp__body">
+          <div class="utp__thumb--slider">
+            <div class="swiper utp__thumb">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="@img/image.webp" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="@img/image.webp" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="@img/image.webp" alt="">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="utp__content--slider">
+            <div class="utp__container">
+              <div class="swiper utp__content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h2 class="utp__title _title">Многопрофильный <br> <span>медицинский центр</span></h2>
+                    <p class="utp__subtitle _subtitle">
+                      С Вами работают думающие и отзывчивые врачи, <br>для которых важна Ваша ситуация
+                    </p>
+                  </div>
+                  <div class="swiper-slide">
+                    <h2 class="utp__title _title">Многопрофильный <br> медицинский центр</h2>
+                    <p class="utp__subtitle _subtitle">
+                      С Вами работают думающие и отзывчивые врачи, для которых важна Ваша ситуация
+                    </p>
+                  </div>
+                  <div class="swiper-slide">
+                    <h2 class="utp__title _title">Многопрофильный <br> медицинский центр</h2>
+                    <p class="utp__subtitle _subtitle">
+                      С Вами работают думающие и отзывчивые врачи, <br> для которых важна Ваша ситуация
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-paginations">
+              <div class="swiper-pagination-bullet _active"></div>
+              <div class="swiper-pagination-bullet"></div>
+              <div class="swiper-pagination-bullet"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     @@include('html/_footer.htm',{})
   </div>
   @@include('html/_popup.htm',{})
   @@include('html/_js.htm',{})
+
 </body>
 
 </html>
