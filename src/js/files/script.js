@@ -3,29 +3,20 @@ import { isMobile, bodyLockToggle } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-const searchBtn = document.querySelector('.header__search');
-if (searchBtn) {
-  let searcBlock = document.querySelector('.search');
-  searchBtn.addEventListener('click', function (e) {
-    searcBlock.classList.add('_active');
-    bodyLockToggle();
+const burgerBtn = document.querySelector('.bottom-header__burger');
+const hiddenMenu = document.querySelector('.hidden-menu');
+
+if (burgerBtn) {
+  burgerBtn.addEventListener('click', function () {
+    this.classList.toggle('open');
+    document.querySelector('.hidden-menu').classList.toggle('show')
   })
 }
 
-const searchInput = document.querySelector('.search__input');
-if (searchInput) {
-  searchInput.addEventListener('input', function (e) {
-    if (e.target.value != '') {
-      document.querySelector('.search__delete').style.display = 'block';
-    } else {
-      document.querySelector('.search__delete').style.display = 'none';
-    }
-  });
-}
-
-const clearBtn = document.querySelector('.search__delete');
-if (clearBtn) {
-  clearBtn.addEventListener('click', function (e) {
-    document.querySelector('.search__input').value = '';
-  })
-}
+// Дописать функцию клика мимо открытого скрытого меню 
+hiddenMenu.addEventListener('click', function (e) {
+  if (!e.target.closest('.hidden-menu') || e.target == null) {
+    burgerBtn.classList.toggle('open');
+    document.querySelector('.hidden-menu').classList.remove('show');
+  }
+})

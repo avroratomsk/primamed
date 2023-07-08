@@ -6,160 +6,200 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230627233820">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230709023546">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230627233820" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230709023546" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<div class="header__top">
-					<div class="header__menu menu">
-						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Новости</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Вопросы и ответы</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Сертификаты</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
-						</ul>
+				<div class="header__inner">
+					<div class="header__top header-top">
+						<a href="/" class="header-top__logo">
+							<img src="img/logo.svg" alt="">
+						</a>
+						<div class="header-top__content">
+							<div class="header-top__address">
+								Чита,<br>
+								ул. Новобульварная, д. 113
+							</div>
+							<div class="header-top__callback">
+								<a href="tel:+8 (3022) 21-11-00">8 (3022) 21-11-00</a>
+								<button type="button">Связаться</button>
+							</div>
+							<div class="header-top__timework">
+								<p class="time">00:00 - 24:00</p>
+								<p class="work">круглосуточно</p>
+							</div>
+							<div class="header-top__actions">
+								<button type="button" class="header-top__login"><i class="fa-regular fa-user"></i></button>
+								<button type="button" class="header-top__search"><i class="fa-solid fa-magnifying-glass"></i></button>
+							</div>
+						</div>
 					</div>
-					<div class="header__action">
-						<button class="header__search header__btn--action">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-						<button class="header__login header__btn--action">
-							<i class="fa-regular fa-user"></i>
-						</button>
-						<button class="header__eye header__btn--action">
-							<i class="fa-regular fa-eye"></i>
-							<span>Версия для слабовидщих</span>
-						</button>
+					<div class="header__bottom bottom-header">
+						<nav class="bottom-header__nav">
+							<button type="button" class="bottom-header__burger"><span></span></button>
+							<ul class="bottom-header__list">
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">Услуги</a>
+								</li>
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">Специалисты</a>
+								</li>
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">Цены</a>
+								</li>
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">Акции</a>
+								</li>
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">Контакты</a>
+								</li>
+								<li class="bottom-header__item">
+									<a href="#" class="bottom-header__link">
+										<i class="fa-brands fa-square-whatsapp"></i>
+										WhatsApp
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="bottom-header__btns">
+							<button type="button" class="bottom-header__btn bottom-header__btn--doctor">
+								<i class="fa-solid fa-user-nurse"></i>
+								Вызвать врача
+								<span>бесплатный выезд</span>
+							</button>
+							<button type="button" class="bottom-header__btn bottom-header__btn--eye">
+								<i class="fa-regular fa-eye"></i>
+								Версия для слабовидящих
+							</button>
+						</div>
 					</div>
-				</div>
-				<div class="header__bottom">
-					<div class="header__logo">
-						<img src="img/logo.svg" alt="">
-					</div>
-					<div class="header__menu menu-bottom">
-						<ul class="menu-bottom__list">
-							<li class="menu-bottom__item"><a href="#" class="menu-bottom__link">Услуги</a> <img src="img/st.svg" alt="" class="menu-bottom__arrow">
+					<div class="header__hidden hidden-menu">
+						<ul class="hidden-menu__list">
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">О компании</a>
 							</li>
-							<li class="menu-bottom__item"><a href="#" class="menu-bottom__link">Специалисты</a></li>
-							<li class="menu-bottom__item"><a href="#" class="menu-bottom__link">Цены</a></li>
-							<li class="menu-bottom__item"><a href="#" class="menu-bottom__link">Акции</a></li>
-							<li class="menu-bottom__item"><a href="#" class="menu-bottom__link">Контакты</a></li>
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">Новости</a>
+							</li>
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">Отзывы</a>
+							</li>
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">Вопросы и ответы</a>
+							</li>
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">Сертификаты</a>
+							</li>
+							<li class="hidden-menu__item">
+								<a href="#" class="hidden-menu__link">Партнеры</a>
+							</li>
 						</ul>
 					</div>
-					<div class="header__phone">
-						<a href="tel:+7 (3022) 21-11-00">+7 (3022) <span>21-11-00</span></a>
-						<a href="tel:+7 (3022) 21-11-00"><i class="fa-solid fa-house-chimney-medical"></i>Вызвать врача</a>
-					</div>
-					<button type="button" class="header__btn">Записаться</button>
 				</div>
 			</div>
 		</header>
 		<main class="page">
-			<div class="note">
-				<div class="note__container">
-					<p class="note__text">
-						Уважаемые пациенты, при оформлении на соскоб на ПЦР COVID необходимо указывать паспорт, СНИЛС и полис ОМС.
-					</p>
-				</div>
-			</div>
 
-			<div class="about">
-				<div class="about__container">
-					<div class="about__body">
-						<div class="about__col about-action">
-							<div class="about-action__hotline">
-								<div class="about-action__hotline--icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-										<path id="вопрос.svg" class="cls-1" d="M406.5,729.5H389.239l-6.464,4.04a0.835,0.835,0,0,1-.442.126,0.823,0.823,0,0,1-.4-0.1,0.832,0.832,0,0,1-.43-0.729v-22.5a2.5,2.5,0,0,1,2.5-2.5h22.5a2.5,2.5,0,0,1,2.5,2.5V727A2.5,2.5,0,0,1,406.5,729.5Zm0.833-19.167a0.833,0.833,0,0,0-.833-0.833H384a0.833,0.833,0,0,0-.833.833v21l5.391-3.369a0.835,0.835,0,0,1,.442-0.127h17.5a0.833,0.833,0,0,0,.833-0.833V710.333Zm-5,12.5H389a0.833,0.833,0,0,1,0-1.666h13.333A0.833,0.833,0,1,1,402.333,722.833Zm-2.5-6.666H389a0.834,0.834,0,0,1,0-1.667h10.833A0.834,0.834,0,1,1,399.833,716.167Zm-0.393-9.462a15.284,15.284,0,0,0-9.19-3.038c-7.689,0-13.274,4.123-14.8,10.833H376.5a0.832,0.832,0,0,1,.833.833v13.334a0.832,0.832,0,0,1-.833.833H374a5.006,5.006,0,0,1-5-5v-5a5.006,5.006,0,0,1,4.741-4.993C375.317,706.772,381.58,702,390.25,702a16.943,16.943,0,0,1,10.185,3.367A0.834,0.834,0,0,1,399.44,706.705ZM370.667,719.5v5A3.336,3.336,0,0,0,374,727.833h1.667V716.167H374A3.336,3.336,0,0,0,370.667,719.5Zm15,14.166h6.666a4.169,4.169,0,0,1,3.681,2.218,15.37,15.37,0,0,0,6.687-5.207,0.833,0.833,0,0,1,1.345.984,17.034,17.034,0,0,1-7.561,5.832c0.009,0.112.015,0.226,0.015,0.34A4.171,4.171,0,0,1,392.333,742h-6.666A4.167,4.167,0,1,1,385.667,733.666Zm0,6.667h6.666a2.5,2.5,0,0,0,2.424-3.113c-0.01-.029-0.018-0.058-0.025-0.087a2.5,2.5,0,0,0-2.4-1.8h-6.666A2.5,2.5,0,0,0,385.667,740.333Z" transform="translate(-369 -702)" />
-									</svg>
-								</div>
-								<p class="about-action__title">Горячая линия</p>
-								<p class="about-action__subtitle">Круглосуточный call-center</p>
-								<a href="tel:+79999999999" class="about-action__phone">8 (999) 999-99-99</a>
-							</div>
-							<p class="about-action__info">
-								По телефону вы можете бесплатно получить консультацию дежурного врача по любым вопросам
-							</p>
-							<div class="about-action__form">
-								<p class="about-action__title">Выезд врача на дом</p>
-								<p class="about-action__subtitle">мы перезвоним Вам в течении 6-ти минут</p>
-								<form action="">
-									<input type="tel" name="phone" id="phone" placeholder="+7 (___)___-__-__*">
-									<div class="about-action__checkbox">
-										<input type="checkbox" name="politic" id="politic" checked>
-										<label for="politic">Я согласен(а) на обработку <a href="#">персональных данных</a></label>
-									</div>
-									<button type="submit" class="about-action__submit">Отправить</button>
-								</form>
-							</div>
-						</div>
-						<div class="about__col about-info">
-							<h2 class="about-info__title">О компании</h2>
-							<p class="about-info__text">
-								Прима-Мед — медицинская клиника, оказывающая своим клиентам платные медицинские услуги. Медицинский
-								центр предлагает широкий спектр медицинских обследований и процедур, начиная от общих осмотров и
-								заканчивая специализированным лечением. Клиника также предоставляет профилактические услуги, такие как
-								вакцинация.
-							</p>
-							<div class="about-info__images">
-								<div class="about-info__image">
-									<picture><source srcset="img/image.webp" type="image/webp"><img src="img/image.webp" alt=""></picture>
-								</div>
-								<div class="about-info__image">
-									<picture><source srcset="img/image.webp" type="image/webp"><img src="img/image.webp" alt=""></picture>
-								</div>
-							</div>
-							<a href="#" class="about-info__link">Узнать больше о центре</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<section class="utp"></section>
 
-			<div class="news _padding-section">
-				<div class="news__container">
-					<div class="news__body">
-						<h2 class="news__title _title">Новости</h2>
-						<div class="news__row">
-							<div class="news__card card-news">
-								<div class="card-news__content">
-									<a href="#" class="card-news__title">Новость 1</a>
-									<p class="card-news__excerp">
-										Специализированное механическое устройство, которое работает от электропитания.
-									</p>
-									<p class="card-news__date">01.12.2022</p>
-								</div>
-								<a href="#" class="card-news__image">
-									<picture><source srcset="img/news-1.webp" type="image/webp"><img src="img/news-1.webp" alt="Новость 1"></picture>
-								</a>
-							</div>
-							<div class="news__card card-news">
-								<div class="card-news__content">
-									<a href="#" class="card-news__title">Новость 2</a>
-									<p class="card-news__excerp">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae amet quos officiis ea, dolorem nobis
-										in
-										perferendis odio
-									</p>
-									<p class="card-news__date">01.12.2022</p>
-								</div>
-								<a href="#" class="card-news__image">
-									<picture><source srcset="img/news-2.webp" type="image/webp"><img src="img/news-2.webp" alt="Новость 2"></picture>
-								</a>
-							</div>
-						</div>
-						<a href="#" class="news__link">Все новости</a>
-					</div>
-				</div>
-			</div>
+
+			<!-- <div class="about">
+        <div class="about__container">
+          <div class="about__body">
+            <div class="about__col about-action">
+              <div class="about-action__hotline">
+                <div class="about-action__hotline--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                    <path id="вопрос.svg" class="cls-1"
+                      d="M406.5,729.5H389.239l-6.464,4.04a0.835,0.835,0,0,1-.442.126,0.823,0.823,0,0,1-.4-0.1,0.832,0.832,0,0,1-.43-0.729v-22.5a2.5,2.5,0,0,1,2.5-2.5h22.5a2.5,2.5,0,0,1,2.5,2.5V727A2.5,2.5,0,0,1,406.5,729.5Zm0.833-19.167a0.833,0.833,0,0,0-.833-0.833H384a0.833,0.833,0,0,0-.833.833v21l5.391-3.369a0.835,0.835,0,0,1,.442-0.127h17.5a0.833,0.833,0,0,0,.833-0.833V710.333Zm-5,12.5H389a0.833,0.833,0,0,1,0-1.666h13.333A0.833,0.833,0,1,1,402.333,722.833Zm-2.5-6.666H389a0.834,0.834,0,0,1,0-1.667h10.833A0.834,0.834,0,1,1,399.833,716.167Zm-0.393-9.462a15.284,15.284,0,0,0-9.19-3.038c-7.689,0-13.274,4.123-14.8,10.833H376.5a0.832,0.832,0,0,1,.833.833v13.334a0.832,0.832,0,0,1-.833.833H374a5.006,5.006,0,0,1-5-5v-5a5.006,5.006,0,0,1,4.741-4.993C375.317,706.772,381.58,702,390.25,702a16.943,16.943,0,0,1,10.185,3.367A0.834,0.834,0,0,1,399.44,706.705ZM370.667,719.5v5A3.336,3.336,0,0,0,374,727.833h1.667V716.167H374A3.336,3.336,0,0,0,370.667,719.5Zm15,14.166h6.666a4.169,4.169,0,0,1,3.681,2.218,15.37,15.37,0,0,0,6.687-5.207,0.833,0.833,0,0,1,1.345.984,17.034,17.034,0,0,1-7.561,5.832c0.009,0.112.015,0.226,0.015,0.34A4.171,4.171,0,0,1,392.333,742h-6.666A4.167,4.167,0,1,1,385.667,733.666Zm0,6.667h6.666a2.5,2.5,0,0,0,2.424-3.113c-0.01-.029-0.018-0.058-0.025-0.087a2.5,2.5,0,0,0-2.4-1.8h-6.666A2.5,2.5,0,0,0,385.667,740.333Z"
+                      transform="translate(-369 -702)" />
+                  </svg>
+                </div>
+                <p class="about-action__title">Горячая линия</p>
+                <p class="about-action__subtitle">Круглосуточный call-center</p>
+                <a href="tel:+79999999999" class="about-action__phone">8 (999) 999-99-99</a>
+              </div>
+              <p class="about-action__info">
+                По телефону вы можете бесплатно получить консультацию дежурного врача по любым вопросам
+              </p>
+              <div class="about-action__form">
+                <p class="about-action__title">Выезд врача на дом</p>
+                <p class="about-action__subtitle">мы перезвоним Вам в течении 6-ти минут</p>
+                <form action="">
+                  <input type="tel" name="phone" id="phone" placeholder="+7 (___)___-__-__*">
+                  <div class="about-action__checkbox">
+                    <input type="checkbox" name="politic" id="politic" checked>
+                    <label for="politic">Я согласен(а) на обработку <a href="#">персональных данных</a></label>
+                  </div>
+                  <button type="submit" class="about-action__submit">Отправить</button>
+                </form>
+              </div>
+            </div>
+            <div class="about__col about-info">
+              <h2 class="about-info__title">О компании</h2>
+              <p class="about-info__text">
+                Прима-Мед — медицинская клиника, оказывающая своим клиентам платные медицинские услуги. Медицинский
+                центр предлагает широкий спектр медицинских обследований и процедур, начиная от общих осмотров и
+                заканчивая специализированным лечением. Клиника также предоставляет профилактические услуги, такие как
+                вакцинация.
+              </p>
+              <div class="about-info__images">
+                <div class="about-info__image">
+                  <picture><source srcset="img/image.webp" type="image/webp"><img src="img/image.webp" alt=""></picture>
+                </div>
+                <div class="about-info__image">
+                  <picture><source srcset="img/image.webp" type="image/webp"><img src="img/image.webp" alt=""></picture>
+                </div>
+              </div>
+              <a href="#" class="about-info__link">Узнать больше о центре</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news _padding-section">
+        <div class="news__container">
+          <div class="news__body">
+            <h2 class="news__title _title">Новости</h2>
+            <div class="news__row">
+              <div class="news__card card-news">
+                <div class="card-news__content">
+                  <a href="#" class="card-news__title">Новость 1</a>
+                  <p class="card-news__excerp">
+                    Специализированное механическое устройство, которое работает от электропитания.
+                  </p>
+                  <p class="card-news__date">01.12.2022</p>
+                </div>
+                <a href="#" class="card-news__image">
+                  <picture><source srcset="img/news-1.webp" type="image/webp"><img src="img/news-1.webp" alt="Новость 1"></picture>
+                </a>
+              </div>
+              <div class="news__card card-news">
+                <div class="card-news__content">
+                  <a href="#" class="card-news__title">Новость 2</a>
+                  <p class="card-news__excerp">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae amet quos officiis ea, dolorem nobis
+                    in
+                    perferendis odio
+                  </p>
+                  <p class="card-news__date">01.12.2022</p>
+                </div>
+                <a href="#" class="card-news__image">
+                  <picture><source srcset="img/news-2.webp" type="image/webp"><img src="img/news-2.webp" alt="Новость 2"></picture>
+                </a>
+              </div>
+            </div>
+            <a href="#" class="news__link">Все новости</a>
+          </div>
+        </div>
+      </div> -->
 
 		</main>
 		<footer class="footer">
@@ -185,7 +225,7 @@
 
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230627233820"></script>
+	<script src="js/app.min.js?_v=20230709023546"></script>
 
 </body>
 
