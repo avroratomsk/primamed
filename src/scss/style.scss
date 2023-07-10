@@ -9,6 +9,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=MuseoModerno:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
 // Подключить если есть локальные файлы шрифтов
 //@import "fonts/fonts";
 
@@ -17,13 +18,14 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: 'Montserrat', sans-serif;
+$fontFamily: 'Oswald', sans-serif;
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
 // $mainColor: #373737; // Цвет шрифта по умолчанию
 $mainColor: #111111; // Цвет шрифта по умолчанию
-$bodyColor: #ffffff;
+$bodyColor: #fcf6f5;
+// $bodyColor: #ffffff;
 $accent: #e31e24;
 $blue: #294f99;
 // $blue: #074fb9;

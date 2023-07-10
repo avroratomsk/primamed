@@ -3,10 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 24px 0px;
-  background-color: $white;
-  border-bottom: 1px solid rgba($color: $mainColor, $alpha: .1);
-  z-index: 99;
+  padding: 24px 0px 6px;
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 2px rgba($color: $mainColor, $alpha: .06);
 
   &__container {
   }
@@ -15,22 +14,23 @@
   }
 
   &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
     margin-bottom: 24px;
   }
 
   &__bottom {
-  }
-
-  &__hidden {
+    border-top: 2px solid rgba($color: $mainColor, $alpha: .05);
+    padding-top: 6px;
   }
 }
-.header-top {
-  display: flex;
-  justify-content: space-between;
+.top-header {
+  width: 100%;
 
   &__logo {
-    width: 300px;
-    margin-right: 10px;
+    max-width: 350px;
 
     img{
       max-width: 100%;
@@ -38,83 +38,136 @@
   }
 
   &__content {
+  }
+}
+.content-top {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 4vw;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
+    margin-right: 1vw;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba($color: $mainColor, $alpha: .5);
+    font-weight: 600;
+    line-height: 150%;
+
+    span{
+      font-size: 20px;
+      color: $blue;
+    }
+  }
+
+  &__btn {
+    padding: 15px 40px;
+    background-color: $blue;
+    border-radius: 5px;
+    color: $white;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .5px;
+    // box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
+    transition: $animation_fast;
+    position: relative; 
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba($color: $white, $alpha: .1);
+      border-radius: 5px;
+      box-shadow: inset 0px 0px 0px 0px rgba($color: $white, $alpha: .1);
+      transition: $animation_fast;
+    }
+
+    &:hover{
+      &::before{
+        width: 96%;
+        height: 86%;
+        box-shadow: inset 0px 0px 0px 1px rgba($color: $white, $alpha: .1);
+      }
+    }
+  }
+}
+
+.bottom-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__nav {
+    margin-top: -2px;
+  }
+
+  &__list {
     display: flex;
     align-items: center;
   }
 
-  &__address {
-    text-align: right;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 150%;
-    margin-right: 3.2vw;
-  }
-
-  &__callback {
+  &__item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 3.2vw;
+    align-items: center;
 
-    a{
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 150%;
-      text-transform: uppercase;
-      transition: $animation_fast;
-
-      @media (hover:hover) {
-        &:hover{
-          color: $accent;
-        }
-      }
+    i{
+      color: rgba($color:  $accent, $alpha: .9);
+      margin-top: 6px;
+      margin-left: .2vw;
     }
 
-    button{
-      color: #878B90;
-      font-size: 14px;
-      font-weight: 500;
-      position: relative;
-      transition: $animation_fast;
+    &:not(:last-child){
+      margin-right: 3vw;
+    }
 
-      &::before{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0%;
-        height: 1px;
-        border: 0px dashed #878B90;
-        transition: $animation_fast;
-      }
+    &--dotes{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
 
-      @media (hover:hover) {
-        &:hover{
-          color: $mainColor;
-
-          &::before{
-            left: 0;
-            width: 100%;
-            border-width: 1px;
-          }
-
+        span,
+        &::before,
+        &::after{
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: $mainColor;
+          display: flex;
+          border-radius: 5px;
         }
-      }
     }
   }
 
-  &__timework {
-    font-weight: 500;
-    line-height: 150%;
-    margin-right: 3.2vw;
-
-    .time {
-      font-size: 16px;
-    }
-    .work {
-      font-size: 14px;
-      font-weight: 600;
-    }
+  &__link {
+    display: flex;
+    padding: 17px 0px;
+    font-size: 19px;
+    font-weight: 400;
+    // border-top: 2px solid $accent;
   }
 
   &__actions {
@@ -122,280 +175,45 @@
     align-items: center;
   }
 
-  &__login{
-    margin-right: .8vw;
-    font-size: 20px;
-    padding: 5px;
-    transition: $animation_fast;
-
-    @media (hover:hover) {
-      &:hover{
-        color: $accent;
-      }
-    }
-  }
-
-  &__search{
-    font-size: 20px;
-    padding: 5px;
-    transition: $animation_fast;
-
-    @media (hover:hover) {
-      &:hover{
-        color: $accent;
-      }
-    }
-  }
-}
-
-.bottom-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__nav {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-  }
-
-  &__burger {
-    width: 24px;
-    height: 24px;
-    margin-right: 2.1vw;
-    position: relative;
-
-    span,
-    &::before,
-    &::after{
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -1px;
-      margin-left: -9px;
-      width: 18px;
-      height: 2px;
-      background-color: $mainColor;
-      display: block;
-      transition: $animation_fast;
-    }
-
-    span{
-      width: 12px;
-    }
-
-    &::before{
-      transform: translateY(5px);
-    }
-
-    &::after{
-      transform: translateY(-5px);
-    }
-
-    @media (hover:hover) {
-      &:hover{
-        span{
-          width: 18px;
-        }
-      }
-    }
-
-    &.open{
-      span{
-        width: 0px;
-      }
-
-      &::after{
-        transform: rotate(-45deg);
-      }
-
-      &::before{
-        transform: rotate(45deg);
-      }
-    }
-
-  }
-
-  &__list {
-    display: flex;
-    align-items: center;
-  }
-
-  &__item {
-    &:not(:last-child){
-      margin-right: 2.1vw;
-    }
-  }
-
-  &__link {
-    padding: 9px 0px;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    transition: $animation_fast;
-
-    i{
-      color: #878B90;
-      font-size: 22px;
-      margin-right: .7vw;
-    }
-
-    @media (hover:hover) {
-      &:hover{
-        color: $accent;
-      }
-    }
-  }
-
-  &__btns {
-    display: flex;
-    align-items: center;
-  }
-
   &__btn {
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    border: 1px solid rgba(135, 139, 144, 0.50);
-    padding: 10px 20px;
-    position: relative;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 150%;
+    box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
+    border-radius: 5px;
+    height: 50px;
     transition: $animation_fast;
+  }
 
-
+  &__eye {
+    margin-right: .8vw;
+    box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
+    padding: 0px 15px;
     i{
-      color: $accent;
-      font-size: 18px;
-      margin-right: .8vw;
-      transition: $animation_fast;
-    }
-
-    span{
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 80%;
-      padding: 0px 10px;
-      border-radius: 5px;
-      background: $blue;
-      border: 1px solid rgba(135, 139, 144, 0.3);
-      color: $white;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 500;
-      height: 15px;
-    }
-  }
-
-  &__btn--doctor {
-    margin-right: 3vw;
-
-    @media (hover:hover) {
-      &:hover{
-        background-color: $blue;
-        color: $white;
-        
-        i{
-          color: $white;
-        }
-      }
-    }
-  }
-
-  &__btn--eye {
-
-    @media (hover:hover) {
-      &:hover{
-        background-color: $accent;
-        color: $white;
-        
-        i{
-          color: $white;
-        }
-      }
-    }
-
-  }
-}
-
-.hidden-menu {
-  display: grid;
-  grid-template-rows: 0fr;
-  overflow: hidden;
-  position: absolute;
-  top: 100%;
-  border: 1px solid rgba(135, 139, 144, 0);
-  border-top: 0px;
-  
-  min-width: 290px;
-  border-radius: 0px 0px 5px 5px;
-  transition: $animation_fast;
-
-  &.show{
-    min-height: auto;
-    grid-template-rows: 1fr;
-    border-color: rgba(135, 139, 144, .2);
-  }
-
-  &__list {
-    min-height: 0px;
-  }
-
-  &__item {
-    padding: 0px 20px 0px 30px;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    &:not(:last-child){
-      border-bottom: 1px dashed rgba(135, 139, 144, .2);
-    }
-
-    &::before{
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 8px;
-      margin-top: -6.5px;
-      width: 13px;
-      height: 13px;
-      border: 1px dashed rgba(135, 139, 144, .5);
-      border-radius: 50%;
-      transition: $animation_fast;
+      margin-top: 3px;
+      margin-left: .3vw;
     }
 
     &:hover{
-      background-color: rgba($color: #000000, $alpha: .02);
-      .hidden-menu__link{
-        color: rgba($color: #000000, $alpha: .7);
-      }
-
-      &::before{
-        border-color: $accent;
-      }
+      background-color: $accent;
+      color: $white;
     }
-
   }
 
-  &__link {
-    display: flex;
-    width: 100%;
-    padding: 15px 0px;
-    font-size: 15px;
-    font-weight: 500;
-    transition: $animation_fast;
+  &__login {
+    margin-right: .8vw;
+    width: 50px;
+
+    &:hover{
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  &__search {
+    width: 50px;
+
+    &:hover{
+      background-color: $blue;
+      color: $white;
+    }
   }
 }
-
-
-
 
