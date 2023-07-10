@@ -1,19 +1,45 @@
-.note {
-  background-color: rgba($color: $blue, $alpha: 1);
-  padding: 8px 0px;
-  text-align: center;
-  background-image: url(../img/bg.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
+.utp {
+
+  &__slider {
+  }
 
   &__container {
   }
 
+  &__content {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: rgba($color: $mainColor, $alpha: .35);
+    min-width: 700px;
+    padding: 35px 25px;
+    border-radius: 25px;
+    backdrop-filter: blur(4em);
+  }
+
   &__text {
-    color: #fff;
-    font-size: 16px;
+    color: $white;
+    font-size: 1.5vw;
     font-weight: 500;
-    letter-spacing: .5px;
+  }
+
+  &__text--big {
+    font-size: 2vw;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 500px !important;
+    padding: 80px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .swiper-pagination {
+  }
+  .swiper-button-prev {
+  }
+  .swiper-button-next {
   }
 }
 
