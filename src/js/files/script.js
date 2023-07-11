@@ -6,3 +6,11 @@ import { flsModules } from "./modules.js";
 const burgerBtn = document.querySelector('.bottom-header__burger');
 const hiddenMenu = document.querySelector('.hidden-menu');
 
+
+const dotesBtn = document.querySelector('.bottom-header__item--dotes');
+
+if (dotesBtn) {
+  dotesBtn.addEventListener('click', function (e) {
+    document.querySelector('.hidden-header').classList.toggle('show')
+  })
+}

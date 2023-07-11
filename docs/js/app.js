@@ -3715,6 +3715,10 @@
     }), 0);
     document.querySelector(".bottom-header__burger");
     document.querySelector(".hidden-menu");
+    const dotesBtn = document.querySelector(".bottom-header__item--dotes");
+    if (dotesBtn) dotesBtn.addEventListener("click", (function(e) {
+        document.querySelector(".hidden-header").classList.toggle("show");
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
