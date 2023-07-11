@@ -3642,8 +3642,8 @@
             observer: true,
             observeParents: true,
             slidesPerView: 1,
-            spaceBetween: 20,
-            autoHeight: true,
+            spaceBetween: 0,
+            autoHeight: false,
             speed: 800,
             loop: true,
             pagination: {
@@ -3713,18 +3713,8 @@
             }));
         }
     }), 0);
-    const burgerBtn = document.querySelector(".bottom-header__burger");
-    const hiddenMenu = document.querySelector(".hidden-menu");
-    if (burgerBtn) burgerBtn.addEventListener("click", (function() {
-        this.classList.toggle("open");
-        document.querySelector(".hidden-menu").classList.toggle("show");
-    }));
-    hiddenMenu.addEventListener("click", (function(e) {
-        if (!e.target.closest(".hidden-menu") || e.target == null) {
-            burgerBtn.classList.toggle("open");
-            document.querySelector(".hidden-menu").classList.remove("show");
-        }
-    }));
+    document.querySelector(".bottom-header__burger");
+    document.querySelector(".hidden-menu");
     window["FLS"] = true;
     isWebp();
     menuInit();
