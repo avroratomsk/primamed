@@ -29,7 +29,8 @@ body {
 body {
 	color: $mainColor;
 	line-height: 1;
-	font-family: $fontFamily;
+  font-family: 'PlayfairDisplay-Regular', sans-serif;
+	// font-family: $fontFamily;
 	font-size: $fontSize;
 	//text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
@@ -44,7 +45,7 @@ body {
 input,
 button,
 textarea {
-	font-family: $fontFamily;
+	// font-family: $fontFamily;
 	font-size: inherit;
 }
 

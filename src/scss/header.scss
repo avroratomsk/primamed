@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -299,11 +299,12 @@
 
 .submenu {
   width: 100%;
-  min-width: 600px;
+  // min-width: 600px;
   background-color: $white;
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
   transform: translateY(10%);
