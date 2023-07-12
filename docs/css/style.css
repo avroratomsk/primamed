@@ -969,6 +969,29 @@ body {
   margin-top: 30px;
 }
 
+.item-excellence {
+  padding: 20px 0px;
+}
+
+.item-excellence--accent {
+  background-color: #A50328;
+  padding-right: 40px;
+  padding-left: 40px;
+  color: #FFFFFF;
+}
+
+.item-excellence--accent i {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.item-excellence--accent svg {
+  fill: #FFFFFF !important;
+}
+
+.item-excellence--accent .item-excellence__link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .item-excellence__icon {
   width: 38px;
   height: 38px;
@@ -998,6 +1021,7 @@ body {
   font-weight: 600;
   padding: 5px 0px;
   margin-top: 30px;
+  cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }

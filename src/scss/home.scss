@@ -171,8 +171,28 @@
   }
 }
 .item-excellence {
+  padding: 20px 0px;
 
-  &--accent{}
+  &--accent{
+    background-color: $accent;
+    padding-right: 40px;
+    padding-left: 40px;
+    color: $white;
+
+    i{
+      color: rgba($color: $white, $alpha: .7) !important;
+    }
+
+    svg{
+      fill: $white !important;
+    }
+
+    .item-excellence__link{
+      &:hover{
+        color: rgba($color: $white, $alpha: .7);
+      }
+    }
+  }
 
   &__icon {
     width: 38px;
@@ -200,6 +220,7 @@
     font-weight: 600;
     padding: 5px 0px;
     margin-top: 30px;
+    cursor: pointer;
     transition: $animation_fast;
 
     i{
