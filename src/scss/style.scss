@@ -26,9 +26,10 @@ $fontSize: rem(16); // где 14(px) - размер шрифта по умолч
 
 // Основные цвета
 // $mainColor: #373737; // Цвет шрифта по умолчанию
-$mainColor: #111111; // Цвет шрифта по умолчанию
-// $bodyColor: #f1f1f5;
-$bodyColor: #ffffff;
+$mainColor: #202124; // Цвет шрифта по умолчанию
+// $mainColor: #111111; // Цвет шрифта по умолчанию
+$bodyColor: #f1f1f5;
+// $bodyColor: #ffffff;
 // $accent: #e31e24;
 $accent: #A50328;
 $blue: #294f99;
@@ -168,6 +169,7 @@ body {
 // Подключение стилей отдельных блоков
 @import "header";
 @import "footer";
+@import "pagging";
 @import "block-style/search";
 
 // Подключение стилей отдельных страниц

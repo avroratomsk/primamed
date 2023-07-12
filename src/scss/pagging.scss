@@ -1,0 +1,45 @@
+.pagging {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+  &__arrow {
+    &:first-child{
+      margin-right: 20px;
+    }
+
+    i{
+      color: $accent;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    margin-right: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: $animation_fast;
+
+    &:hover{
+      background-color: rgba($color: $white, $alpha: .5);
+    }
+  }
+
+  ._active {
+    background-color: $accent;
+    color: $bodyColor;
+  }
+}
+

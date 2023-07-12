@@ -1,14 +1,11 @@
 /*=======================================================================*/
 .utp {
+  padding: 40px 0px 20px;
 
-  &__slider {
-   
-    
+  &__slider { 
   }
 
   &__wrapper {
-
-    
   }
 
   &__container {
@@ -113,7 +110,8 @@
   }
 
   &__title {
-    font-size: 55px;
+    font-size: 60px;
+    font-weight: 500;
     line-height: 90%;
     font-family: $fontSecondary;
     margin-bottom: 20px;
@@ -254,32 +252,11 @@
   }
 
   &__title {
-    font-size: 50px;
-    line-height: 120%;
-    font-family: $fontSecondary;
     margin-bottom: 10px;
   }
 
   &__link {
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
     margin-bottom: 40px;
-    transition: $animation_fast;
-    
-    &:hover{
-      color: $accent;
-
-      i{
-        margin-left: 15px;
-      }
-    }
-
-    i{
-      margin-top: 3px;
-      margin-left: 10px;
-      transition: $animation_fast;
-    }
   }
 
   &__grid {

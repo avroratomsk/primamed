@@ -2,11 +2,38 @@
 }
 
 body{
-  height: 300vh;
+  // height: 300vh;
 }
 
 section{
-  padding: 40px 0px;
+  padding: 20px 0px;
+}
+
+._title{
+  font-size: 50px;
+  line-height: 120%;
+  font-family: $fontSecondary;
+}
+
+._subtitle-link{
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  transition: $animation_fast;
+  
+  &:hover{
+    color: $accent;
+
+    i{
+      margin-left: 15px;
+    }
+  }
+
+  i{
+    margin-top: 3px;
+    margin-left: 10px;
+    transition: $animation_fast;
+  }
 }
 
  .arrow{
