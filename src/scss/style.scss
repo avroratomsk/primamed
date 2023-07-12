@@ -19,8 +19,8 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-// $fontFamily: 'Oswald', sans-serif;
-$fontFamily: 'PlayfairDisplay-Regular';
+$fontFamily: 'Montserrat', sans-serif;
+$fontSecondary: 'PlayfairDisplay-Regular';
 // PlayfairDisplay,sans-serif
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
@@ -29,10 +29,12 @@ $fontSize: rem(16); // где 14(px) - размер шрифта по умолч
 $mainColor: #111111; // Цвет шрифта по умолчанию
 // $bodyColor: #fcf6f5;
 $bodyColor: #ffffff;
-$accent: #e31e24;
+// $accent: #e31e24;
+$accent: #A50328;
 $blue: #294f99;
 // $blue: #074fb9;
 $white: #FFFFFF;
+$lightGrey: #f7f7f7;
 
 
 $animation_fast: .3s;

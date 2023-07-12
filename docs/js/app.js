@@ -3645,7 +3645,7 @@
             spaceBetween: 0,
             autoHeight: false,
             speed: 800,
-            loop: true,
+            loop: false,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true

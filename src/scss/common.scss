@@ -4,3 +4,51 @@
 body{
   height: 300vh;
 }
+
+ .arrow{
+  width: 25px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: normal !important;
+
+  span{
+    width: 20px;
+    height: 1px;
+    background-color: $mainColor;
+    display: inline-block;
+    position: relative;
+    font-weight: 300 !important;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 90%;
+      right: 0;
+      transform: rotate(-30deg);
+      margin-top: 1px;
+      width: 7px;
+      height: 1px;
+      background-color: $mainColor;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: 0;
+      transform: rotate(30deg);
+      margin-top: -1px;
+      width: 7px;
+      height: 1px;
+      background-color: $mainColor;
+    }
+  }
+
+  
+  &--right{
+    margin-left: 8px;
+  }
+
+ }

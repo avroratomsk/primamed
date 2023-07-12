@@ -73,9 +73,10 @@
     color: rgba($color: $mainColor, $alpha: .5);
     font-weight: 600;
     line-height: 150%;
+    font-size: 14px;
 
     span{
-      font-size: 20px;
+      font-size: 16px;
       color: $blue;
     }
   }
@@ -85,8 +86,7 @@
     background-color: $blue;
     border-radius: 5px;
     color: $white;
-    font-size: 18px;
-    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
     letter-spacing: .5px;
     // box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
     transition: $animation_fast;
@@ -165,7 +165,7 @@
     }
 
     &:not(:last-child){
-      margin-right: 3vw;
+      margin-right: 2.5vw;
     }
 
     &--dotes{
@@ -204,8 +204,8 @@
   &__link {
     display: flex;
     padding: 17px 0px;
-    font-size: 19px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     transition: $animation_fast;
 
     @media (hover:hover) {
@@ -228,6 +228,7 @@
   }
 
   &__eye {
+    font-size: 14px;
     margin-right: .8vw;
     box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
     padding: 0px 15px;
@@ -299,12 +300,11 @@
 
 .submenu {
   width: 100%;
-  // min-width: 600px;
+  min-width: 600px;
   background-color: $white;
   position: absolute;
   top: 100%;
   left: 0;
-  right: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
   transform: translateY(10%);
