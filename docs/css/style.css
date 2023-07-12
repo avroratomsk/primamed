@@ -405,6 +405,10 @@ body {
   height: 300vh;
 }
 
+section {
+  padding: 40px 0px;
+}
+
 .arrow {
   width: 25px;
   height: 20px;
@@ -807,13 +811,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding: 15px 20px;
+  font-size: 14px;
 }
 
 /*=======================================================================*/
-
-.utp {
-  margin-top: 70px;
-}
 
 .utp__container {
   position: relative;
@@ -944,6 +945,12 @@ body {
   color: #fff;
   font-weight: 600;
   font-size: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.slide-utp__btn:hover {
+  background-color: rgba(165, 3, 40, 0.9);
 }
 
 .slide-utp__col--image {
@@ -959,18 +966,17 @@ body {
 .excellence__inner {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 20px;
   background-color: #fff;
-  padding: 40px;
   margin-top: 30px;
 }
 
 .item-excellence {
-  padding: 20px 0px;
+  padding: 20px 40px;
 }
 
 .item-excellence--accent {
@@ -1040,6 +1046,420 @@ body {
 
 .item-excellence__link:hover i {
   margin-left: 10px;
+}
+
+/*=======================================================================*/
+
+.service__title {
+  font-size: 50px;
+  line-height: 120%;
+  font-family: "PlayfairDisplay-Regular";
+  margin-bottom: 10px;
+}
+
+.service__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.service__link:hover {
+  color: #A50328;
+}
+
+.service__link:hover i {
+  margin-left: 15px;
+}
+
+.service__link i {
+  margin-top: 3px;
+  margin-left: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.service__grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+}
+
+.service__item {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  min-height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+.item-service:hover .item-service__top {
+  color: #fff;
+  z-index: 2;
+}
+
+.item-service:hover .item-service__icon {
+  z-index: 3;
+}
+
+.item-service:hover .item-service__icon svg {
+  fill: #FFFFFF;
+}
+
+.item-service:hover .item-service__arrow i {
+  opacity: 1 !important;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  margin-left: 15px;
+  color: #fff;
+}
+
+.item-service__top {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 30px 0px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item-service__bottom {
+  padding: 0px 30px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item-service__bottom svg {
+  width: 35px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item-service__icon {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item-service__icon svg {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  fill: #A50328;
+}
+
+.item-service__arrow i {
+  -webkit-transition-delay: 0.3s !important;
+          transition-delay: 0.3s !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+          transform: translateX(-20px);
+  opacity: 0;
+}
+
+/*=======================================================================*/
+
+/* Hide every HTML inside .hover that would render outside*/
+
+.hover {
+  overflow: hidden;
+}
+
+/*Animate overlay and move it 'above'*/
+
+.hover .overlay {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mouse enter event */
+
+.hover.mouseenter.top .overlay {
+  -webkit-animation-name: slide--enter-top;
+          animation-name: slide--enter-top;
+}
+
+.hover.mouseenter.right .overlay {
+  -webkit-animation-name: slide--enter-right;
+          animation-name: slide--enter-right;
+}
+
+.hover.mouseenter.bottom .overlay {
+  -webkit-animation-name: slide--enter-bottom;
+          animation-name: slide--enter-bottom;
+}
+
+.hover.mouseenter.left .overlay {
+  -webkit-animation-name: slide--enter-left;
+          animation-name: slide--enter-left;
+}
+
+/* Mouse leave event */
+
+.hover.mouseleave.top .overlay {
+  -webkit-animation-name: slide--leave-top;
+          animation-name: slide--leave-top;
+}
+
+.hover.mouseleave.right .overlay {
+  -webkit-animation-name: slide--leave-right;
+          animation-name: slide--leave-right;
+}
+
+.hover.mouseleave.bottom .overlay {
+  -webkit-animation-name: slide--leave-bottom;
+          animation-name: slide--leave-bottom;
+}
+
+.hover.mouseleave.left .overlay {
+  -webkit-animation-name: slide--leave-left;
+          animation-name: slide--leave-left;
+}
+
+/* Sliding animations ! */
+
+@-webkit-keyframes slide--enter-top {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slide--enter-top {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes slide--enter-right {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slide--enter-right {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes slide--enter-bottom {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slide--enter-bottom {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes slide--enter-left {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes slide--enter-left {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes slide--leave-top {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slide--leave-top {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+}
+
+@-webkit-keyframes slide--leave-right {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slide--leave-right {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes slide--leave-bottom {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes slide--leave-bottom {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+}
+
+@-webkit-keyframes slide--leave-left {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slide--leave-left {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/**
+ * BASIC CSS FOR DEMO PURPOSE
+ */
+
+.hover {
+  position: relative;
+}
+
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #A50328;
+  text-align: center;
 }
 
 /*=======================================================================*/
