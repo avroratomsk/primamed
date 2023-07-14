@@ -145,6 +145,7 @@
     padding: 0px;
     img{
       max-width: 100%;
+      height: 100%;
     }
   }
 }
@@ -171,12 +172,11 @@
   }
 }
 .item-excellence {
-  padding: 20px 40px;
+  padding: 20px 0px;
 
   &--accent{
     background-color: $accent;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 20px 40px;
     color: $white;
 
     i{
@@ -245,7 +245,7 @@
 /*=======================================================================*/
 
 .service {
-  
+  background-color: $lightGrey;
 
   &__container {
   }
@@ -453,356 +453,9 @@
 
 /*=======================================================================*/
 /*=======================================================================*/
-.about {
-  margin: 80px 0px;
-  background-color: rgba($color: $blue, $alpha: .05);
-
-  &__container {
-  }
-
-  &__body {
-    display: grid;
-    grid-template-columns: 35% 1fr;
-    gap: 40px;
-  }
-
-  &__col {
-  }
-}
-
-.about-action {
-  background-color: $blue;
-  padding: 40px;
-  // overflow: hidden;
-  position: relative;
-
-  &::before{
-    content: '';
-    width: 100%;
-    height: 40px;
-    background-color: $blue;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-  }
-
-  &::after{
-    content: '';
-    width: 100%;
-    height: 40px;
-    background-color: $blue;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-
-  &__hotline {
-    position: relative;
-
-    &::after{
-      content: '';
-      position: absolute;
-      top: -30px;
-      left: -30px;
-      width: 120px;
-      height: 120px;
-      background-color: rgba($color: #fff, $alpha: .1);
-      border-radius: 50%;
-      z-index: 0;
-    }
-  }
-
-  &__hotline--icon {
-    margin-bottom: 20px;
-    svg{
-      fill: #fff;
-    }
-  }
-
-  &__title {
-    font-size: 25px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 5px;
-  }
-
-  &__subtitle {
-    color: rgba($color: #fff, $alpha: .7);
-    font-size: 14px;
-    line-height: 140%;
-    margin-bottom: 10px;
-  }
-
-  &__phone {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-
-  &__info {
-    padding: 20px 0px;
-    color: rgba($color: #fff, $alpha: .7);
-    font-size: 14px;
-    line-height: 130%;
-    border-top: 1px solid rgba($color: #fff, $alpha: .1);
-    border-bottom: 1px solid rgba($color: #fff, $alpha: .1);
-    margin-bottom: 20px;
-  }
-
-  &__form {
-
-    input:not([type="checkbox"]){
-      width: 100%;
-      height: 50px;
-      background-color: transparent;
-      border: 1px solid rgba($color: #fff, $alpha: .1);
-      border-radius: 3px;
-      padding: 0px 10px;
-      outline: none;
-      color: #fff;
-
-      &:focus{
-        border-color: rgba($color: #fff, $alpha: .5)
-      }
-
-      &::placeholder{
-        font-size: 16px;
-        color: rgba($color: #fff, $alpha: .7);
-      }
-    }
-  }
-
-  &__checkbox {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-
-    input[type="checkbox"]{
-      appearance: none;
-      width: 16px;
-      height: 16px;
-      border: 1px solid rgba($color: #fff, $alpha: .5);
-      position: relative;
-      margin-right: 10px;
-      cursor: pointer;
-
-      &::before{
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 8px;
-        margin-left: -4px;
-        height: 8px;
-        margin-top: -4px;
-        background-color: rgba($color: #fff, $alpha: 1.0);
-        transform: scale(0);
-        transition: $animation_fast;
-      }
-      
-      &:checked{
-        border: 1px solid rgba($color: #fff, $alpha: 1.0);
-
-        &::before{
-          transform: scale(1);
-        }
-      }
-    }
-
-    label{
-      font-size: 13px;
-      color: rgba($color: #fff, $alpha: .7);
-      font-weight: 500;
-      cursor: pointer;
-      
-      a{
-        color: rgba($color: #fff, $alpha: 1);
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &__submit {
-    width: 100%;
-    height: 50px;
-    margin-top: 20px;
-    background-color: rgba($color: #fff, $alpha: 1.0);
-    border-radius: 5px;
-    color: $blue;
-    font-weight: 600;
-    font-size: 16px;
-  }
-}
-
-.about-info {
-  padding: 40px 0px;
-
-  &__title {
-    font-size: 2.8vw;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-
-  &__text {
-    font-size: 16px;
-    line-height: 160%;
-    margin-bottom: 20px;
-  }
-
-  &__images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 40px;
-    max-height: 300px;
-  }
-
-  &__image {
-    overflow: hidden;
-    border-radius: 5px;
-
-    img{
-      max-width: 100%;
-    }
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 290px;
-    height: 50px;
-    background-color: $blue;
-    margin-top: 40px;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 5px;
-  }
-}
 
 /*=======================================================================*/
-.news {
 
-  &__container {
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__title {
-    margin-bottom: 30px;
-  }
-
-  &__row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 30px;
-  }
-
-  &__card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    border-radius: 25px;
-    background-color: rgba($color: $blue, $alpha: .06);
-    padding: 25px;
-  }
-
-  &__link {
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    margin-top: 30px;
-    width: 210px;
-    height: 50px;
-    border: 3px solid $blue;
-    color: $blue;
-    font-weight: 600;
-    font-size: 16px;
-    transition: $animation_fast;
-
-    @media (hover:hover) {
-        &:hover{
-          background-color: $blue;
-          color: #fff;
-        }
-    }
-  }
-}
-
-.card-news {
-  &:hover{
-    .card-news__image{
-      img{
-        transform: scale(1.1);
-      }
-    }
-
-    .card-news__title{
-      color: $blue;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  &__image {
-    display: block;
-    overflow: hidden;
-    border-radius: 20px;
-    height: 15vw;
-    width: 100%;
-    position: relative;
-
-    &::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba($color: $blue, $alpha: .1);
-      z-index: 3;
-    }
-
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: $animation_fast;
-    }
-  }
-
-  &__title {
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    transition: $animation_fast;
-  }
-
-  &__excerp {
-    flex: 1 1 auto;
-    line-height: 150%;
-    font-size: 15px;
-    color: rgba($color: $mainColor, $alpha: .7);
-  }
-
-  &__date{
-    font-size: 13px;
-    letter-spacing: .2px;
-    color: rgba($color: $mainColor, $alpha: .7);
-  }
-}
 /*=======================================================================*/
 
 .stock {
@@ -936,6 +589,7 @@
 /*=======================================================================*/
 
 .blog {
+  background-color: $lightGrey;
 
   &__container {
   }

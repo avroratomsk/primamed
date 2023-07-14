@@ -1,0 +1,203 @@
+.footer {
+  background-color: #fff;
+  padding: 40px 0px;
+
+  &__container {
+  }
+
+  &__inner {
+  }
+
+  &__menu {
+  }
+
+  &__grid {
+  }
+}
+.menu-footer {
+  border-top: 1px solid rgba($color: $mainColor, $alpha: .1);
+  border-bottom: 1px solid rgba($color: $mainColor, $alpha: .1);
+  padding: 20px 0px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    padding: 5px 0px;
+    font-weight: 600;
+    display: flex;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover{
+        color: $accent;
+      }
+    }
+  }
+}
+
+.grid-footer {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 23% 1fr 25%;
+  gap: 30px;
+
+  &__col {
+    &:last-child{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    img{
+      width: 100px;
+    }
+  }
+
+  &__logo--text {
+    font-size: 21px;
+    font-weight: 800;
+    color: $blue;
+    margin-left: 5px;
+
+    span{
+      color: $accent;
+    }
+    
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    font-weight: 500;
+    padding: 5px 0px;
+    display: flex;
+    transition: $animation_fast;
+
+    @media (hover:hover) {
+      &:hover{
+        color: $accent;
+      }
+    }
+
+    &--small{
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      transition: $animation_fast;
+
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
+      
+      @media (hover: hover) {
+        &:hover{
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  &__impaired {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover{
+        color: $accent;
+
+        svg{
+          .st1{
+            stroke: $accent !important;
+          }
+        }
+      }
+    }
+
+    svg{
+      width: 40px;
+      margin-right: 8px;
+      
+      .st1{
+        transition: $animation_fast;
+      }
+    }
+  }
+
+  &__phone {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover{
+        color: $accent;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover{
+        background-color: rgba($color: $accent, $alpha: .9);
+      }
+    }
+  }
+
+  &__social {
+  }
+}
+.social-footer {
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  &__link {
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+    img{
+      width: 35px;
+    }
+  }
+}
