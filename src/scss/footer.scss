@@ -138,6 +138,19 @@
     svg{
       width: 40px;
       margin-right: 8px;
+
+      .st0 {
+        fill: #fff
+      }
+
+      .st1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-width: 50;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10
+      }
       
       .st1{
         transition: $animation_fast;
