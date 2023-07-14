@@ -40,7 +40,7 @@ section{
 }
 
  .arrow{
-  width: 40px;
+  width: 30px;
   height: auto;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@ section{
 
   &::after{
     content: '';
-    width: 100%;
+    width: 98%;
     height: 1px;
     background-color: $mainColor;
     display: inline-block;
@@ -71,7 +71,13 @@ section{
     border-style: solid;
     border-width: 4px 0 4px 4px;
     border-color: transparent transparent transparent $mainColor;
-  
+  }
+
+  &--left{
+    &::before{
+      left: 0;
+      transform: rotate(180deg) translateY(-50%);
+    }
   }
 
  }
