@@ -256,21 +256,23 @@ body::after {
 .spollers {
   display: -ms-grid;
   display: grid;
-  gap: 15px;
+  gap: 20px;
 }
 
 .spollers__item {
-  font-size: 1.25rem;
+  font-size: 18px;
 }
 
 .spollers__title {
   width: 100%;
+  font-weight: 500;
   cursor: default;
   text-align: left;
-  border: 1px solid #eee;
-  padding: 0.625rem 0.9375rem;
-  border-radius: 0.3125rem;
+  border: 1px solid rgba(46, 49, 70, 0.1);
+  padding: 20px 15px;
   position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 ._spoller-init .spollers__title {
@@ -285,17 +287,15 @@ body::after {
   top: 50%;
   background-color: #000;
   height: 2px;
-  width: 15px;
-  -webkit-transition: -webkit-transform 0.5s ease 0s;
-  transition: -webkit-transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  width: 9px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 ._spoller-init .spollers__title::before {
-  -webkit-transform: translate(-75%, -50%) rotate(40deg);
-      -ms-transform: translate(-75%, -50%) rotate(40deg);
-          transform: translate(-75%, -50%) rotate(40deg);
+  -webkit-transform: translate(-70%, -50%) rotate(40deg);
+      -ms-transform: translate(-70%, -50%) rotate(40deg);
+          transform: translate(-70%, -50%) rotate(40deg);
 }
 
 ._spoller-init .spollers__title::after {
@@ -304,26 +304,33 @@ body::after {
           transform: translate(0, -50%) rotate(-40deg);
 }
 
+._spoller-init .spollers__title._spoller-active {
+  background-color: #a50328;
+  color: #FFFFFF;
+}
+
 ._spoller-init .spollers__title._spoller-active::before {
   -webkit-transform: translateX(-75%) rotate(-40deg);
       -ms-transform: translateX(-75%) rotate(-40deg);
           transform: translateX(-75%) rotate(-40deg);
+  background-color: #FFFFFF;
 }
 
 ._spoller-init .spollers__title._spoller-active::after {
+  background-color: #FFFFFF;
   -webkit-transform: rotate(40deg);
       -ms-transform: rotate(40deg);
           transform: rotate(40deg);
 }
 
 .spollers__body {
-  padding: 1.25rem;
-  border-radius: 0.3125rem;
-  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 0px;
+  border: 1px solid rgba(46, 49, 70, 0.1);
 }
 
 section {
-  padding: 20px 0px;
+  padding: 40px 0px;
 }
 
 ._title {
@@ -638,7 +645,7 @@ section {
 }
 
 .social-footer__link img {
-  width: 35px;
+  width: 25px;
 }
 
 .pagging {
@@ -1878,6 +1885,33 @@ section {
 
 /*=======================================================================*/
 
+.faq__text {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.faq__text a {
+  color: #A50328;
+}
+
+.faq__btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #2e3146;
+  font-weight: 600;
+  border: 1px solid #2e3146;
+}
+
+.faq__title {
+  margin-bottom: 5px;
+}
+
+.faq__link {
+  margin-bottom: 40px;
+}
+
 /*=======================================================================*/
 
 /* *******************
@@ -2899,6 +2933,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (hover: hover) {
+  .spollers__title:hover {
+    background-color: rgba(46, 49, 70, 0.04);
+  }
+
   .menu-footer__link:hover {
     color: #A50328;
   }

@@ -988,9 +988,61 @@
   }
 }
 
-
-
 /*=======================================================================*/
+
+.faq {
+
+  &__container {
+  }
+
+  &__inner {
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+    margin-bottom: 30px;
+
+    a{
+      color: $accent;
+    }
+  }
+
+  &__btn {
+    // background-color: $accent;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: $mainColor;
+    font-weight: 600;
+    border: 1px solid $mainColor;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__link{
+    margin-bottom: 40px;
+  }
+
+
+
+  .spollers {
+
+    &__item {
+    }
+  
+    &__title {
+    }
+  
+    &__body {
+    }
+  }
+}
+
+
+
 /*=======================================================================*/
 
 

@@ -4,23 +4,33 @@
 // Блок со спойлерами
 .spollers {
 	display: grid;
-	gap: 15px;
+	gap: 20px;
 }
 // Спойлер
 .spollers__item {
-	font-size: rem(20);
+	font-size: 18px;
 }
+
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
+  font-weight: 500;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: rem(10) rem(15);
-	border-radius: rem(5);
+	border: 1px solid rgba($color: $mainColor, $alpha: .1);
+	padding: 20px 15px;
 	position: relative;
+  transition: $animation_fast;
+
+  @media (hover: hover) {
+    &:hover{
+      background-color: rgba($color: $mainColor, $alpha: .04);
+    }
+  }
+
 	._spoller-init & {
 		cursor: pointer;
+    
 		&::before,
 		&::after {
 			content: "";
@@ -29,28 +39,38 @@
 			top: 50%;
 			background-color: #000;
 			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
+			width: 9px;
+			transition: $animation_fast;
 		}
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
+			transform: translate(-70%, -50%) rotate(40deg);
 		}
 		&::after {
 			transform: translate(0, -50%) rotate(-40deg);
 		}
 		&._spoller-active {
+
+      background-color: rgba($color: $accent, $alpha: 1.0);
+      color: $white;
+
 			&::before {
 				transform: translateX(-75%) rotate(-40deg);
+        background-color: $white;
 			}
 			&::after {
+        background-color: $white;
 				transform: rotate(40deg);
 			}
 		}
 	}
 }
+
+._spoller-active{
+  
+}
 // Контент спойлера
 .spollers__body {
-	padding: rem(20);
-	border-radius: rem(5);
-	border: 1px solid #eee;
+	padding: 20px;
+	border-radius: 0px;
+	border: 1px solid rgba($color: $mainColor, $alpha: .1);
 }
