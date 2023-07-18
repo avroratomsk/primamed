@@ -1914,6 +1914,68 @@ section {
 
 /*=======================================================================*/
 
+.contact__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.contact__grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 40px;
+}
+
+.contact__map {
+  width: 100%;
+  height: 450px;
+}
+
+.contact__map img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-contact__item {
+  border: 1px solid rgba(46, 49, 70, 0.1);
+  padding: 20px;
+}
+
+.grid-contact__label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+  color: rgba(46, 49, 70, 0.6);
+  margin-bottom: 3px;
+}
+
+.grid-contact__text {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  line-height: 140%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid-contact__text--phone {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/*=======================================================================*/
+
+/*=======================================================================*/
+
 /* *******************
 Select
 ******************* */
@@ -2967,5 +3029,9 @@ button.swiper-pagination-bullet {
 
   .content-stock:hover .content-stock__btn svg {
     margin-left: 12px;
+  }
+
+  .grid-contact__text--phone:hover {
+    color: #A50328;
   }
 }
