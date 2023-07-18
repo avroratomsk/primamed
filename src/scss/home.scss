@@ -34,6 +34,7 @@
   }
 
   .swiper-slide {
+    height: 450px !important;
   }
 
   .swiper-button-prev {
@@ -1224,7 +1225,6 @@
 
   // .partner__link
   &__link {
-    margin-bottom: 40px;
   }
 
   // .partner__top
@@ -1233,6 +1233,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 40px;
   }
 
   // .partner__top--left

@@ -1,45 +1,45 @@
-.page{
+.page {
 }
 
-body{
+body {
   // height: 300vh;
 }
 
-section{
+section {
   padding: 40px 0px;
 }
 
-._title{
+._title {
   font-size: 50px;
   line-height: 120%;
   font-family: $fontSecondary;
 }
 
-._subtitle-link{
+._subtitle-link {
+  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   font-weight: 600;
   transition: $animation_fast;
-  
-  &:hover{
+
+  &:hover {
     color: $accent;
 
-    svg{
+    svg {
       margin-left: 10px;
       fill: $accent;
     }
   }
 
-  svg{
+  svg {
     transform: rotate(180deg);
     margin-left: 7px;
     margin-top: 4px;
     transition: $animation_fast;
   }
-
 }
 
- .arrow{
+.arrow {
   width: 30px;
   height: auto;
   display: flex;
@@ -47,8 +47,8 @@ section{
   position: relative;
   font-weight: normal !important;
 
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     width: 98%;
     height: 1px;
     background-color: $mainColor;
@@ -59,8 +59,8 @@ section{
     transform: translateY(-50%);
   }
 
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -73,16 +73,15 @@ section{
     border-color: transparent transparent transparent $mainColor;
   }
 
-  &--left{
-    &::before{
+  &--left {
+    &::before {
       left: 0;
       transform: rotate(180deg) translateY(-50%);
     }
   }
+}
 
- }
-
- .question-btn {
+.question-btn {
   position: fixed;
   bottom: 50px;
   right: 10px;

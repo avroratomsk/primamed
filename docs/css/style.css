@@ -340,6 +340,7 @@ section {
 }
 
 ._subtitle-link {
+  margin-top: 10px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1093,6 +1094,10 @@ section {
 
 .utp__container:hover .swiper-button-disabled::after {
   color: #2e3146;
+}
+
+.utp .swiper-slide {
+  height: 450px !important;
 }
 
 .utp .swiper-button-prev {
@@ -2407,10 +2412,6 @@ section {
   background-color: #f7f7f7;
 }
 
-.partner__link {
-  margin-bottom: 40px;
-}
-
 .partner__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2421,6 +2422,7 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .partner__btn {
