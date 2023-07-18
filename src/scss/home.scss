@@ -285,7 +285,10 @@
     .item-service__icon {
       z-index: 3;
       svg {
-        fill: $white;
+        fill: $white !important;
+        g {
+          fill: $white !important;
+        }
       }
     }
     .item-service__arrow {

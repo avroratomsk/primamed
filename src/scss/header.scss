@@ -262,6 +262,18 @@
     .st1 {
       transition: $animation_fast;
     }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $accent;
+
+        svg {
+          .st1 {
+            stroke: $accent !important;
+          }
+        }
+      }
+    }
   }
 
   &__login {

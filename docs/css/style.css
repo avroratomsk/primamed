@@ -1360,7 +1360,11 @@ section {
 }
 
 .item-service:hover .item-service__icon svg {
-  fill: #FFFFFF;
+  fill: #FFFFFF !important;
+}
+
+.item-service:hover .item-service__icon svg g {
+  fill: #FFFFFF !important;
 }
 
 .item-service:hover .item-service__arrow i {
@@ -3330,6 +3334,14 @@ button.swiper-pagination-bullet {
 
   .bottom-header__link:hover {
     color: #294f99;
+  }
+
+  .bottom-header__eye:hover {
+    color: #A50328;
+  }
+
+  .bottom-header__eye:hover svg .st1 {
+    stroke: #A50328 !important;
   }
 
   .submenu__item:hover {
