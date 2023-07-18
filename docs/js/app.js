@@ -3898,6 +3898,25 @@
             },
             on: {}
         });
+        if (document.querySelector(".partner__slider")) new core(".partner__slider", {
+            modules: [ Navigation, Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 4,
+            spaceBetween: 30,
+            autoHeight: true,
+            speed: 800,
+            loop: false,
+            autoplay: {
+                delay: 3e3,
+                disableOnInteraction: false
+            },
+            navigation: {
+                prevEl: ".partner-prev",
+                nextEl: ".partner-next"
+            },
+            on: {}
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
