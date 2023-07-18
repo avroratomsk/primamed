@@ -1,0 +1,356 @@
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 0px 6px;
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 2px rgba($color: $mainColor, $alpha: 0.06);
+  z-index: 99;
+
+  &__container {
+  }
+
+  &__inner {
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($color: $mainColor, $alpha: 0.05);
+    padding-top: 6px;
+    // padding-bottom: 12px;
+  }
+
+  &__hidden {
+  }
+}
+.top-header {
+  width: 100%;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 130px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__logo--text {
+    font-size: 25px;
+    font-weight: 800;
+    color: $blue;
+
+    span {
+      font-weight: 900;
+      color: $accent;
+      font-size: 29px;
+    }
+  }
+}
+
+.content-top {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 4vw;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: $white;
+    border: 1px solid rgba($color: $mainColor, $alpha: 0.1);
+    // font-size: 13px;
+    // box-shadow:
+    //   0 0 0 2px rgba(18, 18, 18, 0.02),
+    //   0 10px 10px 0 rgba(1, 45, 91, 0.07);
+    margin-right: 1vw;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba($color: $blue, $alpha: 1);
+    font-weight: 600;
+    line-height: 150%;
+    font-size: 14px;
+
+    span {
+      font-size: 16px;
+      color: $accent;
+      font-weight: 600;
+    }
+  }
+
+  &__btn {
+    padding: 17px 25px;
+    background-color: $accent;
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: $animation_fast;
+    position: relative;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $accent, $alpha: 0.9);
+      }
+    }
+  }
+}
+
+.bottom-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__nav {
+    // margin-top: -2px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    i {
+      color: rgba($color: $mainColor, $alpha: 0.9);
+      margin-top: 3px;
+      font-size: 13px;
+      margin-left: 0.2vw;
+      transition: $animation_fast;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .bottom-header__link {
+          color: $accent;
+        }
+
+        i {
+          transform: rotate(180deg);
+          color: $accent;
+        }
+
+        .submenu {
+          transform: translateY(0%);
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.5vw;
+    }
+
+    &--dotes {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      span,
+      &::before,
+      &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: $mainColor;
+        display: flex;
+        border-radius: 5px;
+        transition: $animation_fast;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          span,
+          &::before,
+          &::after {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 17px 0px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    // box-shadow:
+    //   0 0 0 2px rgba(18, 18, 18, 0.02),
+    //   0 10px 10px 0 rgba(1, 45, 91, 0.07);
+    border-radius: 5px;
+    height: 50px;
+    // transition: $animation_fast;
+  }
+
+  &__eye {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 0.8vw;
+    padding: 0px 15px;
+    // border: 1px solid rgba($color: $accent, $alpha: 1);
+
+    svg {
+      width: 35px;
+      margin-left: 0.3vw;
+    }
+
+    .st0 {
+      fill: #fff;
+    }
+
+    .st1 {
+      fill: none;
+      stroke: #231f20;
+      stroke-width: 50;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+
+    .st1 {
+      transition: $animation_fast;
+    }
+  }
+
+  &__login {
+    margin-right: 0.8vw;
+    width: 50px;
+
+    i {
+      transition: $animation_fast;
+    }
+
+    &:hover {
+      // border: 1px solid rgba($color: $accent, $alpha: 0.1);
+
+      i {
+        color: $accent;
+      }
+    }
+  }
+
+  &__search {
+    width: 50px;
+
+    &:hover {
+      i {
+        color: $accent;
+      }
+    }
+  }
+}
+
+.hidden-header {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  min-width: 250px;
+  transform: translateY(10%);
+  opacity: 0;
+  pointer-events: none;
+  transition: $animation_fast;
+  background-color: $white;
+
+  &.show {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px dashed rgba($color: $blue, $alpha: 0.1);
+    transition: $animation_fast;
+  }
+}
+
+.submenu {
+  width: 100%;
+  min-width: 600px;
+  background-color: $white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  transform: translateY(10%);
+  opacity: 0;
+  pointer-events: none;
+  transition: $animation_fast;
+
+  &__item {
+    border-bottom: 1px dashed rgba($color: $blue, $alpha: 0.1);
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.07);
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+}

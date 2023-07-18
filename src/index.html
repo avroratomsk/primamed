@@ -1082,52 +1082,48 @@
       <section class="contact">
         <div class="contact__container">
           <div class="contact__inner">
-            <div class="contact__top">
-              <div class="contact__titile--container">
-                <h2 class="contact__title _title">Наши контакты</h2>
-                <a href="#" class="contact__link _subtitle-link">
-                  подробнее
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22"
-                    height="5" viewBox="0 0 22 5">
-                    <defs>
-                      <path id="bvuca"
-                        d="M1123 766.5c0-.3-.27-.56-.6-.56h-18.96l1.18-.97c.24-.2.27-.55.05-.78a.62.62 0 0 0-.84-.05l-2.83 2.34 2.88 2.38c.25.2.62.18.84-.05a.53.53 0 0 0-.05-.78l-1.18-.97h18.92c.32 0 .59-.25.59-.56z" />
-                    </defs>
-                    <g>
-                      <g transform="translate(-1101 -764)">
-                        <use xlink:href="#bvuca" />
-                      </g>
-                    </g>
-                  </svg>
-                </a>
+            <h2 class="contact__title _title">Наши контакты</h2>
+            <a href="#" class="contact__link _subtitle-link">
+              подробнее
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="5"
+                viewBox="0 0 22 5">
+                <defs>
+                  <path id="bvuca"
+                    d="M1123 766.5c0-.3-.27-.56-.6-.56h-18.96l1.18-.97c.24-.2.27-.55.05-.78a.62.62 0 0 0-.84-.05l-2.83 2.34 2.88 2.38c.25.2.62.18.84-.05a.53.53 0 0 0-.05-.78l-1.18-.97h18.92c.32 0 .59-.25.59-.56z" />
+                </defs>
+                <g>
+                  <g transform="translate(-1101 -764)">
+                    <use xlink:href="#bvuca" />
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="contact__grid">
+            <div class="contact__col">
+              <div class="contact__item item-contact">
+                <p class="item-contact__label">номер телефона</p>
+                <a href="#" class="item-contact__text item-contact__link">8 (3022) 21-11-00</a>
               </div>
-              <div class="contact__checkbox checkbox-contact">
-                <p class="checkbox-contact__text">Списком</p>
-                <input type="checkbox" name="" id="">
-                <p class="checkbox-contact__text">На карте</p>
+              <div class="contact__item item-contact">
+                <p class="item-contact__label">адрес клиники</p>
+                <p class="item-contact__text">Чита, ул. Новобульварная, д. 113</p>
               </div>
-            </div>
-            <div class="contact__grid grid-contact">
-              <div class="grid-contact__item">
-                <p class="grid-contact__label">Наименование организации полное</p>
-                <p class="grid-contact__text">Общество с ограниченной ответственностью "Прима-Мед"</p>
-                <p class="grid-contact__label">Наименование организации сокращенное</p>
-                <p class="grid-contact__text">ООО «Прима-Мед»</p>
-                <p class="grid-contact__label">Номер телефона</p>
-                <a href="tel:8 (3022) 210-233" class="grid-contact__text grid-contact__text--phone">8 (3022) 210-233</a>
-                <p class="grid-contact__label">Адрес</p>
-                <p class="grid-contact__text">Чита, ул. Новобульварная, д. 113</p>
-                <p class="grid-contact__label">Режим работы</p>
-                <p class="grid-contact__text">Круглосуточно</p>
-                <p class="grid-contact__label">ФИО руководителя</p>
-                <p class="grid-contact__text">Понарина Марина Викторовна</p>
-              </div>
-              <div class="grid-contact__form">
-
+              <div class="contact__item item-contact">
+                <p class="item-contact__label">режим работы</p>
+                <p class="item-contact__text">круглосуточно</p>
               </div>
             </div>
-            <div class="contact__map map-contact">
-              <img src="@img/map.png" alt="">
+            <div class="contact__col">
+              <div class="contact__form form-contact">
+                <form action="#" class="form-contact__form">
+                  <input type="text" class="form-contact__input" placeholder="Ваше имя">
+                  <input type="text" class="form-contact__input" placeholder="Ваш номер телефона">
+                  <select name="form-contact--select" id="form-contact--select">
+                    <option value="Выберите врача"></option>
+                  </select>
+                </form>
+              </div>
             </div>
           </div>
         </div>
