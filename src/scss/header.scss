@@ -213,8 +213,12 @@
 
     @media (hover: hover) {
       &:hover {
-        color: $blue;
+        color: $accent;
       }
+    }
+
+    &.active {
+      color: $accent;
     }
   }
 
