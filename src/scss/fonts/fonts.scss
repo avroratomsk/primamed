@@ -1,18 +1,54 @@
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: Klein-Regular;
   font-display: swap;
   src:
-    url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"),
-    url("../fonts/PlayfairDisplay-Italic.woff") format("woff");
+    url("../fonts/Klein-Condensed-ExtraBold-trial.woff2") format("woff2"),
+    url("../fonts/Klein-Condensed-ExtraBold-trial.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay-Regular";
+  font-family: Klein;
   font-display: swap;
   src:
-    url("../fonts/PlayfairDisplay.woff2") format("woff2"),
-    url("../fonts/PlayfairDisplay.woff") format("woff");
+    url("../fonts/Klein-Text-Book-Italic-trial.woff2") format("woff2"),
+    url("../fonts/Klein-Text-Book-Italic-trial.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Klein;
+  font-display: swap;
+  src:
+    url("../fonts/Klein-ExtraLight-Italic-trial.woff2") format("woff2"),
+    url("../fonts/Klein-ExtraLight-Italic-trial.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: Klein;
+  font-display: swap;
+  src:
+    url("../fonts/Klein-Condensed-ExtraBold-Italic-trial.woff2") format("woff2"),
+    url("../fonts/Klein-Condensed-ExtraBold-Italic-trial.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Klein;
+  font-display: swap;
+  src:
+    url("../fonts/Klein-ExtraLight-trial.woff2") format("woff2"),
+    url("../fonts/Klein-ExtraLight-trial.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: Klein;
+  font-display: swap;
+  src:
+    url("../fonts/Klein-Text-Book-trial.woff2") format("woff2"),
+    url("../fonts/Klein-Text-Book-trial.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }

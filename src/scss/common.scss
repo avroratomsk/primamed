@@ -12,7 +12,6 @@ section {
 ._title {
   font-size: 50px;
   line-height: 120%;
-  font-family: $fontSecondary;
 }
 
 ._subtitle-link {
@@ -103,4 +102,13 @@ section {
     font-weight: 600;
     font-size: 12px;
   }
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $accent !important;
 }

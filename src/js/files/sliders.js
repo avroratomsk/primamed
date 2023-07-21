@@ -58,6 +58,7 @@ function initSliders() {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
       },
 
       // Скроллбар
@@ -70,8 +71,8 @@ function initSliders() {
 
       // Кнопки "влево/вправо"
       navigation: {
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next',
+        prevEl: '.utp__btns--prev',
+        nextEl: '.utp__btns--next',
       },
 
       // Брейкпоинты

@@ -3652,11 +3652,12 @@
             },
             pagination: {
                 el: ".swiper-pagination",
-                clickable: true
+                clickable: true,
+                dynamicBullets: true
             },
             navigation: {
-                prevEl: ".swiper-button-prev",
-                nextEl: ".swiper-button-next"
+                prevEl: ".utp__btns--prev",
+                nextEl: ".utp__btns--next"
             },
             on: {}
         });
