@@ -572,11 +572,17 @@ section {
   border-radius: 10px;
   color: #ffffff;
   font-size: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .top-header__btn svg {
   fill: #ffffff;
   margin-right: 10px;
+}
+
+.top-header__btn:hover {
+  background-color: rgba(41, 79, 153, 0.9);
 }
 
 .header-search {
@@ -674,6 +680,8 @@ section {
   margin-right: 15px;
   font-size: 15px;
   font-weight: 500;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .bottom-header__eye svg {
@@ -693,11 +701,15 @@ section {
           align-items: center;
   font-size: 15px;
   font-weight: 500;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .bottom-header__doctor svg {
-  fill: #2e3146 !important;
+  fill: #2e3146;
   margin-right: 10px;
+  -webkit-animation: 0.3s;
+          animation: 0.3s;
 }
 
 .bottom-header__login {
@@ -741,12 +753,18 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .menu__link svg {
   font-size: 12px;
   margin-top: 1px;
   margin-left: 5px;
+}
+
+.menu__link:hover {
+  color: #294f99;
 }
 
 .footer {
@@ -3436,6 +3454,26 @@ button.swiper-pagination-bullet {
 @media (hover: hover) {
   .spollers__title:hover {
     background-color: rgba(46, 49, 70, 0.04);
+  }
+
+  .bottom-header__eye:hover {
+    border-color: rgba(41, 79, 153, 0.5);
+    color: #294f99;
+  }
+
+  .bottom-header__eye:hover svg {
+    fill: #294f99;
+    -webkit-animation: 0.3s;
+            animation: 0.3s;
+  }
+
+  .bottom-header__doctor:hover {
+    border-color: rgba(41, 79, 153, 0.5);
+    color: #294f99;
+  }
+
+  .bottom-header__doctor:hover svg {
+    fill: #294f99;
   }
 
   .menu-footer__link:hover {

@@ -73,10 +73,15 @@
     border-radius: 10px;
     color: $white;
     font-size: 16px;
+    transition: $animation_fast;
 
     svg {
       fill: $white;
       margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: rgba($color: $blue, $alpha: 0.9);
     }
   }
 
@@ -177,9 +182,22 @@
     margin-right: 15px;
     font-size: 15px;
     font-weight: 500;
+    transition: $animation_fast;
 
     svg {
       margin-right: 10px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: rgba($color: $blue, $alpha: 0.5);
+        color: $blue;
+
+        svg {
+          fill: $blue;
+          animation: $animation_fast;
+        }
+      }
     }
   }
 
@@ -192,13 +210,25 @@
     border: 1px solid rgba($color: $mainColor, $alpha: 0.1);
     display: flex;
     align-items: center;
-
     font-size: 15px;
     font-weight: 500;
+    transition: $animation_fast;
 
     svg {
-      fill: $mainColor !important;
+      fill: $mainColor;
       margin-right: 10px;
+      animation: $animation_fast;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: rgba($color: $blue, $alpha: 0.5);
+        color: $blue;
+
+        svg {
+          fill: $blue;
+        }
+      }
     }
   }
 
@@ -219,6 +249,7 @@
     }
   }
 }
+
 .menu {
   flex: 1 1 auto;
   margin-right: 3vw;
@@ -243,11 +274,16 @@
   &__link {
     display: flex;
     align-items: center;
+    transition: $animation_fast;
 
     svg {
       font-size: 12px;
       margin-top: 1px;
       margin-left: 5px;
+    }
+
+    &:hover {
+      color: $blue;
     }
   }
 }
