@@ -3,74 +3,72 @@
 
 // Блок со спойлерами
 .spollers {
-	display: grid;
-	gap: 20px;
+  display: grid;
+  gap: 20px;
 }
 // Спойлер
 .spollers__item {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 // Заголовок спойлера
 .spollers__title {
-	width: 100%;
+  width: 100%;
   font-weight: 500;
-	cursor: default;
-	text-align: left;
-	border: 1px solid rgba($color: $mainColor, $alpha: .1);
-	padding: 20px 15px;
-	position: relative;
+  cursor: default;
+  text-align: left;
+  border: 1px solid rgba($color: $mainColor, $alpha: 0.1);
+  padding: 20px 15px;
+  position: relative;
   transition: $animation_fast;
 
   @media (hover: hover) {
-    &:hover{
-      background-color: rgba($color: $mainColor, $alpha: .04);
+    &:hover {
+      background-color: rgba($color: $mainColor, $alpha: 0.04);
     }
   }
 
-	._spoller-init & {
-		cursor: pointer;
-    
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 9px;
-			transition: $animation_fast;
-		}
-		&::before {
-			transform: translate(-70%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
+  ._spoller-init & {
+    cursor: pointer;
 
-      background-color: rgba($color: $accent, $alpha: 1.0);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      background-color: #000;
+      height: 2px;
+      width: 9px;
+      transition: $animation_fast;
+    }
+    &::before {
+      transform: translate(-70%, -50%) rotate(40deg);
+    }
+    &::after {
+      transform: translate(0, -50%) rotate(-40deg);
+    }
+    &._spoller-active {
+      background-color: rgba($color: $blue, $alpha: 1);
       color: $white;
 
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
+      &::before {
+        transform: translateX(-75%) rotate(-40deg);
         background-color: $white;
-			}
-			&::after {
+      }
+      &::after {
         background-color: $white;
-				transform: rotate(40deg);
-			}
-		}
-	}
+        transform: rotate(40deg);
+      }
+    }
+  }
 }
 
-._spoller-active{
-  
+._spoller-active {
 }
 // Контент спойлера
 .spollers__body {
-	padding: 20px;
-	border-radius: 0px;
-	border: 1px solid rgba($color: $mainColor, $alpha: .1);
+  padding: 20px;
+  border-radius: 0px;
+  border: 1px solid rgba($color: $mainColor, $alpha: 0.1);
 }

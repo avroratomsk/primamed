@@ -3680,6 +3680,29 @@
             },
             on: {}
         });
+        if (document.querySelector(".reviews__slider")) new core(".reviews__slider", {
+            modules: [ Navigation, Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 3.5,
+            spaceBetween: 30,
+            autoHeight: true,
+            speed: 800,
+            loop: false,
+            autoplay: {
+                delay: 3e3,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: ".reviews-pagi",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".reviews-prev",
+                nextEl: ".reviews-next"
+            },
+            on: {}
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
