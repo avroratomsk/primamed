@@ -372,6 +372,7 @@ section {
 ._title {
   font-size: 40px;
   line-height: 120%;
+  font-family: "Oswald";
 }
 
 ._subtitle-link {
@@ -494,6 +495,78 @@ section {
 
 .swiper-pagination-bullet-active {
   background-color: #a50328 !important;
+}
+
+.blind {
+  position: fixed;
+  left: 0%;
+  top: 60%;
+  z-index: 99;
+  background-color: #a50328;
+  border-radius: 0px 10px 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  overflow: hidden;
+  width: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.blind:hover {
+  width: auto;
+  padding: 0px 20px;
+}
+
+.blind:hover .blind__icon {
+  margin-left: 10px;
+}
+
+.blind:hover .blind__icon svg {
+  margin-left: 5px;
+}
+
+.blind:hover .blind__text {
+  font-size: 17px;
+}
+
+.blind__icon {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.blind__icon svg {
+  width: 40px;
+  margin-top: 7px;
+}
+
+.blind__icon svg .st0 {
+  fill: #a50328;
+}
+
+.blind__icon svg .st1 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 50;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.blind__icon svg .st1 {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.blind__text {
+  font-family: "Oswald";
+  color: #ffffff;
+  font-size: 0px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header__top {
@@ -1156,9 +1229,6 @@ section {
 }
 
 .tab-service__trigger {
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -1205,12 +1275,19 @@ section {
 }
 
 .content-tab__item span {
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
   text-align: center;
-  line-height: 140%;
+  letter-spacing: 0.5px;
+  line-height: 120%;
+  font-family: "Oswald";
 }
 
 .content-tab__icon svg {
+  -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+  fill: #ffffff;
+  stroke: #294f99;
   height: 70px !important;
 }
 
@@ -1242,10 +1319,7 @@ section {
 }
 
 .service-home__title {
-  font-size: 35px;
-  font-weight: 600;
   margin-bottom: 72px;
-  text-align: center;
 }
 
 .service-home__link {
@@ -1665,8 +1739,8 @@ section {
 
 .reviews-slide__stars svg {
   margin-right: 5px;
-  width: 20px;
-  height: 20px !important;
+  width: 15px;
+  height: 15px !important;
   fill: #a50328;
 }
 
@@ -1821,6 +1895,7 @@ section {
 
 .faq__title {
   margin-bottom: 5px;
+  margin-bottom: 40px;
 }
 
 .faq__link {

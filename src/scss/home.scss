@@ -149,9 +149,6 @@
   // .tab-service__trigger
 
   &__trigger {
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center;
     margin-bottom: 40px;
   }
 
@@ -192,10 +189,13 @@
     transition: $animation_fast;
 
     span {
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 500;
       text-align: center;
+      letter-spacing: 0.5px;
       // margin-top: 15px;
-      line-height: 140%;
+      line-height: 120%;
+      font-family: $fontSecondary;
     }
 
     &:hover {
@@ -207,7 +207,12 @@
   // .content-tab__icon
 
   &__icon {
+    &:hover {
+    }
     svg {
+      filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+      fill: $white;
+      stroke: $blue;
       height: 70px !important;
     }
   }
@@ -251,10 +256,7 @@
 
   // .service-home__title
   &__title {
-    font-size: 35px;
-    font-weight: 600;
     margin-bottom: 72px;
-    text-align: center;
   }
 
   // .service-home__link
@@ -675,8 +677,8 @@
   &__stars {
     svg {
       margin-right: 5px;
-      width: 20px;
-      height: 20px !important;
+      width: 15px;
+      height: 15px !important;
       fill: $accent;
     }
   }
@@ -848,6 +850,7 @@
 
   &__title {
     margin-bottom: 5px;
+    margin-bottom: 40px;
   }
 
   &__link {

@@ -12,6 +12,7 @@ section {
 ._title {
   font-size: 40px;
   line-height: 120%;
+  font-family: $fontSecondary;
 }
 
 ._subtitle-link {
@@ -111,4 +112,80 @@ section {
 
 .swiper-pagination-bullet-active {
   background-color: $accent !important;
+}
+
+// Кнопка для включени режима для слабовидящих
+
+.blind {
+  position: fixed;
+  left: 0%;
+  top: 60%;
+  // transform: translateY(-50%);
+  // transform: translateX(-50%);
+  z-index: 99;
+  background-color: $accent;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  overflow: hidden;
+  width: 50px;
+  transition: $animation_fast;
+
+  &:hover {
+    width: auto;
+    padding: 0px 20px;
+
+    .blind__icon {
+      margin-left: 10px;
+
+      svg {
+        margin-left: 5px;
+      }
+    }
+
+    .blind__text {
+      font-size: 17px;
+    }
+  }
+
+  // .blind__icon
+
+  &__icon {
+    // padding-top: 15px;
+    border-left: 1px solid rgba($color: $white, $alpha: 0.2);
+    // margin-left: 10px;
+
+    svg {
+      width: 40px;
+      margin-top: 7px;
+      // margin-left: 5px;
+
+      .st0 {
+        fill: $accent;
+      }
+
+      .st1 {
+        fill: none;
+        stroke: $white;
+        stroke-width: 50;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+
+      .st1 {
+        transition: $animation_fast;
+      }
+    }
+  }
+
+  // .blind__text
+
+  &__text {
+    font-family: $fontSecondary;
+    color: $white;
+    font-size: 0px;
+    transition: $animation_fast;
+  }
 }
