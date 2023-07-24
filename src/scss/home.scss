@@ -231,6 +231,233 @@
 
 /*=======================================================================*/
 
+.service-home {
+  background-color: rgba($color: $blue, $alpha: 0.03);
+
+  // .service-home__container
+
+  &__container {
+  }
+
+  // .service-home__inner
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .service-home__row
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    margin-bottom: 50px;
+  }
+
+  // .service-home__col
+
+  &__col {
+  }
+
+  // .service-home__human
+
+  &__human {
+  }
+
+  // .service-home__title
+  &__title {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 72px;
+    text-align: center;
+  }
+
+  // .service-home__link
+  &__link {
+    text-align: center;
+    color: $accent;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+.human-service {
+  position: relative;
+  width: 550px;
+  display: flex;
+  justify-content: center;
+
+  &:hover::before {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $white, $alpha: 1);
+    border-radius: 50%;
+    transition: $animation_fast;
+  }
+
+  // .human-service__link
+  &__link {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.5;
+    width: 100%;
+    transition: $animation_fast;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $accent;
+      border: 3px solid rgba($color: $white, $alpha: 1);
+      box-shadow: 0 0 0 3px #efefef;
+    }
+
+    .line {
+      width: 7vw;
+      height: 1px;
+      background-color: $accent;
+    }
+
+    .text {
+      // text-decoration: underline;
+      font-size: 15px;
+    }
+  }
+}
+
+.head-man {
+  left: 51%;
+  top: 1%;
+}
+
+.nose-man {
+  left: 51%;
+  top: 6%;
+  .line {
+    width: 5vw;
+  }
+}
+
+.thyroid-man {
+  left: 51%;
+  top: 10%;
+
+  .line {
+    width: 8vw;
+  }
+}
+
+.throat-man {
+  left: 22%;
+  top: 14%;
+}
+
+.breast-man {
+  left: 8%;
+  top: 23%;
+
+  .line {
+    width: 10vw;
+  }
+}
+
+.lungs-man {
+  left: 26%;
+  top: 27%;
+
+  .line {
+    width: 5vw;
+  }
+}
+
+.heart-man {
+  left: 55%;
+  top: 24%;
+
+  .line {
+    width: 5vw;
+  }
+}
+
+.stomach-man {
+  left: 50%;
+  top: 36%;
+
+  .line {
+    width: 10vw;
+  }
+}
+
+.hand-man {
+  left: 8%;
+  top: 46%;
+
+  .line {
+    width: 5vw;
+  }
+}
+
+.sexual-man {
+  left: 51%;
+  top: 46%;
+
+  .line {
+    width: 5vw;
+  }
+}
+
+.foot-man {
+  left: 12%;
+  top: 54%;
+
+  .line {
+    width: 8vw;
+  }
+}
+
+.knees-man {
+  left: 16%;
+  top: 68%;
+
+  .line {
+    width: 5vw;
+  }
+}
+
+.nails-man {
+  left: 12%;
+  top: 97%;
+
+  .line {
+    width: 7vw;
+  }
+}
+
+/*=======================================================================*/
+
 .about {
   position: relative;
 
