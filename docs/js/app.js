@@ -3721,8 +3721,8 @@
                 clickable: true
             },
             navigation: {
-                prevEl: ".reviews-prev",
-                nextEl: ".reviews-next"
+                prevEl: ".stock-prev",
+                nextEl: ".stock-next"
             },
             on: {}
         });

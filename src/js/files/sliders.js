@@ -293,8 +293,8 @@ function initSliders() {
 
       // Кнопки "влево/вправо"
       navigation: {
-        prevEl: '.reviews-prev',
-        nextEl: '.reviews-next',
+        prevEl: '.stock-prev',
+        nextEl: '.stock-next',
       },
 
       // Брейкпоинты
