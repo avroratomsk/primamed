@@ -308,7 +308,7 @@
   // .tab-service__trigger
 
   &__trigger {
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
   }
 
   // .tab-service__content
@@ -428,7 +428,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 72px;
+    margin-bottom: 40px;
   }
 
   // .service-home__link
@@ -447,6 +447,7 @@
     }
   }
 }
+
 .human-service {
   position: relative;
   width: 550px;
@@ -1198,7 +1199,6 @@
 /*=======================================================================*/
 
 .contact {
-  display: none;
   // .contact__container
 
   &__container {
@@ -1209,6 +1209,13 @@
   &__inner {
   }
 
+  // .contact__caption
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   // .contact__title
 
   &__title {
@@ -1217,6 +1224,18 @@
   // .contact__link
 
   &__link {
+    color: $white;
+    font-family: $fontSecondary;
+    padding: 15px 50px;
+    border-radius: 10px;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
+      }
+    }
   }
 
   // .contact__grid
@@ -1358,7 +1377,7 @@
 /*=======================================================================*/
 
 .partner {
-  background-color: $lightGrey;
+  background-color: rgba($color: $blue, $alpha: 0.05);
 
   // .partner__container
 
@@ -1405,57 +1424,57 @@
   }
 
   .partner-prev {
-    border: 1px solid rgba($color: $accent, $alpha: 0.5);
+    position: relative;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba($color: $blue, $alpha: 0.5);
     width: 35px;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: #fff;
     transition: $animation_fast;
+    margin-top: 0px;
+    border-radius: 5px;
 
-    svg {
-      fill: rgba($color: $accent, $alpha: 0.5);
-      transition: $animation_fast;
+    &::after {
+      font-size: 18px;
+      color: $blue;
     }
 
     @media (hover: hover) {
       &:hover {
-        border-color: $accent;
-
-        svg {
-          fill: $accent;
-        }
+        border-color: $blue;
       }
     }
   }
 
   .partner-next {
-    border: 1px solid rgba($color: $accent, $alpha: 0.5);
+    margin-top: 0px;
+    border: 1px solid rgba($color: $blue, $alpha: 0.5);
     width: 35px;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+    border-radius: 5px;
     background-color: #fff;
     cursor: pointer;
     transition: $animation_fast;
+    position: relative;
+    left: 0;
+    right: 0;
 
-    svg {
-      transform: rotate(180deg);
-      fill: rgba($color: $accent, $alpha: 0.5);
-      transition: $animation_fast;
+    &::after {
+      font-size: 18px;
+      color: $blue;
     }
 
     @media (hover: hover) {
       &:hover {
-        border-color: $accent;
-
-        svg {
-          fill: $accent;
-        }
+        border-color: $blue;
       }
     }
   }
@@ -1468,28 +1487,24 @@
   // .partner__wrapper
 
   &__wrapper {
+    padding: 5px;
   }
 
   // .partner__slide
 
   &__slide {
     background-color: #fff;
+    box-shadow: 0px 0px 7px rgba($color: $mainColor, $alpha: 0.1);
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .swiper-button-disabled {
-    border-color: rgba($color: $accent, $alpha: 0.2);
+    border-color: rgba($color: $blue, $alpha: 0.2);
     cursor: not-allowed !important;
-
-    svg {
-      fill: rgba($color: $accent, $alpha: 0.2);
-    }
 
     &:hover {
       border-color: rgba($color: $accent, $alpha: 0.2);
-
-      svg {
-        fill: rgba($color: $accent, $alpha: 0.2);
-      }
     }
   }
 
