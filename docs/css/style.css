@@ -498,6 +498,7 @@ section {
 }
 
 .blind {
+  display: none;
   position: fixed;
   left: 0%;
   top: 60%;
@@ -1122,7 +1123,7 @@ section {
 .utp__slide {
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 550px;
+  min-height: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1143,7 +1144,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(46, 49, 70, 0.3);
+  background-color: rgba(46, 49, 70, 0.5);
 }
 
 .utp__container {
@@ -1153,16 +1154,16 @@ section {
 }
 
 .utp__title {
-  max-width: 600px;
+  max-width: 750px;
   color: #fff;
-  font-size: 55px;
+  font-size: 60px;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
 .utp__subtitle {
-  max-width: 600px;
-  color: #ffffff;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 140%;
   margin-bottom: 40px;
 }
@@ -1188,9 +1189,9 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   width: 290px;
-  height: 60px;
-  border-radius: 10px;
-  border: 2px solid #ffffff;
+  height: 50px;
+  background-color: #294f99;
+  border-radius: 5px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
@@ -1215,6 +1216,125 @@ section {
 
 .utp .swiper-button-disabled {
   opacity: 0 !important;
+}
+
+.utp .swiper-pagination {
+  bottom: 100px !important;
+}
+
+.utp .swiper-pagination-bullet {
+  width: 20px !important;
+  height: 6px !important;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.utp .swiper-pagination-bullet-active {
+  background-color: #ffffff !important;
+}
+
+/*=======================================================================*/
+
+.excellence {
+  margin-top: -80px;
+}
+
+.excellence__container {
+  position: relative;
+  max-width: 1200px;
+  z-index: 12;
+}
+
+.excellence__inner {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px rgba(46, 49, 70, 0.1);
+          box-shadow: 0px 0px 10px rgba(46, 49, 70, 0.1);
+  padding: 0px 0px 0px 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.item-excellence {
+  padding: 20px 0px;
+}
+
+.item-excellence--accent {
+  background-color: #294f99;
+  padding: 20px 40px;
+  color: #ffffff;
+}
+
+.item-excellence--accent i {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.item-excellence--accent svg {
+  fill: #ffffff !important;
+}
+
+.item-excellence--accent .item-excellence__link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.item-excellence__icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.item-excellence__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #294f99;
+}
+
+.item-excellence__title {
+  font-family: "Oswald";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.item-excellence__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 0px;
+  margin-top: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item-excellence__link:hover {
+  color: #a50328;
+}
+
+.item-excellence__link:hover svg {
+  margin-left: 12px;
+  fill: #a50328;
+}
+
+.item-excellence__link svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-left: 8px;
+  margin-top: 2px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 /*Service=======================================================================*/
@@ -1281,6 +1401,14 @@ section {
   letter-spacing: 0.5px;
   line-height: 120%;
   font-family: "Oswald";
+}
+
+.content-tab__item:hover {
+  background-color: #294f99;
+}
+
+.content-tab__item:hover span {
+  color: #ffffff;
 }
 
 .content-tab__icon svg {
@@ -1903,6 +2031,10 @@ section {
 }
 
 /*=======================================================================*/
+
+.contact {
+  display: none;
+}
 
 .contact__grid {
   margin-top: 40px;
