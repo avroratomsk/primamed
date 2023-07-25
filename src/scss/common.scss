@@ -6,11 +6,11 @@ body {
 }
 
 section {
-  padding: 40px 0px;
+  padding: 60px 0px;
 }
 
 ._title {
-  font-size: 40px;
+  font-size: 45px;
   line-height: 120%;
   font-family: $fontSecondary;
 }
@@ -90,6 +90,7 @@ section {
   background-color: $accent;
   padding: 12px;
   transition: $animation_fast;
+  z-index: 99;
 
   &__inner {
     border: 2px solid $white;
@@ -117,11 +118,10 @@ section {
 // Кнопка для включени режима для слабовидящих
 
 .blind {
-  display: none;
   position: fixed;
   left: 0%;
   top: 60%;
-  // transform: translateY(-50%);
+  transform: translateY(-50%);
   // transform: translateX(-50%);
   z-index: 99;
   background-color: $accent;
@@ -189,4 +189,35 @@ section {
     font-size: 0px;
     transition: $animation_fast;
   }
+}
+
+@keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.swiper-slide-active .utp__title {
+  animation: fadeInUpSD 0.6s both 0.6s;
+}
+
+.swiper-slide-active .utp__subtitle {
+  animation: fadeInUpSD 0.6s both 0.8s;
+}
+
+.swiper-slide-active .utp__links {
+  animation: fadeInUpSD 0.6s both 1s;
+}
+
+// .dots__icon
+.dots__icon {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }

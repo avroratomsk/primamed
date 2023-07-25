@@ -36,7 +36,6 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    // padding: 350px 0px 100px;
 
     &::before {
       content: "";
@@ -45,7 +44,51 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba($color: $mainColor, $alpha: 0.5);
+      background-color: rgba($color: $blue, $alpha: 0.4);
+    }
+
+    .one {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      transform: rotate(-45deg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 10px rgba($color: $white, $alpha: 0.1);
+    }
+
+    .two {
+      position: absolute;
+      left: 80%;
+      top: 60%;
+      transform: rotate(-45deg);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 20px rgba($color: $white, $alpha: 0.5);
+    }
+
+    .three {
+      position: absolute;
+      left: 30%;
+      top: 70%;
+      transform: rotate(-45deg);
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 0px 20px rgba($color: $white, $alpha: 0.1);
+    }
+
+    .four {
+      position: absolute;
+      left: 90%;
+      top: 0%;
+      transform: rotate(-75deg);
+      width: 200px;
+      height: 200px;
+      border-radius: 25px;
+      box-shadow: 0px 0px 0px 20px rgba($color: $white, $alpha: 0.1);
     }
   }
 
@@ -300,6 +343,7 @@
     border-radius: 5px;
     padding: 50px;
     transition: $animation_fast;
+    box-shadow: 0px 0px 5px rgba($color: $mainColor, $alpha: 0.1);
 
     span {
       font-size: 15px;
@@ -339,7 +383,7 @@
 /*=======================================================================*/
 
 .service-home {
-  background-color: rgba($color: $blue, $alpha: 0.03);
+  background-color: rgba($color: $blue, $alpha: 0.05);
 
   // .service-home__container
 
@@ -565,7 +609,15 @@
 /*=======================================================================*/
 
 .about {
-  padding: 50px 0px;
+  position: relative;
+
+  // .about__caption
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
 
   &__container {
   }
@@ -586,11 +638,26 @@
   }
 
   &__link {
-    margin-bottom: 40px;
+    font-size: 18px;
+    font-family: $fontSecondary;
+    color: $white;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
+      }
+    }
   }
 
   &__text {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 150%;
     color: rgba($color: $mainColor, $alpha: 0.7);
@@ -605,6 +672,8 @@
     width: 100%;
     height: 500px;
 
+    // overflow: hidden;
+
     img {
       width: 100%;
       height: 100%;
@@ -612,6 +681,18 @@
       top: 0;
       left: 0;
       object-fit: cover;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 200px;
+      height: 100%;
+      background-color: rgba($color: $blue, $alpha: 0.1);
+      border-radius: 20px 20px 20px 20px;
     }
   }
 
@@ -630,6 +711,7 @@
   }
 
   &__number {
+    font-family: $fontSecondary;
     font-size: 35px;
     font-weight: 600;
     color: $blue;
@@ -637,14 +719,15 @@
   }
 
   &__text {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
   }
 }
 /*=======================================================================*/
 
 .reviews {
   padding-left: calc((100vw - 1360px) / 2);
+  background-color: rgba($color: $blue, $alpha: 0.03);
 
   &__container {
     width: 100%;
@@ -716,9 +799,17 @@
     justify-content: center;
     width: 200px;
     height: 40px;
-    border: 1px solid $blue;
-    color: $blue;
+    font-family: $fontSecondary;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    color: $white;
     border-radius: 5px;
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
+      }
+    }
   }
 
   &__btns {
@@ -748,8 +839,10 @@
 }
 
 .reviews-slide {
+  background-color: $white;
   box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
   padding: 20px;
+  border-radius: 10px;
 
   // .reviews-slide__user
 
@@ -763,6 +856,10 @@
 
   &__avatar {
     margin-right: 20px;
+    border: 1px solid rgba($color: $mainColor, $alpha: 1);
+    box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
+
+    border-radius: 50%;
     img {
       width: 50px;
       height: 50px;
@@ -775,9 +872,12 @@
   &__name {
     p {
       font-size: 20px;
+      font-family: $fontSecondary;
+      margin-bottom: 3px;
     }
 
     span {
+      font-size: 13px;
       color: rgba($color: $mainColor, $alpha: 0.7);
     }
   }
@@ -814,136 +914,209 @@
 
 /*=======================================================================*/
 
+/*=======================================================================*/
+
 .stock {
+  background-color: rgba($color: $blue, $alpha: 0.03);
+  // .stock__container
+
   &__container {
   }
+
+  // .stock__inner
 
   &__inner {
   }
 
+  // .stock__caption
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  // .stock__title
+
   &__title {
-  }
-
-  &__link {
-  }
-
-  &__row {
-    display: grid;
-    grid-template-columns: 57% 1fr;
-    margin-top: 40px;
-
-    &:nth-child(even) {
-      display: grid;
-      grid-template-columns: 1fr 57%;
-
-      .stock__col {
-        justify-content: flex-end;
-      }
-
-      .stock__content {
-        margin-right: -100px;
-        position: relative;
-        z-index: 3;
-      }
-
-      .content-stock__btn {
-      }
-    }
-
-    .stock__col {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  &__col {
-  }
-
-  &__image {
-    width: 100%;
-    height: 450px;
+    display: flex;
+    align-items: center;
     position: relative;
 
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      margin-right: 7px;
+      width: 25px;
+      height: 30px;
     }
   }
 
-  &__content {
-    background-color: $lightGrey;
-    padding: 40px 30px;
-    min-width: 550px;
-    display: flex;
-    flex-direction: column;
-    margin-left: -100px;
-    position: relative;
-    z-index: 2;
-  }
-}
+  // .stock__link
 
-.content-stock {
-  @media (hover: hover) {
-    &:hover {
-      .content-stock__btn {
-        svg {
-          margin-left: 12px;
-        }
+  &__link {
+    font-size: 18px;
+    font-family: $fontSecondary;
+    color: $white;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
       }
     }
   }
 
-  &__date {
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 20px;
+  // .stock__slider
+
+  &__slider {
   }
 
-  &__title {
-    flex: 1 1 auto;
+  // .stock__wrapper
+
+  &__wrapper {
+    padding: 5px 5px;
+    height: 100% !important;
+  }
+
+  // .stock__slide
+
+  &__slide {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
+  }
+
+  // .stock__image
+
+  &__image {
+    height: 350px;
+    display: flex;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  // .stock__bottom
+  &__bottom {
+    background-color: $white;
+    padding: 30px 20px;
+  }
+  // .stock__title--slide
+  &__title--slide {
+    color: $blue;
     font-size: 23px;
-    font-weight: 600;
-    // font-family: $fontSecondary;
-    color: $accent;
+    font-family: $fontSecondary;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  // .stock__text
+
+  &__stage {
+    font-size: 14px;
+    color: rgba($color: $mainColor, $alpha: 1);
+    margin-bottom: 10px;
+  }
+
+  // .stock__spec
+  &__spec {
+    font-size: 14px;
     margin-bottom: 20px;
   }
 
-  &__text {
-    font-size: 16px;
-    line-height: 120%;
-    color: rgba($color: $mainColor, $alpha: 0.8);
-  }
-
-  &__btn {
-    font-size: 15px;
-    align-self: flex-start;
-    margin-top: 20px;
-    font-weight: 600;
+  // .stock__link--slide
+  &__link--slide {
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    padding: 15px 40px;
+    color: $white;
+    border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    transition: $animation_fast;
 
-    svg {
-      transform: rotate(180deg);
-      margin-left: 8px;
-      margin-top: 2px;
-      transition: $animation_fast;
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
+      }
     }
   }
 }
-
-/*=======================================================================*/
 
 /*=======================================================================*/
 
 .faq {
+  position: relative;
+  overflow: hidden;
+
+  .dots__icon {
+    left: 0%;
+    bottom: 0;
+    transform: translateX(0%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    width: 200px;
+    height: 200px;
+    border: 20px solid rgba($color: $blue, $alpha: 0.06);
+    border-radius: 10px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 150px;
+    height: 150px;
+    border: 20px solid rgba($color: $blue, $alpha: 0.03);
+    z-index: -1;
+  }
+
   &__container {
   }
 
   &__inner {
+  }
+
+  // .faq__caption
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  // .faq__popup
+  &__popup {
+    font-size: 18px;
+    font-family: $fontSecondary;
+    color: $white;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+    transition: $animation_fast;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.8);
+      }
+    }
   }
 
   &__text {
@@ -968,7 +1141,6 @@
 
   &__title {
     margin-bottom: 5px;
-    margin-bottom: 40px;
   }
 
   &__link {
@@ -976,10 +1148,29 @@
   }
 
   .spollers {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+
+    &__col {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     &__item {
+      width: 100%;
     }
 
     &__title {
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px rgba($color: $mainColor, $alpha: 0.1);
+      background-color: $white;
+      // font-family: $fontSecondary;
+
+      &._spoller-active {
+        background-color: rgba($color: $blue, $alpha: 0.6);
+        border-radius: 10px 10px 0px 0px;
+      }
     }
 
     &__body {
