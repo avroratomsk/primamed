@@ -1521,4 +1521,211 @@
   }
 }
 
-/*=======================================================================*/
+/*Страница услуг=======================================================================*/
+.service-promo {
+  background-image: url(../img/image.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+  }
+  // .service-promo__container
+
+  &__container {
+    height: 100%;
+  }
+
+  // .service-promo__inner
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  // .service-promo__title
+
+  &__title {
+    font-size: 60px;
+    color: $white;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+.service-card {
+  // .service-card__container
+
+  &__container {
+  }
+
+  // .service-card__inner
+
+  &__inner {
+  }
+
+  // .service-card__top
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .service-card__serch
+
+  &__serch {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba($color: $mainColor, $alpha: 0.4);
+    width: 390px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  // .service-card__input
+
+  &__input {
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 0px 15px;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  // .service-card__submit
+
+  &__submit {
+    width: 40px;
+    height: 100%;
+    // background-color: $accent;
+    svg {
+      width: 15px;
+      fill: $accent;
+      margin-top: 2px;
+    }
+  }
+
+  // .service-card__select
+  &__select {
+    width: 80px;
+    height: 40px;
+    border: 1px solid rgba($color: $mainColor, $alpha: 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    outline: none;
+  }
+
+  // .service-card__cards
+
+  &__cards {
+  }
+}
+.card-service {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+
+  // .card-service__item
+
+  &__item {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    transition: $animation_fast;
+    box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(46, 49, 70, 0.2);
+    }
+  }
+
+  // .card-service__left
+
+  &__left {
+    margin-right: 10px;
+    flex: 0 0 30%;
+    padding: 30px 0px 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .card-service__title
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba($color: $blue, $alpha: 1);
+    margin-bottom: 15px;
+  }
+
+  // .card-service__text
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba($color: $mainColor, $alpha: 0.7);
+    flex: 1 1 auto;
+    line-height: 130%;
+  }
+
+  // .card-service__btn
+
+  &__btn {
+    border: 1px solid $blue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba($color: $blue, $alpha: 1);
+    border-radius: 5px;
+
+    svg {
+      width: 16px;
+      transform: rotate(180deg);
+      fill: rgba($color: $white, $alpha: 1);
+    }
+  }
+
+  // .card-service__right
+
+  &__right {
+    overflow: hidden;
+    border-radius: 50% 0px 0px 50%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
