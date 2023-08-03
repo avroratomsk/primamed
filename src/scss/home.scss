@@ -1783,3 +1783,80 @@
     color: rgba($color: $blue, $alpha: 1);
   }
 }
+
+.help-info {
+  // .help-info__container
+
+  &__container {
+  }
+
+  // .help-info__inner
+
+  &__inner {
+  }
+
+  // .help-info__title
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  // .help-info__cards
+
+  &__cards {
+  }
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+
+  // .card-info__item
+
+  &__item {
+  }
+
+  // .card-info__img
+
+  &__img {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  // .card-info__image
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  // .card-info__date
+
+  &__date {
+    display: inline-flex;
+    position: relative;
+    z-index: 2;
+    background-color: rgba($color: $blue, $alpha: 1);
+    margin: 10px;
+    padding: 8px 30px;
+    color: $white;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+
+  // .card-info__title
+
+  &__title {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: rgba($color: $blue, $alpha: 1);
+  }
+}
