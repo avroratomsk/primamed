@@ -1523,11 +1523,12 @@
 
 /*Страница услуг=======================================================================*/
 .service-promo {
-  background-image: url(../img/image.webp);
+  background-image: url(../img/service-banner.jpg);
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
-  height: 250px;
+  height: 300px;
   position: relative;
 
   &::before {
@@ -1559,10 +1560,10 @@
   // .service-promo__title
 
   &__title {
-    font-size: 60px;
+    font-size: 70px;
     color: $white;
     font-weight: 800;
-    text-transform: uppercase;
+    font-family: $fontSecondary;
   }
 }
 
@@ -1642,6 +1643,7 @@
   &__cards {
   }
 }
+
 .card-service {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1695,7 +1697,6 @@
   // .card-service__btn
 
   &__btn {
-    border: 1px solid $blue;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1727,5 +1728,58 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+}
+
+.home-doctor {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $blue, $alpha: 0.6);
+  }
+  // .home-doctor__container
+
+  &__container {
+  }
+
+  // .home-doctor__inner
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .home-doctor__text
+
+  &__text {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: $fontSecondary;
+    color: $white;
+  }
+
+  // .home-doctor__btn
+
+  &__btn {
+    height: 50px;
+    width: 240px;
+    background-color: rgba($color: $white, $alpha: 0.8);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($color: $blue, $alpha: 1);
   }
 }
