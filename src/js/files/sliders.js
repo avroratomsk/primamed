@@ -10,7 +10,7 @@
 import Swiper, { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay, \
 EffectFade, Lazy, Manipulation
 Подробнее смотри https://swiperjs.com/
 */
@@ -32,7 +32,7 @@ function initSliders() {
     new Swiper('.utp__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      // modules: [Navigation, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -107,7 +107,7 @@ function initSliders() {
     new Swiper('.partner__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      // modules: [Navigation, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 4,
@@ -181,7 +181,7 @@ function initSliders() {
     new Swiper('.reviews__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      // modules: [Navigation, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 3.5,
@@ -255,7 +255,7 @@ function initSliders() {
     new Swiper('.stock__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      // modules: [Navigation, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 4,

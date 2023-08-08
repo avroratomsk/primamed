@@ -1523,7 +1523,6 @@
 
 /*Страница услуг=======================================================================*/
 .service-promo {
-  background-image: url(../img/service-banner.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1540,6 +1539,33 @@
     height: 100%;
     background-color: rgba($color: $blue, $alpha: 0.6);
   }
+
+  .square{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    width: 50px;
+    height: 50px;
+    border: 10px solid rgba($color: $white, $alpha: .2);
+    border-radius: 10px;
+
+    &--big{
+      width: 150px;
+      height: 150px;
+      top: 60%;
+      right: 13%;
+      transform: rotate(10deg);
+    }
+
+    &--small{
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      right: 5%;
+      transform: rotate(-67deg);
+    }
+  }
+
   // .service-promo__container
 
   &__container {
@@ -1737,6 +1763,61 @@
   background-attachment: fixed;
   position: relative;
 
+  .hd-squary{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgba($color: $white, $alpha: .2);
+    border-radius: 10px;
+    transform: rotate(-20deg);
+
+    &--big{
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: 0%;
+      top: 10%;
+      border: 10px solid rgba($color: $white, $alpha: .2);
+      border-radius: 10px;
+      transform: rotate(-20deg);
+    }
+
+    &--small{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      right: 40%;
+      top: 10%;
+      border: 10px solid rgba($color: $white, $alpha: .2);
+      border-radius: 10px;
+      transform: rotate(-20deg);
+    }
+
+    &--circle{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: 40%;
+      top: 10%;
+      border: 10px solid rgba($color: $white, $alpha: .2);
+      border-radius: 10px;
+      transform: rotate(-20deg);
+    }
+  }
+
+  .hd-circle{
+    position: absolute;
+      width: 50px;
+      height: 50px;
+      left: 30%;
+      bottom: 10%;
+      border: 10px solid rgba($color: $white, $alpha: .2);
+      border-radius: 50%;
+      transform: rotate(-20deg);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -1781,6 +1862,11 @@
     font-size: 14px;
     font-weight: 600;
     color: rgba($color: $blue, $alpha: 1);
+    transition: $animation_fast;
+
+    &:hover{
+      background-color: rgba($color: $white, $alpha: 1.0);
+    }
   }
 }
 
@@ -1860,3 +1946,49 @@
     color: rgba($color: $blue, $alpha: 1);
   }
 }
+
+
+// Страница лицензия
+
+.license {
+}
+.license__container {
+}
+.license__inner {
+}
+.license__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 30px;
+}
+.license__item {
+  display: flex;
+  box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  border: 5px solid rgba($color: $white, $alpha: 1.0);
+
+  &:hover{
+    &::before{
+      opacity: 1;
+    }
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $blue, $alpha: .2);
+    opacity: 0;
+    transition: $animation_fast;
+  }
+
+  img{
+    max-width: 100%;
+  }
+}
+
