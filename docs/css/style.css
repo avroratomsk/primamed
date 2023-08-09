@@ -2562,6 +2562,10 @@ section {
           justify-content: center;
 }
 
+.partner__item img {
+  width: 180px;
+}
+
 /*Страница услуг=======================================================================*/
 
 .service-promo {

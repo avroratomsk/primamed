@@ -1,11 +1,12 @@
 /*=======================================================================*/
 .utp {
-  &__inner {
-  }
+  &__inner {}
 
   &__slider {
     position: relative;
+
     &:hover {
+
       .utp__btns--next,
       .utp__btns--prev {
         opacity: 1;
@@ -17,8 +18,7 @@
     }
   }
 
-  &__wrapper {
-  }
+  &__wrapper {}
 
   // .utp__content
   &__content {
@@ -125,8 +125,7 @@
   }
 
   // .utp__more
-  &__more {
-  }
+  &__more {}
 
   &__link {
     display: flex;
@@ -140,6 +139,7 @@
     font-size: 14px;
     font-weight: 600;
   }
+
   &__btns--next,
   &__btns--prev {
     width: 40px !important;
@@ -159,10 +159,9 @@
     opacity: 0 !important;
   }
 
-  &__btns--next {
-  }
-  &__btns--prev {
-  }
+  &__btns--next {}
+
+  &__btns--prev {}
 
   .swiper-pagination {
     bottom: 100px !important;
@@ -204,8 +203,7 @@
     // box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
   }
 
-  &__item {
-  }
+  &__item {}
 }
 
 .item-excellence {
@@ -283,18 +281,15 @@
 .service {
   // .service__container
 
-  &__container {
-  }
+  &__container {}
 
   // .service__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .service__tabs
 
-  &__tabs {
-  }
+  &__tabs {}
 }
 
 .tab-service {
@@ -313,8 +308,7 @@
 
   // .tab-service__content
 
-  &__content {
-  }
+  &__content {}
 
   // .tab-service__checkbox
   &__checkbox {
@@ -364,16 +358,16 @@
       span {
         color: $white;
       }
-      svg {
-      }
+
+      svg {}
     }
   }
 
   // .content-tab__icon
 
   &__icon {
-    &:hover {
-    }
+    &:hover {}
+
     svg {
       filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
       fill: $white;
@@ -390,8 +384,7 @@
 
   // .service-home__container
 
-  &__container {
-  }
+  &__container {}
 
   // .service-home__inner
 
@@ -411,17 +404,14 @@
 
   // .service-home__col
 
-  &__col {
-  }
+  &__col {}
 
   // .service-home__human
 
-  &__human {
-  }
+  &__human {}
 
   // .service-home__title
-  &__title {
-  }
+  &__title {}
 
   // .service-home__caption
   &__caption {
@@ -526,6 +516,7 @@
 .nose-man {
   left: 49%;
   top: 6%;
+
   .line {
     width: 5vw;
   }
@@ -639,11 +630,9 @@
     margin-bottom: 40px;
   }
 
-  &__container {
-  }
+  &__container {}
 
-  &__inner {
-  }
+  &__inner {}
 
   &__row {
     display: grid;
@@ -651,11 +640,9 @@
     gap: 40px;
   }
 
-  &__col {
-  }
+  &__col {}
 
-  &__title {
-  }
+  &__title {}
 
   &__link {
     font-size: 18px;
@@ -743,6 +730,7 @@
     font-weight: 600;
   }
 }
+
 /*=======================================================================*/
 
 .reviews {
@@ -778,18 +766,15 @@
 
   // .reviews__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .reviews__title
 
-  &__title {
-  }
+  &__title {}
 
   // .reviews__slider
 
-  &__slider {
-  }
+  &__slider {}
 
   // .reviews__wrapper
 
@@ -853,6 +838,7 @@
       color: $blue;
     }
   }
+
   .reviews-next {
     margin-left: 10px;
   }
@@ -880,6 +866,7 @@
     box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
 
     border-radius: 50%;
+
     img {
       width: 50px;
       height: 50px;
@@ -940,13 +927,11 @@
   background-color: rgba($color: $blue, $alpha: 0.03);
   // .stock__container
 
-  &__container {
-  }
+  &__container {}
 
   // .stock__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .stock__caption
 
@@ -994,8 +979,7 @@
 
   // .stock__slider
 
-  &__slider {
-  }
+  &__slider {}
 
   // .stock__wrapper
 
@@ -1018,6 +1002,7 @@
     height: 350px;
     display: flex;
     width: 100%;
+
     img {
       width: 100%;
     }
@@ -1028,6 +1013,7 @@
     background-color: $white;
     padding: 30px 20px;
   }
+
   // .stock__title--slide
   &__title--slide {
     color: $blue;
@@ -1105,11 +1091,9 @@
     z-index: -1;
   }
 
-  &__container {
-  }
+  &__container {}
 
-  &__inner {
-  }
+  &__inner {}
 
   // .faq__caption
   &__caption {
@@ -1193,8 +1177,7 @@
       }
     }
 
-    &__body {
-    }
+    &__body {}
   }
 }
 
@@ -1203,13 +1186,11 @@
 .contact {
   // .contact__container
 
-  &__container {
-  }
+  &__container {}
 
   // .contact__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .contact__caption
   &__caption {
@@ -1220,8 +1201,7 @@
 
   // .contact__title
 
-  &__title {
-  }
+  &__title {}
 
   // .contact__link
 
@@ -1251,12 +1231,10 @@
 
   // .contact__col
 
-  &__col {
-  }
+  &__col {}
 
   // .contact__content
-  &__content {
-  }
+  &__content {}
 
   // .contact__map
   &__map {
@@ -1326,14 +1304,14 @@
     p {
       font-size: 14px;
       font-weight: 500;
+
       span {
         font-weight: 600;
       }
     }
   }
 
-  &__action {
-  }
+  &__action {}
 }
 
 .action-content {
@@ -1383,21 +1361,17 @@
 
   // .partner__container
 
-  &__container {
-  }
+  &__container {}
 
   // .partner__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .partner__title
-  &__title {
-  }
+  &__title {}
 
   // .partner__link
-  &__link {
-  }
+  &__link {}
 
   // .partner__top
 
@@ -1410,13 +1384,11 @@
 
   // .partner__top--left
 
-  &__top--left {
-  }
+  &__top--left {}
 
   // .partner__top--right
 
-  &__top--right {
-  }
+  &__top--right {}
 
   // .partner__btn
 
@@ -1483,8 +1455,7 @@
 
   // .partner__slider
 
-  &__slider {
-  }
+  &__slider {}
 
   // .partner__wrapper
 
@@ -1518,6 +1489,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      width: 180px;
+    }
   }
 }
 
@@ -1540,7 +1515,7 @@
     background-color: rgba($color: $blue, $alpha: 0.6);
   }
 
-  .square{
+  .square {
     position: absolute;
     top: 30%;
     right: 30%;
@@ -1549,7 +1524,7 @@
     border: 10px solid rgba($color: $white, $alpha: .2);
     border-radius: 10px;
 
-    &--big{
+    &--big {
       width: 150px;
       height: 150px;
       top: 60%;
@@ -1557,7 +1532,7 @@
       transform: rotate(10deg);
     }
 
-    &--small{
+    &--small {
       width: 100px;
       height: 100px;
       top: 10%;
@@ -1596,13 +1571,11 @@
 .service-card {
   // .service-card__container
 
-  &__container {
-  }
+  &__container {}
 
   // .service-card__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .service-card__top
 
@@ -1645,6 +1618,7 @@
   &__submit {
     width: 40px;
     height: 100%;
+
     // background-color: $accent;
     svg {
       width: 15px;
@@ -1666,8 +1640,7 @@
 
   // .service-card__cards
 
-  &__cards {
-  }
+  &__cards {}
 }
 
 .card-service {
@@ -1746,6 +1719,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+
     img {
       position: absolute;
       top: 0;
@@ -1763,7 +1737,7 @@
   background-attachment: fixed;
   position: relative;
 
-  .hd-squary{
+  .hd-squary {
     position: absolute;
     left: 0%;
     top: 50%;
@@ -1773,7 +1747,7 @@
     border-radius: 10px;
     transform: rotate(-20deg);
 
-    &--big{
+    &--big {
       position: absolute;
       width: 150px;
       height: 150px;
@@ -1784,7 +1758,7 @@
       transform: rotate(-20deg);
     }
 
-    &--small{
+    &--small {
       position: absolute;
       width: 50px;
       height: 50px;
@@ -1795,7 +1769,7 @@
       transform: rotate(-20deg);
     }
 
-    &--circle{
+    &--circle {
       position: absolute;
       width: 50px;
       height: 50px;
@@ -1807,15 +1781,15 @@
     }
   }
 
-  .hd-circle{
+  .hd-circle {
     position: absolute;
-      width: 50px;
-      height: 50px;
-      left: 30%;
-      bottom: 10%;
-      border: 10px solid rgba($color: $white, $alpha: .2);
-      border-radius: 50%;
-      transform: rotate(-20deg);
+    width: 50px;
+    height: 50px;
+    left: 30%;
+    bottom: 10%;
+    border: 10px solid rgba($color: $white, $alpha: .2);
+    border-radius: 50%;
+    transform: rotate(-20deg);
   }
 
   &::before {
@@ -1827,10 +1801,10 @@
     height: 100%;
     background-color: rgba($color: $blue, $alpha: 0.6);
   }
+
   // .home-doctor__container
 
-  &__container {
-  }
+  &__container {}
 
   // .home-doctor__inner
 
@@ -1864,7 +1838,7 @@
     color: rgba($color: $blue, $alpha: 1);
     transition: $animation_fast;
 
-    &:hover{
+    &:hover {
       background-color: rgba($color: $white, $alpha: 1.0);
     }
   }
@@ -1873,13 +1847,11 @@
 .help-info {
   // .help-info__container
 
-  &__container {
-  }
+  &__container {}
 
   // .help-info__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .help-info__title
   &__title {
@@ -1888,8 +1860,7 @@
 
   // .help-info__cards
 
-  &__cards {
-  }
+  &__cards {}
 }
 
 .card-info {
@@ -1899,8 +1870,7 @@
 
   // .card-info__item
 
-  &__item {
-  }
+  &__item {}
 
   // .card-info__img
 
@@ -1950,17 +1920,18 @@
 
 // Страница лицензия
 
-.license {
-}
-.license__container {
-}
-.license__inner {
-}
+.license {}
+
+.license__container {}
+
+.license__inner {}
+
 .license__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 30px;
 }
+
 .license__item {
   display: flex;
   box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
@@ -1969,13 +1940,13 @@
   position: relative;
   border: 5px solid rgba($color: $white, $alpha: 1.0);
 
-  &:hover{
-    &::before{
+  &:hover {
+    &::before {
       opacity: 1;
     }
   }
 
-  &::before{
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1987,8 +1958,7 @@
     transition: $animation_fast;
   }
 
-  img{
+  img {
     max-width: 100%;
   }
 }
-
