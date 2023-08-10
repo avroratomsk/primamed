@@ -1,0 +1,190 @@
+.contact-page {
+	padding: 40px 0px;
+
+	// .contact-page__container
+
+	&__container {}
+
+	// .contact-page__inner
+
+	&__inner {}
+
+	// .contact-page__sprav
+
+	&__sprav {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 120%;
+		margin-bottom: 20px;
+
+		a {
+			color: $accent;
+		}
+	}
+
+	// .contact-page__text
+
+	&__text {
+		// max-width: 700px;
+		font-weight: 600;
+		line-height: 140%;
+		color: rgba($color: $mainColor, $alpha: .8);
+	}
+
+	// .contact-page__row
+
+	&__row {
+		margin-top: 40px;
+		display: flex;
+	}
+
+	// .contact-page__col
+
+	&__col {
+		&:not(:last-child) {
+			margin-right: 100px;
+		}
+
+		p {
+			font-size: 15px;
+		}
+	}
+
+	// .contact-page__icon
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 10px;
+
+		i {
+			margin-right: 10px;
+		}
+	}
+
+	// .contact-page__map
+	&__map {
+		margin-top: 40px;
+	}
+
+	// .contact-page__grid
+	&__grid {
+		margin-top: 40px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 40px;
+	}
+}
+
+.requisites {
+	padding: 40px 0px;
+
+	// .requisites__container
+
+	&__container {}
+
+	// .requisites__inner
+
+	&__inner {}
+
+	// .requisites__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// .requisites__col
+	&__col {
+		flex: 1 1 auto;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			border: 1px solid rgba($color: $blue, $alpha: .3);
+			border-radius: 5px;
+			background-color: rgba($color: $blue, $alpha: .05);
+			transition: $animation_fast;
+
+			&:hover {
+				background-color: rgba($color: $blue, $alpha: .15);
+			}
+
+			span {
+				font-size: 25px;
+				font-weight: 600;
+				color: rgba($color: $mainColor, $alpha: .8);
+				text-align: center;
+
+			}
+		}
+	}
+
+	// .requisites__title
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	// .requisites__text
+
+	&__text {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		span {
+			font-weight: 600;
+			margin-right: 10px;
+		}
+	}
+
+	// .requisites__bank
+
+	&__bank {
+		margin-top: 30px;
+
+		span {
+			font-weight: 600;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			display: flex;
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.contact-oferta {
+	border-top: 1px solid rgba($color: $mainColor, $alpha: .1);
+	padding: 20px 0px 0px;
+
+	// .contact-oferta__container
+
+	&__container {}
+
+	// .contact-oferta__inner
+
+	&__inner {
+		text-align: center;
+		font-size: 27px;
+		line-height: 140%;
+		font-family: $fontSecondary;
+		color: rgba($color: $mainColor, $alpha: .6);
+		// max-width: 1000px;
+		margin: 0 auto;
+		text-transform: uppercase;
+	}
+}

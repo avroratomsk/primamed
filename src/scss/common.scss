@@ -1,5 +1,4 @@
-.page {
-}
+.page {}
 
 body {
   // height: 300vh;
@@ -191,16 +190,6 @@ section {
   }
 }
 
-@keyframes fadeInUpSD {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 15%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
 
 .swiper-slide-active .utp__title {
   animation: fadeInUpSD 0.6s both 0.6s;
@@ -220,4 +209,42 @@ section {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.breadcrumbs {
+  margin-top: 20px;
+
+  // .breadcrumbs__container
+  &__container {}
+
+  // .breadcrumbs__inner
+  &__inner {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-family: $fontSecondary;
+    letter-spacing: .05em;
+    color: #777;
+  }
+
+  // .breadcrumbs__first
+
+  &__first {}
+
+  // .breadcrumbs__separator
+  &__separator {
+    margin: 0px 0.6rem;
+
+    &::after {
+
+      content: "–";
+    }
+  }
+
+  // .breadcrumbs__link
+
+  &__link {
+    position: relative;
+    display: flex;
+  }
 }
