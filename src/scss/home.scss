@@ -1832,6 +1832,9 @@
   &__btn {
     height: 50px;
     width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgba($color: $white, $alpha: 0.8);
     border-radius: 10px;
     font-size: 14px;

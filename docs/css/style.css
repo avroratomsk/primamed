@@ -1304,6 +1304,254 @@ section {
   text-transform: uppercase;
 }
 
+.price {
+  position: relative;
+}
+
+.price .square {
+  border: 10px solid rgba(41, 79, 153, 0.02);
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  -webkit-transform: rotate(-36deg);
+      -ms-transform: rotate(-36deg);
+          transform: rotate(-36deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.price .square--small {
+  border: 10px solid rgba(41, 79, 153, 0.02);
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  -webkit-transform: rotate(36deg);
+      -ms-transform: rotate(36deg);
+          transform: rotate(36deg);
+  position: absolute;
+  top: 40%;
+  right: 0;
+  z-index: -1;
+}
+
+.price .square--big {
+  border: 30px solid rgba(41, 79, 153, 0.02);
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  -webkit-transform: rotate(-36deg);
+      -ms-transform: rotate(-36deg);
+          transform: rotate(-36deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.price .round {
+  border: 10px solid rgba(41, 79, 153, 0.03);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.price .round--small {
+  border: 10px solid rgba(41, 79, 153, 0.05);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.price__top {
+  margin: 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.price__select {
+  border: 1px solid rgba(46, 49, 70, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  outline: none;
+}
+
+.price__caption {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 1fr 10% 15%;
+  grid-template-columns: 10% 1fr 10% 15%;
+  background-color: rgba(41, 79, 153, 0.6);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.price__id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10px;
+  color: white;
+  font-weight: 400;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px;
+  color: white;
+  font-weight: 400;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10px;
+  color: white;
+  font-weight: 400;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 1fr 10% 15%;
+  grid-template-columns: 10% 1fr 10% 15%;
+  border-bottom: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__item:nth-child(even) {
+  background-color: rgba(41, 79, 153, 0.2);
+}
+
+.price-table__id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10px;
+  color: #2e3146;
+  font-weight: 400;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+  border-left: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px;
+  color: #2e3146;
+  font-weight: 400;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10px;
+  color: #a50328;
+  font-weight: 500;
+  font-family: "Oswald";
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price-table__button button {
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: #2e3146;
+  font-weight: 400;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price-table__button button:hover {
+  color: #ffffff;
+  background-color: rgba(41, 79, 153, 0.8);
+}
+
 /*=======================================================================*/
 
 .utp__slider {
@@ -3108,6 +3356,15 @@ section {
 .home-doctor__btn {
   height: 50px;
   width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   font-size: 14px;
