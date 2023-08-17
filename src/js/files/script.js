@@ -70,3 +70,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
+new VenoBox({
+  selector: ".gallery__item"
+});
+
