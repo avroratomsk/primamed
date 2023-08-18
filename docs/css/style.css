@@ -3203,6 +3203,54 @@ button.vbox-link-btn:hover {
   }
 }
 
+.single__inner {
+  margin-top: 50px;
+}
+
+.single__inner p {
+  font-size: 20px;
+  font-weight: 300;
+  font-family: "Oswald";
+  line-height: 140%;
+}
+
+.single__inner p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.single__inner .title {
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.single__inner ul {
+  margin-left: 30px;
+}
+
+.single__inner ul li {
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.single__inner ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #a50328;
+  border-radius: 50%;
+}
+
+.single__inner ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 /*=======================================================================*/
 
 .utp__slider {

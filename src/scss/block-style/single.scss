@@ -1,0 +1,57 @@
+.single {
+
+    // .single__container
+
+    &__container {}
+
+    // .single__inner
+
+    &__inner {
+        margin-top: 50px;
+
+        p {
+            font-size: 20px;
+            font-weight: 300;
+            font-family: $fontSecondary;
+            line-height: 140%;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .title {
+            font-weight: 500;
+            padding-top: 20px;
+        }
+
+        ul {
+            margin-left: 30px;
+
+            li {
+                font-family: $fontSecondary;
+                font-weight: 300;
+                font-size: 20px;
+                position: relative;
+
+                padding-left: 20px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -4px;
+                    left: 0;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $accent;
+                    border-radius: 50%;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
