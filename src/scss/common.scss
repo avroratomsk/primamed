@@ -248,3 +248,63 @@ section {
     display: flex;
   }
 }
+
+.square {
+  border: 10px solid rgba($color: $blue, $alpha: .02);
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  transform: rotate(-36deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.square--small {
+  border: 10px solid rgba($color: $blue, $alpha: .02);
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  transform: rotate(36deg);
+  position: absolute;
+  top: 40%;
+  right: 0;
+  z-index: -1;
+}
+
+.square--big {
+  border: 30px solid rgba($color: $blue, $alpha: .02);
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  transform: rotate(-36deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.round {
+  border: 10px solid rgba($color: $blue, $alpha: .03);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.round--small {
+  border: 10px solid rgba($color: $blue, $alpha: .05);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.round--big {}
