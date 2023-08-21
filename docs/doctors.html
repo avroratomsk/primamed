@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Услуга</title>
+	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -104,265 +104,146 @@
 				</div>
 			</div>
 		</header>
-		<main class="page">
-			<div class="service-promo" style="background-image: url(img/service-banner.jpg);">
+		<main class="doctors-page">
+			<div class="service-promo" style="background-image: url(img/license-bg.jpg);">
 				<div class="square"></div>
 				<div class="square square--big"></div>
 				<div class="square square--small"></div>
 				<div class="service-promo__container">
 					<div class="service-promo__inner">
-						<h1 class="service-promo__title">Рентгенотология</h1>
+						<h1 class="service-promo__title">Наши врачи</h1>
 					</div>
 				</div>
 			</div>
 
-			<servion class="single">
-				<div class="single__container">
-					<div class="single__inner">
-						<p>Рентгенография на сегодняшний день является одним из наиболее эффективных, безопасных и информативных
-							методов получения информации о состоянии здоровья внутренних органов. Цифровая система обработки
-							изображений позволяет снизить риск получения осложнений и свести к минимуму рентгенологическую нагрузку.
-						</p>
-						<p>
-							В наших клиниках установлено рентгеноскопическое оборудование от ведущих производителей.
-						</p>
-						<p>
-							Изображение, получаемое в процессе диагностики, моментально выводится на монитор компьютера. Его
-							повышенная четкость и качество позволяют выявить мельчайшие изменения и нарушения на самой ранней стадии.
-						</p>
-						<p>
-							После проведения обследования врач-рентгенолог записывает данные на диск и передает пациенту. Расшифровкой
-							снимков занимается лечащий врач, и на основании результатов назначает необходимое лечение.
-						</p>
-						<p>
-							Стоит отметить, что полученные данные хранятся в архиве в цифровом формате, поэтому при необходимости есть
-							возможность дублирования информации.
-						</p>
-						<p>
-							Рентгенография в наших центрах отличается рядом преимуществ.
-						</p>
-
-						<p class="title">Чаще всего поводом для проведения рентгенографии становится:</p>
-						<ul>
-							<li>Ушибы, травмы и повреждения внутренних органов.</li>
-							<li>Нарушения функциональности позвоночника и опорно-двигательного аппарата.</li>
-							<li>Необходимость изучения состояния грудной клетки.</li>
-							<li>Необходимость изучения состояния зубов и челюстей при посещении стоматолога.</li>
-							<li>Заболевания гинекологического характера, а также молочных желез.</li>
-						</ul>
-					</div>
-				</div>
-			</servion>
-
-			<section class="price">
-				<div class="square"></div>
-				<div class="square--small"></div>
-				<div class="square--big"></div>
-				<div class="round"></div>
-				<div class="round--small"></div>
-				<div class="round--big"></div>
-				<div class="price__container">
-					<div class="price__inner">
-						<div class="price__caption">
-							<div class="price__id">Код услуги</div>
-							<div class="price__name">Название услуги</div>
-							<div class="price__price">Цена услуги</div>
-							<div class="price__button"></div>
+			<div class="doctors">
+				<div class="doctors__container">
+					<div class="doctors__inner">
+						<div class="doctors__top">
+							<div class="doctors__top--left">
+								<select name="#" id="" class="doctors__select">
+									<option value="">Гинеколог</option>
+									<option value="">Гастроэнтеролог</option>
+									<option value="">Терапевт</option>
+									<option value="">Хирург</option>
+								</select>
+							</div>
+							<div class="doctors__top--right">
+								<form action="" class="doctors__search">
+									<input type="text" placeholder="Поиск врачей" class="doctors__input">
+									<button type="button" class="doctors__submit"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+											<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+											</path>
+										</svg></button>
+								</form>
+							</div>
 						</div>
-						<div class="price__content price-table">
-							<div class="price-table__item">
-								<div class="price-table__id">10794</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
+						<div class="doctors__grid">
+							<div class="doctors__card card-doctors">
+								<div class="card-doctors__top">
+									<a href="#" class="card-doctors__image">
+										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
+									</a>
+									<div class="card-doctors__content">
+										<a href="#" class="card-doctors__title">Ткачев Владимир Николаевич</a>
+										<p class="card-doctors__spec">
+											Заведующий гинекологическим отделением - врач-акушер-гинеколог
+										</p>
+										<p class="card-doctors__stage">
+											<span>Стаж: </span> 20 лет
+										</p>
+										<a href="#" class="card-doctors__btn">Подробнее</a>
+									</div>
 								</div>
 							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10795</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
+							<div class="doctors__card card-doctors">
+								<div class="card-doctors__top">
+									<a href="#" class="card-doctors__image">
+										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
+									</a>
+									<div class="card-doctors__content">
+										<a href="#" class="card-doctors__title">Ткачев Владимир Николаевич</a>
+										<p class="card-doctors__spec">
+											Заведующий гинекологическим отделением - врач-акушер-гинеколог
+										</p>
+										<p class="card-doctors__stage">
+											<span>Стаж: </span> 20 лет
+										</p>
+										<a href="#" class="card-doctors__btn">Подробнее</a>
+									</div>
 								</div>
 							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10793</div>
-								<div class="price-table__name"> АКЦИЯ 'ВАКЦИНАЦИЯ ОТ КЛЕЩЕВОГО ЭНЦЕФАЛИТА''</div>
-								<div class="price-table__price">1900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
+							<div class="doctors__card card-doctors">
+								<div class="card-doctors__top">
+									<a href="#" class="card-doctors__image">
+										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
+									</a>
+									<div class="card-doctors__content">
+										<a href="#" class="card-doctors__title">Ткачев Владимир Николаевич</a>
+										<p class="card-doctors__spec">
+											Заведующий гинекологическим отделением - врач-акушер-гинеколог
+										</p>
+										<p class="card-doctors__stage">
+											<span>Стаж: </span> 20 лет
+										</p>
+										<a href="#" class="card-doctors__btn">Подробнее</a>
+									</div>
 								</div>
 							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10791</div>
-								<div class="price-table__name">
-									АКЦИЯ 'ЖЕНСКОЕ ЗДОРОВЬЕ'
-								</div>
-								<div class="price-table__price"> 3500 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
-								</div>
-							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10794</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
-								</div>
-							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10795</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
+							<div class="doctors__card card-doctors">
+								<div class="card-doctors__top">
+									<a href="#" class="card-doctors__image">
+										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
+									</a>
+									<div class="card-doctors__content">
+										<a href="#" class="card-doctors__title">Ткачев Владимир Николаевич</a>
+										<p class="card-doctors__spec">
+											Заведующий гинекологическим отделением - врач-акушер-гинеколог
+										</p>
+										<p class="card-doctors__stage">
+											<span>Стаж: </span> 20 лет
+										</p>
+										<a href="#" class="card-doctors__btn">Подробнее</a>
+									</div>
 								</div>
 							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10793</div>
-								<div class="price-table__name"> АКЦИЯ 'ВАКЦИНАЦИЯ ОТ КЛЕЩЕВОГО ЭНЦЕФАЛИТА''</div>
-								<div class="price-table__price">1900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
+							<div class="doctors__card card-doctors">
+								<div class="card-doctors__top">
+									<a href="#" class="card-doctors__image">
+										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
+									</a>
+									<div class="card-doctors__content">
+										<a href="#" class="card-doctors__title">Ткачев Владимир Николаевич</a>
+										<p class="card-doctors__spec">
+											Заведующий гинекологическим отделением - врач-акушер-гинеколог
+										</p>
+										<p class="card-doctors__stage">
+											<span>Стаж: </span> 20 лет
+										</p>
+										<a href="#" class="card-doctors__btn">Подробнее</a>
+									</div>
 								</div>
 							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10791</div>
-								<div class="price-table__name">
-									АКЦИЯ 'ЖЕНСКОЕ ЗДОРОВЬЕ'
-								</div>
-								<div class="price-table__price"> 3500 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
-								</div>
-							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10794</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
-								</div>
-							</div>
-							<div class="price-table__item">
-								<div class="price-table__id">10795</div>
-								<div class="price-table__name">АКЦИЯ 'ЗДОРОВЫЙ РЕБЕНОК' ДО 1 ГОДА</div>
-								<div class="price-table__price">3900 ₽</div>
-								<div class="price-table__button">
-									<button type="button" class="">Записаться</button>
-								</div>
-							</div>
+
+						</div>
+						<div class="pagging">
+							<a href="" class="pagging__arrow"><i class="fa-solid fa-arrow-left-long"></i></a>
+							<ul class="pagging__list">
+								<li>
+									<a href="" class="pagging__item _active">1</a>
+								</li>
+								<li>
+									<a href="" class="pagging__item">2</a>
+								</li>
+								<li>
+									<a href="" class="pagging__item">3</a>
+								</li>
+							</ul>
+							<a href="" class="pagging__arrow"><i class="fa-solid fa-arrow-right-long"></i></a>
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<section class="stock">
-				<div class="stock__container">
-					<div class="stock__inner">
-						<div class="stock__caption">
-							<h2 class="_title stock__title">
-								<!-- <img src="img/fire.svg" alt=""> -->
-								Специалиты нашей клиники
-							</h2>
-							<a href="#" class="stock__link">Все специалисты</a>
-						</div>
-						<div class="swiper stock__slider">
-							<div class="swiper-wrapper stock__wrapper">
-								<div class="swiper-slide stock__slide">
-									<a href="#" class="stock__image">
-										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
-									</a>
-									<div class="stock__bottom">
-										<a href="#" class="stock__title--slide">
-											Гаврилов Степан Иванович
-										</a>
-										<p class="stock__stage">
-											<span>Стаж: </span> 12лет
-										</p>
-										<p class="stock__spec">
-											<span>Специальность: </span> Отолоринголог
-										</p>
-										<a href="#" class="stock__link--slide">Записаться</a>
-									</div>
-								</div>
-								<div class="swiper-slide stock__slide">
-									<a href="#" class="stock__image">
-										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
-									</a>
-									<div class="stock__bottom">
-										<a href="#" class="stock__title--slide">
-											Гаврилов Степан Иванович
-										</a>
-										<p class="stock__stage">
-											<span>Стаж: </span> 12лет
-										</p>
-										<p class="stock__spec">
-											<span>Специальность: </span> Отолоринголог
-										</p>
-										<a href="#" class="stock__link--slide">Записаться</a>
-									</div>
-								</div>
-								<div class="swiper-slide stock__slide">
-									<a href="#" class="stock__image">
-										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
-									</a>
-									<div class="stock__bottom">
-										<a href="#" class="stock__title--slide">
-											Гаврилов Степан Иванович
-										</a>
-										<p class="stock__stage">
-											<span>Стаж: </span> 12лет
-										</p>
-										<p class="stock__spec">
-											<span>Специальность: </span> Отолоринголог
-										</p>
-										<a href="#" class="stock__link--slide">Записаться</a>
-									</div>
-								</div>
-								<div class="swiper-slide stock__slide">
-									<a href="#" class="stock__image">
-										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
-									</a>
-									<div class="stock__bottom">
-										<a href="#" class="stock__title--slide">
-											Гаврилов Степан Иванович
-										</a>
-										<p class="stock__stage">
-											<span>Стаж: </span> 12лет
-										</p>
-										<p class="stock__spec">
-											<span>Специальность: </span> Отолоринголог
-										</p>
-										<a href="#" class="stock__link--slide">Записаться</a>
-									</div>
-								</div>
-								<div class="swiper-slide stock__slide">
-									<a href="#" class="stock__image">
-										<picture><source srcset="img/doctor.webp" type="image/webp"><img src="img/doctor.jpg" alt=""></picture>
-									</a>
-									<div class="stock__bottom">
-										<a href="#" class="stock__title--slide">
-											Гаврилов Степан Иванович
-										</a>
-										<p class="stock__stage">
-											<span>Стаж: </span> 12лет
-										</p>
-										<p class="stock__spec">
-											<span>Специальность: </span> Отолоринголог
-										</p>
-										<a href="#" class="stock__link--slide">Записаться</a>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-button-prev stock-prev"></div>
-							<div class="swiper-button-next stock-next"></div>
-						</div>
-					</div>
-				</div>
-			</section>
+			</div>
 
 			<section class="contact">
 				<div class="contact__container">
@@ -609,3 +490,7 @@
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230821174715"></script>
 	<script src="js/app.min.js?_v=20230821174715"></script>
+
+</body>
+
+</html>
