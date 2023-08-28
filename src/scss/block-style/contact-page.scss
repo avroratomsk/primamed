@@ -20,6 +20,15 @@
 		a {
 			color: $accent;
 		}
+
+		@media screen and (max-width: 470px) {
+			display: flex;
+			flex-direction: column;
+
+			a {
+				margin-top: 10px;
+			}
+		}
 	}
 
 	// .contact-page__text
@@ -36,6 +45,10 @@
 	&__row {
 		margin-top: 40px;
 		display: flex;
+
+		@media screen and (max-width: 670px) {
+			flex-direction: column;
+		}
 	}
 
 	// .contact-page__col
@@ -47,6 +60,19 @@
 
 		p {
 			font-size: 15px;
+		}
+
+		@media screen and (max-width: 810px) {
+			&:not(:last-child) {
+				margin-right: 30px;
+			}
+		}
+
+		@media screen and (max-width: 670px) {
+			&:not(:last-child) {
+				margin-right: 0px;
+				margin-bottom: 20px;
+			}
 		}
 	}
 
@@ -94,6 +120,10 @@
 	&__row {
 		display: flex;
 		justify-content: space-between;
+
+		@media screen and (max-width: 1024px) {
+			flex-direction: column;
+		}
 	}
 
 	// .requisites__col
@@ -123,6 +153,29 @@
 
 			}
 		}
+
+		@media screen and (min-width: 1024px) {
+			margin-right: 20px;
+		}
+
+		@media screen and (max-width: 1024px) {
+			&:last-child {
+				margin-top: 30px;
+
+				a {
+					padding: 20px 0px;
+				}
+			}
+		}
+
+		@media screen and (max-width: 425px) {
+			&:last-child {
+
+				span {
+					font-size: 18px;
+				}
+			}
+		}
 	}
 
 	// .requisites__title
@@ -145,6 +198,19 @@
 		span {
 			font-weight: 600;
 			margin-right: 10px;
+		}
+
+		p {
+			line-height: 140%;
+		}
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+			align-items: flex-start;
+
+			span {
+				margin-bottom: 5px;
+			}
 		}
 	}
 
@@ -172,6 +238,10 @@
 	border-top: 1px solid rgba($color: $mainColor, $alpha: .1);
 	padding: 20px 0px 0px;
 
+	@media screen and (max-width: 660px) {
+		padding: 40px 0px 0px;
+	}
+
 	// .contact-oferta__container
 
 	&__container {}
@@ -187,5 +257,9 @@
 		// max-width: 1000px;
 		margin: 0 auto;
 		text-transform: uppercase;
+
+		@media screen and (max-width: 660px) {
+			font-size: 18px;
+		}
 	}
 }
