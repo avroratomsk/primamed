@@ -15,6 +15,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+        }
     }
 
     // .price__select
@@ -25,6 +29,11 @@
         border-radius: 5px;
         overflow: hidden;
         outline: none;
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            margin-top: 20px;
+        }
     }
 
     // .price__caption
@@ -34,6 +43,14 @@
         grid-template-columns: 10% 1fr 10% 15%;
         background-color: rgba($color: $blue, $alpha: .6);
         border-radius: 5px 5px 0px 0px;
+
+        @media screen and (max-width: 730px) {
+            grid-template-columns: 1fr 20%;
+        }
+
+        @media screen and (max-width: 352px) {
+            grid-template-columns: 1fr 23%;
+        }
     }
 
     // .price__id
@@ -49,6 +66,10 @@
         letter-spacing: .5px;
         font-size: 18px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 730px) {
+            display: none;
+        }
     }
 
     // .price__name
@@ -63,6 +84,11 @@
         letter-spacing: .5px;
         font-size: 18px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+            padding: 10px 10px;
+        }
     }
 
     // .price__price
@@ -78,11 +104,24 @@
         letter-spacing: .5px;
         font-size: 18px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 730px) {
+            border-right: 0px;
+        }
+
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+            padding: 10px 10px;
+        }
     }
 
     // .price__button
 
-    &__button {}
+    &__button {
+        @media screen and (max-width: 730px) {
+            display: none;
+        }
+    }
 
     // .price__content
 
@@ -99,14 +138,16 @@
         grid-template-columns: 10% 1fr 10% 15%;
         border-bottom: 1px solid rgba($color: $mainColor, $alpha: .5);
 
+        @media screen and (max-width: 730px) {
+            grid-template-columns: 1fr 20%;
+        }
+
+        @media screen and (max-width: 352px) {
+            grid-template-columns: 1fr 23%;
+        }
+
         &:nth-child(even) {
             background-color: rgba($color: $blue, $alpha: .2);
-
-            .price-table__button {
-                button {
-                    // background-color: rgba($color: $blue, $alpha: .5);
-                }
-            }
         }
     }
 
@@ -124,6 +165,10 @@
         font-size: 16px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
         border-left: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 730px) {
+            display: none;
+        }
     }
 
     // .price-table__name
@@ -138,6 +183,19 @@
         letter-spacing: .5px;
         font-size: 16px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 730px) {
+            border-left: 1px solid rgba($color: $mainColor, $alpha: .5);
+        }
+
+        @media screen and (max-width: 425px) {
+            padding: 10px 10px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 14px;
+            padding: 10px 10px;
+        }
     }
 
     // .price-table__price
@@ -153,6 +211,15 @@
         letter-spacing: .5px;
         font-size: 16px;
         border-right: 1px solid rgba($color: $mainColor, $alpha: .5);
+
+        @media screen and (max-width: 425px) {
+            padding: 10px 10px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 14px;
+            padding: 10px 10px;
+        }
     }
 
     // .price-table__button
@@ -179,6 +246,10 @@
                 color: $white;
                 background-color: rgba($color: $blue, $alpha: .8);
             }
+        }
+
+        @media screen and (max-width: 730px) {
+            display: none;
         }
     }
 }

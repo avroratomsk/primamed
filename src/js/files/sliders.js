@@ -151,25 +151,25 @@ function initSliders() {
       },
 
       // Брейкпоинты
-      // breakpoints: {
-      // 	320: {
-      // 		slidesPerView: 1,
-      // 		spaceBetween: 20,
-      // 		autoHeight: true,
-      // 	},
-      // 	485: {
-      // 		slidesPerView: 2,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	992: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	1268: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 30,
-      // 	},
-      // },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          autoHeight: true,
+        },
+        485: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1268: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
       // События
       on: {
 
@@ -225,25 +225,25 @@ function initSliders() {
       },
 
       // Брейкпоинты
-      // breakpoints: {
-      // 	320: {
-      // 		slidesPerView: 1,
-      // 		spaceBetween: 20,
-      // 		autoHeight: true,
-      // 	},
-      // 	485: {
-      // 		slidesPerView: 2,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	992: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	1268: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 30,
-      // 	},
-      // },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          autoHeight: true,
+        },
+        485: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        1268: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
       // События
       on: {
 
@@ -278,6 +278,26 @@ function initSliders() {
       navigation: {
         prevEl: '.stock-prev',
         nextEl: '.stock-next',
+      },
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          autoHeight: true,
+        },
+        485: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1268: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
       },
 
     });

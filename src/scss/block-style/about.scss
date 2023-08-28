@@ -39,6 +39,16 @@
     grid-template-rows: repeat(8, 3vw);
     grid-gap: 15px;
 
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 520px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
     // .gallery__icon
     &__icon {
         position: absolute;
@@ -95,54 +105,66 @@
     // .gallery__item--1
 
     &__item--1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 3;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
     }
 
     // .gallery__item--2
 
     &__item--2 {
-        grid-column-start: 3;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 3;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
     }
 
     // .gallery__item--3
 
     &__item--3 {
-        grid-column-start: 5;
-        grid-column-end: 9;
-        grid-row-start: 1;
-        grid-row-end: 6;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 5;
+            grid-column-end: 9;
+            grid-row-start: 1;
+            grid-row-end: 6;
+        }
     }
 
     // .gallery__item--4
 
     &__item--4 {
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 3;
-        grid-row-end: 6;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 6;
+        }
     }
 
     // .gallery__item--5
 
     &__item--5 {
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 6;
-        grid-row-end: 9;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 6;
+            grid-row-end: 9;
+        }
     }
 
     // .gallery__item--6
 
     &__item--6 {
-        grid-column-start: 5;
-        grid-column-end: 9;
-        grid-row-start: 6;
-        grid-row-end: 9;
+        @media screen and (min-width: 768px) {
+            grid-column-start: 5;
+            grid-column-end: 9;
+            grid-row-start: 6;
+            grid-row-end: 9;
+        }
     }
 }

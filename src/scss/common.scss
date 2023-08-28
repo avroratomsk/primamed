@@ -209,6 +209,7 @@ section {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: -1;
 }
 
 .breadcrumbs {
@@ -308,3 +309,25 @@ section {
 }
 
 .round--big {}
+
+._pc-btn {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+._mb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  margin-top: 30px;
+
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+}

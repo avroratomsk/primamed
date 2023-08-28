@@ -1,13 +1,13 @@
 .header {
+  display: none;
+
   // .header__container
 
-  &__container {
-  }
+  &__container {}
 
   // .header__inner
 
-  &__inner {
-  }
+  &__inner {}
 
   // .header__top
 
@@ -61,8 +61,7 @@
 
   // .top-header__search
 
-  &__search {
-  }
+  &__search {}
 
   // .top-header__btn
 
@@ -85,8 +84,7 @@
 
   // .top-header__action
 
-  &__action {
-  }
+  &__action {}
 }
 
 .header-search {
@@ -191,8 +189,7 @@
 
   // .bottom-header__menu
 
-  &__menu {
-  }
+  &__menu {}
 
   // .bottom-header__login
 
@@ -206,6 +203,7 @@
     }
   }
 }
+
 .menu {
   flex: 1 1 auto;
   margin-right: 3vw;
