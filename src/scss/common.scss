@@ -12,6 +12,10 @@ section {
   font-size: 45px;
   line-height: 120%;
   font-family: $fontSecondary;
+
+  @media screen and (max-width: 425px) {
+    font-size: 30px;
+  }
 }
 
 ._subtitle-link {
