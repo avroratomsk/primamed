@@ -1254,6 +1254,7 @@ section {
 
 .contact-page__map {
   margin-top: 40px;
+  height: 250px;
 }
 
 .contact-page__grid {
@@ -3561,6 +3562,49 @@ button.vbox-link-btn:hover {
   border-bottom: 1px solid rgba(46, 49, 70, 0.1);
 }
 
+.single-blog__content {
+  color: rgba(46, 49, 70, 0.8);
+}
+
+.single-blog__content h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.single-blog__content h2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.single-blog__content p {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.single-blog__content ul li {
+  padding-left: 20px;
+  position: relative;
+  line-height: 140%;
+}
+
+.single-blog__content ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #a50328;
+  border-radius: 50%;
+}
+
+.single-blog__content img {
+  max-width: 100%;
+}
+
 /*=======================================================================*/
 
 .utp__slider {
@@ -3672,7 +3716,7 @@ button.vbox-link-btn:hover {
 }
 
 .utp__title {
-  max-width: 750px;
+  max-width: 850px;
   color: #fff;
   font-size: 60px;
   font-weight: 600;
@@ -3682,7 +3726,7 @@ button.vbox-link-btn:hover {
 
 .utp__subtitle {
   font-size: 18px;
-  max-width: 700px;
+  max-width: 800px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 150%;
   margin-bottom: 40px;
@@ -4610,6 +4654,7 @@ button.vbox-link-btn:hover {
   -webkit-transform: translateX(0%);
       -ms-transform: translateX(0%);
           transform: translateX(0%);
+  z-index: -1;
 }
 
 .faq::before {
@@ -4722,11 +4767,17 @@ button.vbox-link-btn:hover {
   -webkit-box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
           box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
   background-color: #ffffff;
+  padding: 20px 40px 20px 20px;
+  line-height: 130%;
 }
 
 .faq .spollers__title._spoller-active {
   background-color: rgba(41, 79, 153, 0.6);
   border-radius: 10px 10px 0px 0px;
+}
+
+.faq .spollers__body {
+  background-color: #ffffff;
 }
 
 /*=======================================================================*/
@@ -5398,7 +5449,7 @@ button.vbox-link-btn:hover {
 .card-info {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 30px;
 }
 
@@ -6493,6 +6544,16 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media screen and (max-width: 769px) {
+  .single-blog__content h1 {
+    font-size: 35px;
+  }
+
+  .single-blog__content h2 {
+    font-size: 28px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .popup__title {
     font-size: 25px;
@@ -6500,6 +6561,14 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 425px) {
+  .single-blog__content h1 {
+    font-size: 30px;
+  }
+
+  .single-blog__content h2 {
+    font-size: 25px;
+  }
+
   .dropdown__button {
     font-size: 14px;
   }
