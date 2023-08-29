@@ -708,10 +708,6 @@ section {
   margin-top: 30px;
 }
 
-.header {
-  display: none;
-}
-
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -934,8 +930,79 @@ section {
           align-items: center;
 }
 
+.menu__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .menu__item:not(:last-child) {
   margin-right: 1.7vw;
+}
+
+.menu__btn {
+  margin-left: 10px;
+  width: 25px;
+  height: 20px;
+  position: relative;
+}
+
+.menu__btn span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #a50328;
+  margin-top: -1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.menu__btn::before,
+.menu__btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+  background-color: #a50328;
+  width: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.menu__btn::before {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.menu__btn::after {
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.menu__btn._active span {
+  width: 0%;
+}
+
+.menu__btn._active::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.menu__btn._active::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .menu__link {
@@ -945,12 +1012,128 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 600;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .menu__link svg {
   font-size: 12px;
   margin-top: 1px;
   margin-left: 5px;
+}
+
+.submenu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 100;
+  overflow-y: auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.submenu._show-submenu {
+  top: 0;
+}
+
+.submenu__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgba(46, 49, 70, 0.1);
+}
+
+.submenu__sprav {
+  font-weight: 600;
+}
+
+.submenu__sprav a {
+  color: #a50328;
+}
+
+.submenu__blue {
+  height: 44px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(46, 49, 70, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #294f99;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.submenu__red {
+  margin-left: 10px;
+}
+
+.submenu__grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px 20px;
+  padding: 20px 0px;
+}
+
+.submenu__link {
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(46, 49, 70, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0px;
+  font-weight: 600;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.submenu__btn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.submenu__btn::before,
+.submenu__btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin-top: -1px;
+  background-color: #a50328;
+}
+
+.submenu__btn::before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.submenu__btn::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .footer {
@@ -7180,6 +7363,14 @@ button.swiper-pagination-bullet {
 @media (hover: hover) {
   .spollers__title:hover {
     background-color: rgba(41, 79, 153, 0.04);
+  }
+
+  .menu__link:hover {
+    color: #a50328;
+  }
+
+  .submenu__link:hover {
+    color: #a50328;
   }
 
   .menu-footer__link:hover {

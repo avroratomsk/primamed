@@ -1,5 +1,4 @@
 .header {
-  display: none;
 
   // .header__container
 
@@ -218,8 +217,67 @@
   // .menu__item
 
   &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
     &:not(:last-child) {
       margin-right: 1.7vw;
+    }
+  }
+
+  // .menu__btn
+  &__btn {
+    margin-left: 10px;
+    width: 25px;
+    height: 20px;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 70%;
+      height: 2px;
+      background-color: $accent;
+      margin-top: -1px;
+      transition: $animation_fast;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      margin-top: -1px;
+      background-color: $accent;
+      width: 100%;
+      transition: $animation_fast;
+    }
+
+    &::before {
+
+      transform: translateY(-5px);
+    }
+
+    &::after {
+      transform: translateY(5px);
+    }
+
+    &._active {
+      span {
+        width: 0%;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
     }
   }
 
@@ -228,11 +286,152 @@
   &__link {
     display: flex;
     align-items: center;
+    font-weight: 600;
+    transition: $animation_fast;
 
     svg {
       font-size: 12px;
       margin-top: 1px;
       margin-left: 5px;
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+.submenu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  z-index: 100;
+  overflow-y: auto;
+  transition: $animation_fast;
+
+  &._show-submenu {
+    top: 0;
+  }
+
+  // .submenu__container
+
+  &__container {}
+
+  // .submenu__inner
+
+  &__inner {}
+
+  // .submenu__top
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid rgba($color: $mainColor, $alpha: .1);
+  }
+
+  // .submenu__sprav
+
+  &__sprav {
+    font-weight: 600;
+
+    a {
+      color: $accent;
+    }
+  }
+
+  // .submenu__blue
+
+  &__blue {
+    height: 44px;
+    padding: 0px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(46, 49, 70, 0.1);
+    display: flex;
+    align-items: center;
+    background-color: $blue;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  // .submenu__red
+
+  &__red {
+    margin-left: 10px;
+  }
+
+  // .submenu__grid
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px 20px;
+    padding: 20px 0px;
+  }
+
+  // .submenu__link
+
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba($color: $mainColor, $alpha: .9);
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    font-weight: 600;
+    transition: $animation_fast;
+
+    @media (hover:hover) {
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  .top-header {
+
+    // .top-header__logo
+
+    &__logo {}
+  }
+
+  .bottom-header {
+
+    // .bottom-header__doctor
+
+    &__doctor {}
+  }
+
+  // .submenu__btn
+  &__btn {
+    position: relative;
+    width: 25px;
+    height: 25px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      margin-top: -1px;
+      background-color: $accent;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
     }
   }
 }
