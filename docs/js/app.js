@@ -4288,6 +4288,7 @@
     }));
     let submenuCloseBtn = document.querySelector(".submenu__btn");
     if (submenuCloseBtn) submenuCloseBtn.addEventListener("click", (function(e) {
+        bodyUnlock();
         document.querySelector(".submenu").classList.remove("_show-submenu");
         document.querySelector(".menu__btn").classList.remove("_active");
     }));

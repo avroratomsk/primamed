@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockToggle, bodyLock } from "./functions.js";
+import { isMobile, bodyLockToggle, bodyLock, bodyUnlock } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
@@ -25,6 +25,7 @@ if (openSubmenuBtn) {
 let submenuCloseBtn = document.querySelector('.submenu__btn');
 if (submenuCloseBtn) {
   submenuCloseBtn.addEventListener('click', function (e) {
+    bodyUnlock()
     document.querySelector('.submenu').classList.remove('_show-submenu');
 
     document.querySelector('.menu__btn').classList.remove('_active')
