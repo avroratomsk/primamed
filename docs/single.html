@@ -6,12 +6,12 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230829180137">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230831111604">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230829180137" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230829180137" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230831111604" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230831111604" />
 </head>
 
 <body>
@@ -27,23 +27,36 @@
 								<span>Прима-Мед</span>
 							</p>
 						</a>
-						<div class="top-header__action--col">
-							<button type="button" class="bottom-header__login">
-								<span>Записаться на прием</span>
-							</button>
-							<button type="button" class="top-header__btn">
-								<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-									<path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
-								</svg>
-								<span>Задать вопрос</span>
-							</button>
-							<div class="top-header__action action-header">
-								<a href="tel:89999999999" class="action-header__phone">8 (999) 999-99-99</a>
-								<p class="action-header__address">г. Чита ул. Новобульварная, д. 113</p>
-							</div>
+						<div class="top-header__search header-search">
+							<form action="#" class="header-search__form">
+								<input type="text" class="header-search__input" placeholder="Найти услугу...">
+								<button type="submit" class="header-search__btn">
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+									</svg>
+								</button>
+							</form>
 						</div>
+						<div class="top-header__action action-header">
+							<a href="tel:89999999999" class="action-header__phone">8 (999) 999-99-99</a>
+							<p class="action-header__address">г. Чита ул. Новобульварная, д. 113</p>
+						</div>
+						<button type="button" class="bottom-header__login">
+							<span>Записаться на прием</span>
+						</button>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
 					</div>
-					<div class="header__bottom bottom-header">
+					<div class="header__bottom bottom-header ">
+						<div class="top-header__search header-search mb-search">
+							<form action="#" class="header-search__form">
+								<input type="text" class="header-search__input" placeholder="Найти услугу...">
+								<button type="submit" class="header-search__btn">
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+									</svg>
+								</button>
+							</form>
+						</div>
 						<div class="bottom-header__left">
 							<nav class="bottom-header__menu menu">
 								<ul class="menu__list">
@@ -77,11 +90,7 @@
 							</nav>
 						</div>
 						<div class="bottom-header__right">
-							<button type="submit" class="bottom-header__btn">
-								<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-									<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-								</svg>
-							</button>
+
 							<button type="button" class="bottom-header__doctor">
 								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
 									<g id="city">
@@ -95,6 +104,9 @@
 									</g>
 								</svg>
 								Вызвать врача на дом
+							</button>
+							<button type="button" class="bottom-header__login mb-btn">
+								<span>Записаться на прием</span>
 							</button>
 						</div>
 					</div>
@@ -117,54 +129,54 @@
 							Единая справочная города Чита
 							<a href="">8 (999) 999-99-99</a>
 						</div>
-						<button type="button" class="submenu__blue">
-							Заказать обратный звонок
-						</button>
-						<button type="button" class="bottom-header__doctor submenu__red">
-							<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
-								<g id="city">
-									<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
-									<path id="Vector (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 8.94132C11.8196 9.21841 11.8446 9.69263 11.5675 10.0005L11.5575 10.0116C11.2804 10.3195 10.8062 10.3445 10.4983 10.0674C10.1904 9.79027 10.1654 9.31606 10.4425 9.00817L10.4525 8.99706C10.7296 8.68918 11.2038 8.66422 11.5117 8.94132Z" fill="" />
-									<path id="Vector (Stroke)_3" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 12.9413C7.81961 13.2184 7.84457 13.6926 7.56748 14.0005L7.55748 14.0116C7.28038 14.3195 6.80616 14.3445 6.49828 14.0674C6.1904 13.7903 6.16544 13.3161 6.44254 13.0082L6.45254 12.9971C6.72963 12.6892 7.20385 12.6642 7.51173 12.9413Z" fill="" />
-									<path id="Vector (Stroke)_4" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 12.9413C11.8196 13.2184 11.8446 13.6926 11.5675 14.0005L11.5575 14.0116C11.2804 14.3195 10.8062 14.3445 10.4983 14.0674C10.1904 13.7903 10.1654 13.3161 10.4425 13.0082L10.4525 12.9971C10.7296 12.6892 11.2038 12.6642 11.5117 12.9413Z" fill="" />
-									<path id="Vector (Stroke)_5" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 16.9413C7.81961 17.2184 7.84457 17.6926 7.56748 18.0005L7.55748 18.0116C7.28038 18.3195 6.80616 18.3445 6.49828 18.0674C6.1904 17.7903 6.16544 17.3161 6.44254 17.0082L6.45254 16.9971C6.72963 16.6892 7.20385 16.6642 7.51173 16.9413Z" fill="" />
-									<path id="Vector (Stroke)_6" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 16.9413C11.8196 17.2184 11.8446 17.6926 11.5675 18.0005L11.5575 18.0116C11.2804 18.3195 10.8062 18.3445 10.4983 18.0674C10.1904 17.7903 10.1654 17.3161 10.4425 17.0082L10.4525 16.9971C10.7296 16.6892 11.2038 16.6642 11.5117 16.9413Z" fill="" />
-									<path id="Vector (Stroke)_7" fill-rule="evenodd" clip-rule="evenodd" d="M20.25 20.75V10.25H15.75V12.75H17C17.4142 12.75 17.75 13.0858 17.75 13.5C17.75 13.9142 17.4142 14.25 17 14.25H15.75V16.75H17C17.4142 16.75 17.75 17.0858 17.75 17.5C17.75 17.9142 17.4142 18.25 17 18.25H15.75V20.75H20.25ZM14.25 20.75V4.25H9.75V5.5C9.75 5.91421 9.41421 6.25 9 6.25H3.75V20.75H14.25ZM15.75 8.75H20.4C21.1456 8.75 21.75 9.35442 21.75 10.1V20.9C21.75 21.6456 21.1456 22.25 20.4 22.25H3.6C2.85442 22.25 2.25 21.6456 2.25 20.9V6.1C2.25 5.35442 2.85442 4.75 3.6 4.75H8.25V4.1C8.25 3.35442 8.85442 2.75 9.6 2.75H14.4C15.1456 2.75 15.75 3.35442 15.75 4.1V8.75Z" fill="" />
-								</g>
-							</svg>
-							Вызвать врача на дом
-						</button>
-						<button type="button" class="submenu__btn">
-						</button>
+						<div class="submenu__action">
+							<button type="button" class="submenu__blue">
+								Консультация
+							</button>
+							<button type="button" class="bottom-header__doctor submenu__red">
+								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
+									<g id="city">
+										<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
+										<path id="Vector (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 8.94132C11.8196 9.21841 11.8446 9.69263 11.5675 10.0005L11.5575 10.0116C11.2804 10.3195 10.8062 10.3445 10.4983 10.0674C10.1904 9.79027 10.1654 9.31606 10.4425 9.00817L10.4525 8.99706C10.7296 8.68918 11.2038 8.66422 11.5117 8.94132Z" fill="" />
+										<path id="Vector (Stroke)_3" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 12.9413C7.81961 13.2184 7.84457 13.6926 7.56748 14.0005L7.55748 14.0116C7.28038 14.3195 6.80616 14.3445 6.49828 14.0674C6.1904 13.7903 6.16544 13.3161 6.44254 13.0082L6.45254 12.9971C6.72963 12.6892 7.20385 12.6642 7.51173 12.9413Z" fill="" />
+										<path id="Vector (Stroke)_4" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 12.9413C11.8196 13.2184 11.8446 13.6926 11.5675 14.0005L11.5575 14.0116C11.2804 14.3195 10.8062 14.3445 10.4983 14.0674C10.1904 13.7903 10.1654 13.3161 10.4425 13.0082L10.4525 12.9971C10.7296 12.6892 11.2038 12.6642 11.5117 12.9413Z" fill="" />
+										<path id="Vector (Stroke)_5" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 16.9413C7.81961 17.2184 7.84457 17.6926 7.56748 18.0005L7.55748 18.0116C7.28038 18.3195 6.80616 18.3445 6.49828 18.0674C6.1904 17.7903 6.16544 17.3161 6.44254 17.0082L6.45254 16.9971C6.72963 16.6892 7.20385 16.6642 7.51173 16.9413Z" fill="" />
+										<path id="Vector (Stroke)_6" fill-rule="evenodd" clip-rule="evenodd" d="M11.5117 16.9413C11.8196 17.2184 11.8446 17.6926 11.5675 18.0005L11.5575 18.0116C11.2804 18.3195 10.8062 18.3445 10.4983 18.0674C10.1904 17.7903 10.1654 17.3161 10.4425 17.0082L10.4525 16.9971C10.7296 16.6892 11.2038 16.6642 11.5117 16.9413Z" fill="" />
+										<path id="Vector (Stroke)_7" fill-rule="evenodd" clip-rule="evenodd" d="M20.25 20.75V10.25H15.75V12.75H17C17.4142 12.75 17.75 13.0858 17.75 13.5C17.75 13.9142 17.4142 14.25 17 14.25H15.75V16.75H17C17.4142 16.75 17.75 17.0858 17.75 17.5C17.75 17.9142 17.4142 18.25 17 18.25H15.75V20.75H20.25ZM14.25 20.75V4.25H9.75V5.5C9.75 5.91421 9.41421 6.25 9 6.25H3.75V20.75H14.25ZM15.75 8.75H20.4C21.1456 8.75 21.75 9.35442 21.75 10.1V20.9C21.75 21.6456 21.1456 22.25 20.4 22.25H3.6C2.85442 22.25 2.25 21.6456 2.25 20.9V6.1C2.25 5.35442 2.85442 4.75 3.6 4.75H8.25V4.1C8.25 3.35442 8.85442 2.75 9.6 2.75H14.4C15.1456 2.75 15.75 3.35442 15.75 4.1V8.75Z" fill="" />
+									</g>
+								</svg>
+								Вызвать врача на дом
+							</button>
+							<button type="button" class="submenu__btn">
+							</button>
+						</div>
 					</div>
-					<div class="submenu__grid">
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
-						<a href="" class="submenu__link">Общеклинические исследования</a>
+					<div class="submenu__row">
+						<div class="submenu__col submenu-grid">
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+							<a href="#" class="submenu-grid__link">Общеклиническое исследование</a>
+						</div>
+						<div class="submenu__col">
+							<div class="action-content__item">
+								<p class="action-content__title">
+									Записаться на онлайн-консультацию
+								</p>
+								<button type="button" class="action-content__btn">Записаться на консультацию</button>
+							</div>
+							<div class="action-content__item">
+								<p class="action-content__title">
+									Записаться на прием или обследование
+								</p>
+								<button type="button" class="action-content__btn">Записаться на прием</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -682,5 +694,5 @@
 
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230829180137"></script>
-	<script src="js/app.min.js?_v=20230829180137"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230831111604"></script>
+	<script src="js/app.min.js?_v=20230831111604"></script>
