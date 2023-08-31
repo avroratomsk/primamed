@@ -1042,16 +1042,39 @@
     color: rgba($color: $mainColor, $alpha: 0.8);
     line-height: 130%;
     margin-bottom: 20px;
+    height: 100px;
+    overflow: hidden;
   }
 
   // .reviews-slide__stars
 
   &__stars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     svg {
       margin-right: 5px;
       width: 15px;
       height: 15px !important;
       fill: $accent;
+    }
+  }
+
+  // .reviews-slide__star
+  &__star {}
+
+  // .reviews-slide
+  &__btn {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($color: $mainColor, $alpha: .8);
+    transition: $animation_fast;
+
+    @media (hover:hover) {
+      &:hover {
+        color: rgba($color: $mainColor, $alpha: 1);
+      }
     }
   }
 

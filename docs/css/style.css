@@ -4774,6 +4774,20 @@ button.vbox-link-btn:hover {
   color: rgba(46, 49, 70, 0.8);
   line-height: 130%;
   margin-bottom: 20px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.reviews-slide__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .reviews-slide__stars svg {
@@ -4781,6 +4795,14 @@ button.vbox-link-btn:hover {
   width: 15px;
   height: 15px !important;
   fill: #a50328;
+}
+
+.reviews-slide__btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(46, 49, 70, 0.8);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .reviews-slide .reviews-pagi {
@@ -7822,6 +7844,10 @@ button.swiper-pagination-bullet {
 
   .reviews__link:hover {
     background-color: rgba(41, 79, 153, 0.8);
+  }
+
+  .reviews-slide__btn:hover {
+    color: #2e3146;
   }
 
   .stock__link:hover {

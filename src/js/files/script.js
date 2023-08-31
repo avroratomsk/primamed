@@ -32,3 +32,14 @@ if (submenuCloseBtn) {
   })
 }
 
+let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]')
+trigerPopupReviews.forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    let parent = this.closest('.reviews-slide')
+    console.log(parent);
+  })
+})
+
+
+
+
