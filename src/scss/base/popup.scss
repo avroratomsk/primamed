@@ -28,6 +28,12 @@ body::after {
 	pointer-events: none;
 }
 
+.popup-reviews {
+	.popup__content {
+		padding: 50px 30px;
+	}
+}
+
 .popup_show {
 	z-index: 9999;
 	visibility: visible;
@@ -81,6 +87,11 @@ body::after {
 	}
 }
 
+.popup__text {
+	font-size: 18px;
+	line-height: 140%;
+}
+
 
 .popup__close {
 	position: absolute;
@@ -89,6 +100,7 @@ body::after {
 	font-size: 20px;
 	font-weight: 700;
 	color: red;
+	cursor: pointer;
 }
 
 .popup__subtitle {

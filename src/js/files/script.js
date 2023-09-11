@@ -32,12 +32,32 @@ if (submenuCloseBtn) {
   })
 }
 
-let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]')
+let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
 trigerPopupReviews.forEach(btn => {
   btn.addEventListener('click', function (e) {
-    let parent = this.closest('.reviews-slide')
-    console.log(parent);
+    let parent = this.closest('.reviews-slide');
+    let data = this.dataset.popup;
+    let popup = document.querySelector(data);
+    let content = parent.querySelector('.reviews-slide__content').innerHTML;
+    let popupBody = popup.querySelector('.popup__text');
+
+    if (popup) {
+      bodyLock();
+      popupBody.innerHTML += content;
+      popup.classList.add('popup_show');
+      document.documentElement.classList.add('popup-show');
+    }
   })
+})
+
+let popupReviewsCloseBtn = document.querySelector('.popup__close');
+popupReviewsCloseBtn.addEventListener('click', function (e) {
+  bodyUnlock()
+  let popupReviews = document.querySelector('.popup-reviews');
+  let child = popupReviews.querySelector('.popup__text');
+  popupReviews.classList.remove('popup_show');
+  child.innerHTML = '';
+  document.documentElement.classList.remove('popup-show');
 })
 
 
