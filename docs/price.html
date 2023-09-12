@@ -6,12 +6,12 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230911173426">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230912162753">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230911173426" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230911173426" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230912162753" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230912162753" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 			<div class="header__container">
 				<div class="header__inner">
 					<div class="header__top top-header">
-						<a herf="/" class="top-header__logo">
+						<a href="/" class="top-header__logo">
 							<img src="img/logo-1.svg" alt="">
 							<p>
 								клиника
@@ -41,8 +41,8 @@
 							<a href="tel:89999999999" class="action-header__phone">8 (999) 999-99-99</a>
 							<p class="action-header__address">г. Чита ул. Новобульварная, д. 113</p>
 						</div>
-						<button type="button" class="bottom-header__login">
-							<span>Записаться на прием</span>
+						<button type="button" class="bottom-header__login" data-popup=".popup-signUp">
+							Записаться на прием
 						</button>
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 					</div>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="bottom-header__right">
 
-							<button type="button" class="bottom-header__doctor">
+							<button type="button" class="bottom-header__doctor" data-popup=".popup-doctor">
 								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
 									<g id="city">
 										<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
@@ -118,7 +118,7 @@
 			<div class="submenu__container">
 				<div class="submenu__inner">
 					<div class="submenu__top">
-						<a herf="/" class="top-header__logo">
+						<a href="/" class="top-header__logo">
 							<img src="img/logo-1.svg" alt="">
 							<p>
 								клиника
@@ -130,10 +130,10 @@
 							<a href="">8 (999) 999-99-99</a>
 						</div>
 						<div class="submenu__action">
-							<button type="button" class="submenu__blue">
-								Консультация
+							<button type="button" class="submenu__blue" data-popup=".popup-consult">
+								Проконсультироваться
 							</button>
-							<button type="button" class="bottom-header__doctor submenu__red">
+							<button type="button" class="bottom-header__doctor submenu__red" data-popup=".popup-doctor">
 								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
 									<g id="city">
 										<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
@@ -711,12 +711,70 @@
   </div>
 </div> -->
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
+	<!-- Всплывающее окно на кнопку "Записаться на прием" -->
+	<div id="popup" aria-hidden="true" class="popup popup-signUp">
 		<div class="popup__wrapper">
-
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<input type="text" class="form-popup__input" placeholder="Название услуги">
+					<input type="text" class="form-popup__input" placeholder="Имя врача(необязательно)">
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?(необязательно)" class="form-popup__textarea"></textarea>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
+	<!-- Всплывающее окно на кнопку "Вызвать врача на дом" -->
+	<div id="popup" aria-hidden="true" class="popup popup-doctor">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<input type="text" class="form-popup__input" placeholder="Улица">
+					<input type="text" class="form-popup__input" placeholder="Дом, квартира, этаж">
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?" class="form-popup__textarea"></textarea>
+					<p class="form-popup__text">Работает домофон ?</p>
+					<div class="form-popup__intercom">
+						<div class="form-popup__radio">
+							<input type="radio" name="yes" id="there_is" checked>
+							<label for="there_is">Есть</label>
+						</div>
+						<div class="form-popup__radio">
+							<input type="radio" name="yes" id="there_is_not">
+							<label for="there_is_not">Нет</label>
+						</div>
+					</div>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Всплывающее окно на кнопку "Проконсультироваться" -->
+	<div id="popup" aria-hidden="true" class="popup popup-consult">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?" class="form-popup__textarea"></textarea>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Всплывающее окна кнопка "Читать подробнее" -->
 	<div id="popup" aria-hidden="true" class="popup popup-reviews">
 		<div class="popup__wrapper">
 			<div class="popup__content">
@@ -725,8 +783,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230911173426"></script>
-	<script src="js/app.min.js?_v=20230911173426"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230912162753"></script>
+	<script src="js/app.min.js?_v=20230912162753"></script>
 
 </body>
 

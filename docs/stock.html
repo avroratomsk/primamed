@@ -2,16 +2,16 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Акции</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230911173426">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230912162753">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230911173426" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230911173426" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230912162753" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230912162753" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 			<div class="header__container">
 				<div class="header__inner">
 					<div class="header__top top-header">
-						<a herf="/" class="top-header__logo">
+						<a href="/" class="top-header__logo">
 							<img src="img/logo-1.svg" alt="">
 							<p>
 								клиника
@@ -41,8 +41,8 @@
 							<a href="tel:89999999999" class="action-header__phone">8 (999) 999-99-99</a>
 							<p class="action-header__address">г. Чита ул. Новобульварная, д. 113</p>
 						</div>
-						<button type="button" class="bottom-header__login">
-							<span>Записаться на прием</span>
+						<button type="button" class="bottom-header__login" data-popup=".popup-signUp">
+							Записаться на прием
 						</button>
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 					</div>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="bottom-header__right">
 
-							<button type="button" class="bottom-header__doctor">
+							<button type="button" class="bottom-header__doctor" data-popup=".popup-doctor">
 								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
 									<g id="city">
 										<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
@@ -118,7 +118,7 @@
 			<div class="submenu__container">
 				<div class="submenu__inner">
 					<div class="submenu__top">
-						<a herf="/" class="top-header__logo">
+						<a href="/" class="top-header__logo">
 							<img src="img/logo-1.svg" alt="">
 							<p>
 								клиника
@@ -130,10 +130,10 @@
 							<a href="">8 (999) 999-99-99</a>
 						</div>
 						<div class="submenu__action">
-							<button type="button" class="submenu__blue">
-								Консультация
+							<button type="button" class="submenu__blue" data-popup=".popup-consult">
+								Проконсультироваться
 							</button>
-							<button type="button" class="bottom-header__doctor submenu__red">
+							<button type="button" class="bottom-header__doctor submenu__red" data-popup=".popup-doctor">
 								<svg width="20" height="20" viewBox="0 0 24 25" fill="" xmlns="http://www.w3.org/2000/svg">
 									<g id="city">
 										<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.51173 8.94132C7.81961 9.21841 7.84457 9.69263 7.56748 10.0005L7.55748 10.0116C7.28038 10.3195 6.80616 10.3445 6.49828 10.0674C6.1904 9.79027 6.16544 9.31606 6.44254 9.00817L6.45254 8.99706C6.72963 8.68918 7.20385 8.66422 7.51173 8.94132Z" fill="" />
@@ -182,6 +182,217 @@
 			</div>
 		</div>
 		<main class="page">
+			<div class="service-promo" style="background-image: url(img/service-banner.jpg);">
+				<div class="square"></div>
+				<div class="square square--big"></div>
+				<div class="square square--small"></div>
+				<div class="service-promo__container">
+					<div class="service-promo__inner">
+						<h1 class="service-promo__title">Акции</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<div class="breadcrumbs__inner">
+						<a href="/" class="breadcrumbs__first">Главная</a>
+						<span class="breadcrumbs__separator"></span>
+						<p class="breadcrumbs__link">Акции</p>
+					</div>
+				</div>
+			</div>
+
+			<section class="stock">
+				<div class="stock__container">
+					<div class="stock__inner">
+
+						<div class="stock__row">
+							<div class="stock__col">
+								<div class="stock__image">
+									<picture><source srcset="img/stock-1.webp" type="image/webp"><img src="img/stock-1.jpg" alt="Image"></picture>
+								</div>
+							</div>
+							<div class="stock__col">
+								<a href="" class="stock__content content-stock">
+									<p class="content-stock__text">
+										Вакцинация от клещевого энцефалита
+									</p>
+									<h3 class="content-stock__title">1900 руб.</h3>
+									<button type="button" class="content-stock__btn">
+										Записаться
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="5" viewBox="0 0 22 5">
+											<defs>
+												<path id="bvuca" d="M1123 766.5c0-.3-.27-.56-.6-.56h-18.96l1.18-.97c.24-.2.27-.55.05-.78a.62.62 0 0 0-.84-.05l-2.83 2.34 2.88 2.38c.25.2.62.18.84-.05a.53.53 0 0 0-.05-.78l-1.18-.97h18.92c.32 0 .59-.25.59-.56z" />
+											</defs>
+											<g>
+												<g transform="translate(-1101 -764)">
+													<use xlink:href="#bvuca" />
+												</g>
+											</g>
+										</svg>
+									</button>
+								</a>
+							</div>
+						</div>
+
+						<div class="stock__row">
+							<div class="stock__col">
+								<div class="stock__image">
+									<picture><source srcset="img/stock-1.webp" type="image/webp"><img src="img/stock-1.jpg" alt="Image"></picture>
+								</div>
+							</div>
+							<div class="stock__col">
+								<a href="" class="stock__content content-stock">
+									<p class="content-stock__text">
+										Вакцинация от клещевого энцефалита
+									</p>
+									<h3 class="content-stock__title">1900 руб.</h3>
+									<button type="button" class="content-stock__btn">
+										Записаться
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="5" viewBox="0 0 22 5">
+											<defs>
+												<path id="bvuca" d="M1123 766.5c0-.3-.27-.56-.6-.56h-18.96l1.18-.97c.24-.2.27-.55.05-.78a.62.62 0 0 0-.84-.05l-2.83 2.34 2.88 2.38c.25.2.62.18.84-.05a.53.53 0 0 0-.05-.78l-1.18-.97h18.92c.32 0 .59-.25.59-.56z" />
+											</defs>
+											<g>
+												<g transform="translate(-1101 -764)">
+													<use xlink:href="#bvuca" />
+												</g>
+											</g>
+										</svg>
+									</button>
+								</a>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</section>
+
+			<section class="contact">
+				<div class="contact__container">
+					<div class="contact__inner">
+						<div class="contact__caption">
+							<h2 class="contact__title _title">Наши контакты</h2>
+							<a href="#" class="contact__link">Подробнее</a>
+						</div>
+					</div>
+					<div class="contact__grid">
+						<div class="contact__col">
+							<div class="contact__content content-contact">
+								<p class="content-contact__phone">
+									Единая справочная г. Чита
+									<a href="tel:8 (3022) 21-11-00">
+										8 (3022) 21-11-00
+									</a>
+								</p>
+								<div class="content-contact__row">
+									<div class="content-contact__item">
+										<div class="content-contact__item--top">
+											<i class="fa-solid fa-map-pin"></i>
+											Адрес
+										</div>
+										<div class="content-contact__item--bottom">
+											г. Чита ул. Новобульварная, д. 113
+										</div>
+									</div>
+									<div class="content-contact__item">
+										<div class="content-contact__item--top">
+											<i class="fa-regular fa-clock"></i>
+											Рабочее время
+										</div>
+										<div class="content-contact__item--bottom">
+											круглосуточно и без выходных
+										</div>
+									</div>
+								</div>
+								<div class="content-contact__row--bottom">
+									<p><span>ОГРН</span> 1147536003053</p>
+									<p><span>ИНН</span> 7536143204</p>
+									<p><span>КПП</span> 753601001</p>
+								</div>
+								<div class="content-contact__action action-content">
+									<div class="action-content__item">
+										<p class="action-content__title">
+											Записаться на онлайн-консультацию
+										</p>
+										<button type="button" class="action-content__btn">Записаться на консультацию</button>
+									</div>
+									<div class="action-content__item">
+										<p class="action-content__title">
+											Записаться на прием или обследование
+										</p>
+										<button type="button" class="action-content__btn">Записаться на прием</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="contact__col">
+							<div class="contact__map">
+								<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4cb2adbed2caeccf7055e6f4e358535bf1afe83dedb37fa74e4ff59aac00e21e&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="partner">
+				<div class="partner__container">
+					<div class="partner__inner">
+						<div class="swiper partner__slider">
+							<div class="partner__top">
+								<div class="partner__top--left">
+									<h2 class="partner__title _title">Партнеры</h2>
+								</div>
+								<div class="partner__top--right">
+									<div class="partner__btn">
+										<div class="partner-prev swiper-button-prev"></div>
+										<div class="partner-next swiper-button-next"></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-wrapper partner__wrapper">
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+								<div class="swiper-slide partner__slide">
+									<a href="#" class="partner__item">
+										<picture><source srcset="img/partner.webp" type="image/webp"><img src="img/partner.jpg" alt=""></picture>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -297,12 +508,70 @@
   </div>
 </div> -->
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
+	<!-- Всплывающее окно на кнопку "Записаться на прием" -->
+	<div id="popup" aria-hidden="true" class="popup popup-signUp">
 		<div class="popup__wrapper">
-
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<input type="text" class="form-popup__input" placeholder="Название услуги">
+					<input type="text" class="form-popup__input" placeholder="Имя врача(необязательно)">
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?(необязательно)" class="form-popup__textarea"></textarea>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
+	<!-- Всплывающее окно на кнопку "Вызвать врача на дом" -->
+	<div id="popup" aria-hidden="true" class="popup popup-doctor">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<input type="text" class="form-popup__input" placeholder="Улица">
+					<input type="text" class="form-popup__input" placeholder="Дом, квартира, этаж">
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?" class="form-popup__textarea"></textarea>
+					<p class="form-popup__text">Работает домофон ?</p>
+					<div class="form-popup__intercom">
+						<div class="form-popup__radio">
+							<input type="radio" name="yes" id="there_is" checked>
+							<label for="there_is">Есть</label>
+						</div>
+						<div class="form-popup__radio">
+							<input type="radio" name="yes" id="there_is_not">
+							<label for="there_is_not">Нет</label>
+						</div>
+					</div>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Всплывающее окно на кнопку "Проконсультироваться" -->
+	<div id="popup" aria-hidden="true" class="popup popup-consult">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<textarea name="message" id="message" placeholder="Что вас беспокоит ?" class="form-popup__textarea"></textarea>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Всплывающее окна кнопка "Читать подробнее" -->
 	<div id="popup" aria-hidden="true" class="popup popup-reviews">
 		<div class="popup__wrapper">
 			<div class="popup__content">
@@ -311,8 +580,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230911173426"></script>
-	<script src="js/app.min.js?_v=20230911173426"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230912162753"></script>
+	<script src="js/app.min.js?_v=20230912162753"></script>
 
 </body>
 

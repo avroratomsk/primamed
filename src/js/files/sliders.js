@@ -251,9 +251,9 @@ function initSliders() {
     });
   }
 
-  if (document.querySelector('.stock__slider')) { // Указываем скласс нужного слайдера
+  if (document.querySelector('.specialist__slider')) { // Указываем скласс нужного слайдера
     // Создаем слайдер
-    new Swiper('.stock__slider', { // Указываем скласс нужного слайдера
+    new Swiper('.specialist__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
       modules: [Navigation, Pagination],
@@ -276,8 +276,8 @@ function initSliders() {
       },
 
       navigation: {
-        prevEl: '.stock-prev',
-        nextEl: '.stock-next',
+        prevEl: '.specialist-prev',
+        nextEl: '.specialist-next',
       },
 
       breakpoints: {
