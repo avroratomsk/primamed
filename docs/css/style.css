@@ -926,6 +926,7 @@ section {
 }
 
 .header-search {
+  position: relative;
   width: 400px;
   height: 52px;
   padding: 0px 10px 0px 20px;
@@ -991,6 +992,71 @@ section {
 
 .header-search__btn svg {
   fill: #a50328;
+}
+
+.header-search__grid {
+  position: absolute;
+  top: 100%;
+  margin-top: 3px;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  pointer-events: none;
+  z-index: 99;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Работает в Firefox */
+  /* Работает в Chrome, Edge и Safari */
+}
+
+.header-search__grid {
+  scrollbar-width: thin;
+  scrollbar-color: #a50328 orange;
+}
+
+.header-search__grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.header-search__grid::-webkit-scrollbar-track {
+  background: #f7f7f8;
+}
+
+.header-search__grid::-webkit-scrollbar-thumb {
+  background-color: #294f99;
+  border-radius: 5px;
+}
+
+.header-search__card {
+  width: 400px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 20px;
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid rgba(46, 49, 70, 0.05);
+  pointer-events: all;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header-search__card.hidden-search-card {
+  display: none;
+  pointer-events: none;
 }
 
 .action-header__phone {
@@ -4677,6 +4743,24 @@ button.vbox-link-btn:hover {
   opacity: 1;
 }
 
+.human-service__link.right-link .dot {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.human-service__link.right-link .line {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.human-service__link.right-link .text {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
 .human-service__link .dot {
   width: 8px;
   height: 8px;
@@ -4689,7 +4773,7 @@ button.vbox-link-btn:hover {
 }
 
 .human-service__link .line {
-  width: 7vw;
+  width: 70px;
   height: 1px;
   background-color: #a50328;
 }
@@ -4698,115 +4782,6 @@ button.vbox-link-btn:hover {
   font-family: "Oswald";
   font-size: 15px;
   white-space: nowrap;
-}
-
-.head-man {
-  left: 50%;
-  top: 0%;
-}
-
-.nose-man {
-  left: 50%;
-  top: 6%;
-}
-
-.nose-man .line {
-  width: 5vw;
-}
-
-.thyroid-man {
-  left: 50%;
-  top: 10%;
-}
-
-.thyroid-man .line {
-  width: 8vw;
-}
-
-.throat-man {
-  left: -18%;
-  top: 15%;
-}
-
-.breast-man {
-  left: -8%;
-  top: 22%;
-}
-
-.breast-man .line {
-  width: 5vw;
-}
-
-.lungs-man {
-  left: 0%;
-  top: 28%;
-}
-
-.lungs-man .line {
-  width: 3vw;
-}
-
-.heart-man {
-  left: 55%;
-  top: 24%;
-}
-
-.heart-man .line {
-  width: 5vw;
-}
-
-.stomach-man {
-  left: 50%;
-  top: 36%;
-}
-
-.stomach-man .line {
-  width: 3vw;
-}
-
-.hand-man {
-  left: -18%;
-  top: 46%;
-}
-
-.hand-man .line {
-  width: 2vw;
-}
-
-.sexual-man {
-  left: 51%;
-  top: 46%;
-}
-
-.sexual-man .line {
-  width: 5vw;
-}
-
-.foot-man {
-  left: -3%;
-  top: 58%;
-}
-
-.foot-man .line {
-  width: 4vw;
-}
-
-.knees-man {
-  left: 10%;
-  top: 70%;
-}
-
-.knees-man .line {
-  width: 1vw;
-}
-
-.nails-man {
-  left: 0%;
-  top: 97%;
-}
-
-.nails-man .line {
-  width: 2vw;
 }
 
 /*=======================================================================*/
@@ -7280,6 +7255,12 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 1200px) {
+  .human-service {
+    width: 450px;
+  }
+}
+
 @media screen and (max-width: 1155px) {
   .submenu__top {
     -ms-flex-wrap: wrap;
@@ -7344,6 +7325,12 @@ button.swiper-pagination-bullet {
 
   .statistic-about:not(:last-child) {
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .human-service {
+    width: 350px;
   }
 }
 
@@ -7999,6 +7986,10 @@ button.swiper-pagination-bullet {
     gap: 25px;
   }
 
+  .human-service {
+    width: 100%;
+  }
+
   .about__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8086,6 +8077,10 @@ button.swiper-pagination-bullet {
 
   .spollers__title:hover {
     background-color: rgba(41, 79, 153, 0.04);
+  }
+
+  .header-search__card:hover {
+    background-color: #f7f7f8;
   }
 
   .action-header__phone:hover {

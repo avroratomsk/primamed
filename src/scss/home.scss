@@ -481,19 +481,18 @@
   position: relative;
   width: 550px;
   height: 500px;
-  // border: 1px solid #000;
 
-  // @media (max-width: 1200px) {
-  //   width: 450px;
-  // }
+  @media (max-width: 1200px) {
+    width: 450px;
+  }
 
-  // @media (max-width: 992px) {
-  //   width: 350px;
-  // }
+  @media (max-width: 992px) {
+    width: 350px;
+  }
 
-  // @media screen and (max-width: 425px) {
-  //   width: 100%;
-  // }
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
 
   &:hover::before {
     width: 100%;
@@ -547,6 +546,20 @@
       opacity: 1;
     }
 
+    &.right-link {
+      .dot {
+        order: 1;
+      }
+
+      .line {
+        order: 2;
+      }
+
+      .text {
+        order: 3;
+      }
+    }
+
     .dot {
       width: 8px;
       height: 8px;
@@ -558,7 +571,7 @@
     }
 
     .line {
-      width: 7vw;
+      width: 70px;
       height: 1px;
       background-color: $accent;
     }
@@ -566,119 +579,9 @@
     .text {
       font-family: $fontSecondary;
       font-size: 15px;
-      // width: 100%;
       white-space: nowrap;
     }
 
-  }
-}
-
-.head-man {
-  left: 50%;
-  top: 0%;
-}
-
-.nose-man {
-  left: 50%;
-  top: 6%;
-
-  .line {
-    width: 5vw;
-  }
-}
-
-.thyroid-man {
-  left: 50%;
-  top: 10%;
-
-  .line {
-    width: 8vw;
-  }
-}
-
-.throat-man {
-  left: -18%;
-  top: 15%;
-}
-
-.breast-man {
-  left: -8%;
-  top: 22%;
-
-  .line {
-    width: 5vw;
-  }
-}
-
-.lungs-man {
-  left: -0%;
-  top: 28%;
-
-  .line {
-    width: 3vw;
-  }
-}
-
-.heart-man {
-  left: 55%;
-  top: 24%;
-
-  .line {
-    width: 5vw;
-  }
-}
-
-.stomach-man {
-  left: 50%;
-  top: 36%;
-
-  .line {
-    width: 3vw;
-  }
-}
-
-.hand-man {
-  left: -18%;
-  top: 46%;
-
-  .line {
-    width: 2vw;
-  }
-}
-
-.sexual-man {
-  left: 51%;
-  top: 46%;
-
-  .line {
-    width: 5vw;
-  }
-}
-
-.foot-man {
-  left: -3%;
-  top: 58%;
-
-  .line {
-    width: 4vw;
-  }
-}
-
-.knees-man {
-  left: 10%;
-  top: 70%;
-
-  .line {
-    width: 1vw;
-  }
-}
-
-.nails-man {
-  left: 0%;
-  top: 97%;
-
-  .line {
-    width: 2vw;
   }
 }
 

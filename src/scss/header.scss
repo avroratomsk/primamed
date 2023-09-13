@@ -105,7 +105,7 @@
 }
 
 .header-search {
-  // background-color: rgba($color: $mainColor, $alpha: .02);
+  position: relative;
   width: 400px;
   height: 52px;
   padding: 0px 10px 0px 20px;
@@ -166,6 +166,70 @@
       fill: rgba($color: $accent, $alpha: 1);
     }
   }
+
+  // .header-search__grid
+  &__grid {
+    position: absolute;
+    top: 100%;
+    margin-top: 3px;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    z-index: 99;
+    transition: $animation_fast;
+
+    /* Работает в Firefox */
+    & {
+      scrollbar-width: thin;
+      scrollbar-color: rgba($color: $accent, $alpha: 1) orange;
+    }
+
+    /* Работает в Chrome, Edge и Safari */
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($color: $lightGrey, $alpha: 1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($color: $blue, $alpha: 1);
+      border-radius: 5px;
+    }
+  }
+
+  // .header-search__card
+  &__card {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    font-size: 16px;
+    background-color: rgba($color: $white, $alpha: 1.0);
+    border: 1px solid rgba($color: $mainColor, $alpha: .05);
+    pointer-events: all;
+    transition: $animation_fast;
+
+    @media (hover:hover) {
+      &:hover {
+        background-color: rgba($color: $lightGrey, $alpha: 1);
+      }
+    }
+
+    &.hidden-search-card {
+      display: none;
+      pointer-events: none;
+    }
+  }
+
+
 }
 
 .action-header {
