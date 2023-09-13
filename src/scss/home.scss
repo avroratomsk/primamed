@@ -568,18 +568,21 @@
       background-color: $accent;
       border: 3px solid rgba($color: $white, $alpha: 1);
       box-shadow: 0 0 0 3px #efefef;
+      order: 3;
     }
 
     .line {
       width: 70px;
       height: 1px;
       background-color: $accent;
+      order: 2;
     }
 
     .text {
       font-family: $fontSecondary;
       font-size: 15px;
       white-space: nowrap;
+      order: 1;
     }
 
   }

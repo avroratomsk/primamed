@@ -4770,18 +4770,27 @@ button.vbox-link-btn:hover {
   border: 3px solid white;
   -webkit-box-shadow: 0 0 0 3px #efefef;
           box-shadow: 0 0 0 3px #efefef;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 
 .human-service__link .line {
   width: 70px;
   height: 1px;
   background-color: #a50328;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .human-service__link .text {
   font-family: "Oswald";
   font-size: 15px;
   white-space: nowrap;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 /*=======================================================================*/
