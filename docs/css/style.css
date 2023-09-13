@@ -999,7 +999,7 @@ section {
   top: 100%;
   margin-top: 3px;
   left: 0;
-  width: 100%;
+  width: 700px;
   height: 80vh;
   overflow-y: auto;
   overflow-x: hidden !important;
@@ -1037,8 +1037,7 @@ section {
 }
 
 .header-search__card {
-  width: 400px;
-  height: 50px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7303,6 +7302,10 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 1024px) {
+  .header-search__grid {
+    width: 500px;
+  }
+
   .bottom-header__login {
     display: none;
   }
