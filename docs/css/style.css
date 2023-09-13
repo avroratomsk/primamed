@@ -4770,9 +4770,9 @@ button.vbox-link-btn:hover {
   border: 3px solid white;
   -webkit-box-shadow: 0 0 0 3px #efefef;
           box-shadow: 0 0 0 3px #efefef;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .human-service__link .line {
@@ -4788,9 +4788,9 @@ button.vbox-link-btn:hover {
   font-family: "Oswald";
   font-size: 15px;
   white-space: nowrap;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 
 /*=======================================================================*/

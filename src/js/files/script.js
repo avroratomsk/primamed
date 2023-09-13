@@ -111,6 +111,31 @@ if (popups) {
   })
 }
 
+// Поиск услуг на сайте
+window.addEventListener('DOMContentLoaded', function () {
+  let inputSeacrh = document.querySelector('#search_header');
+  inputSeacrh.addEventListener('input', function (e) {
+    let value = this.value.trim().toLowerCase();
+    let list = document.querySelectorAll('.header-search__card');
+
+
+    if (value) {
+      list.forEach(item => {
+        let textLowerCase = item.innerText.toLowerCase();
+        if (textLowerCase.search(value) == -1) {
+          item.classList.add('hidden-search-card')
+        } else {
+          item.classList.remove('hidden-search-card')
+        }
+      })
+    } else {
+      list.forEach(item => {
+        item.classList.add('hidden-search-card')
+      })
+    }
+  })
+})
+
 
 
 
