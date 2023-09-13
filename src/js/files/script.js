@@ -36,63 +36,81 @@ function closeSubmenu() {
 
 
 // Всплывающие окно отзывов
-// let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
-// trigerPopupReviews.forEach(btn => {
-//   btn.addEventListener('click', function (e) {
-//     let parent = this.closest('.reviews-slide');
-//     let data = this.dataset.popup;
-//     let popup = document.querySelector(data);
-//     let content = parent.querySelector('.reviews-slide__content').innerHTML;
-//     let popupBody = popup.querySelector('.popup__text');
+let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
+trigerPopupReviews.forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    let parent = this.closest('.reviews-slide');
+    let data = this.dataset.popup;
+    let popup = document.querySelector(data);
+    let content = parent.querySelector('.reviews-slide__content').innerHTML;
+    let popupBody = popup.querySelector('.popup__text');
 
-//     if (popup) {
-//       bodyLock();
-//       popupBody.innerHTML += content;
-//       popup.classList.add('popup_show');
-//       document.documentElement.classList.add('popup-show');
-//     }
-//   })
-// })
+    if (popup) {
+      bodyLock();
+      popupBody.innerHTML += content;
+      popup.classList.add('popup_show');
+      document.documentElement.classList.add('popup-show');
+    }
+  })
+})
 
-// let popupReviewsCloseBtn = document.querySelector('.popup__close');
-// popupReviewsCloseBtn.addEventListener('click', function (e) {
-//   bodyUnlock()
-//   let popupReviews = document.querySelector('.popup-reviews');
-//   let child = popupReviews.querySelector('.popup__text');
-//   popupReviews.classList.remove('popup_show');
-//   child.innerHTML = '';
-//   document.documentElement.classList.remove('popup-show');
-// })
+let popupReviewsCloseBtn = document.querySelector('.popup__close');
+popupReviewsCloseBtn.addEventListener('click', function (e) {
+  bodyUnlock()
+  let popupReviews = document.querySelector('.popup-reviews');
+  let child = popupReviews.querySelector('.popup__text');
+  popupReviews.classList.remove('popup_show');
+  child.innerHTML = '';
+  document.documentElement.classList.remove('popup-show');
+})
 
 
-// // Всплывающие окна
+// Всплывающие окна
 
-// let popupButtons = document.querySelectorAll('[data-popup]');
-// if (popupButtons) {
-//   popupButtons.forEach(button => {
-//     button.addEventListener('click', popupOpen);
-//   })
-// }
+let popupButtons = document.querySelectorAll('[data-popup]');
+if (popupButtons) {
+  popupButtons.forEach(button => {
+    button.addEventListener('click', popupOpen);
+  })
+}
 
-// function popupOpen(e) {
-//   let popupClass = e.target.dataset.popup;
-//   let popup = document.querySelector(popupClass);
+function popupOpen(e) {
+  let popupClass = e.target.dataset.popup;
+  let popup = document.querySelector(popupClass);
 
-//   if (popup) {
-//     bodyLock()
-//     document.documentElement.classList.add('popup-show')
-//     popup.classList.add('popup_show')
-//   }
-// }
+  if (popup) {
+    bodyLock()
+    document.documentElement.classList.add('popup-show')
+    popup.classList.add('popup_show')
+  }
+}
 
-// let popupCloseButton = document.querySelector('.popup__close');
-// if (popupCloseButton) {
-//   popupCloseButton.addEventListener('click', function (e) {
-//     bodyUnlock();
-//     document.documentElement.classList.remove('popup-show');
-//     document.querySelector('.popup').classList.remove('popup_show')
-//   })
-// }
+let popupCloseButton = document.querySelectorAll('.popup__close');
+if (popupCloseButton) {
+  popupCloseButton.forEach(button => {
+    button.addEventListener('click', function (e) {
+      bodyUnlock();
+      let parent = this.closest('.popup');
+      document.documentElement.classList.remove('popup-show');
+      parent.classList.remove('popup_show');
+    })
+  })
+}
+
+let popups = document.querySelectorAll('.popup');
+if (popups) {
+  popups.forEach(popup => {
+    popup.addEventListener('click', function (e) {
+      if (!e.target.classList.contains('popup__content') && !e.target.closest('.popup__content')) {
+        bodyUnlock();
+        let parent = e.target.closest('.popup');
+        document.documentElement.classList.remove('popup-show');
+        parent.classList.remove('popup_show');
+      }
+    })
+  })
+}
+
 
 
 

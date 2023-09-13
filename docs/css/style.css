@@ -4611,12 +4611,6 @@ button.vbox-link-btn:hover {
   position: relative;
   width: 550px;
   height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .human-service:hover::before {
@@ -4625,8 +4619,23 @@ button.vbox-link-btn:hover {
   background-color: rgba(41, 79, 153, 0.05);
 }
 
-.human-service img {
+.human-service__image {
   position: relative;
+  width: 265px;
+  margin: 0 auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.human-service img {
   z-index: 2;
   max-width: 100%;
   height: 100%;
@@ -4650,7 +4659,6 @@ button.vbox-link-btn:hover {
 
 .human-service__link {
   position: absolute;
-  z-index: 2;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -4660,6 +4668,7 @@ button.vbox-link-btn:hover {
   gap: 5px;
   opacity: 0.7;
   width: auto;
+  z-index: 2;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -4671,6 +4680,7 @@ button.vbox-link-btn:hover {
 .human-service__link .dot {
   width: 8px;
   height: 8px;
+  margin-left: -4px;
   border-radius: 50%;
   background-color: #a50328;
   border: 3px solid white;
@@ -4687,15 +4697,16 @@ button.vbox-link-btn:hover {
 .human-service__link .text {
   font-family: "Oswald";
   font-size: 15px;
+  white-space: nowrap;
 }
 
 .head-man {
-  left: 49%;
-  top: 1%;
+  left: 50%;
+  top: 0%;
 }
 
 .nose-man {
-  left: 49%;
+  left: 50%;
   top: 6%;
 }
 
@@ -4704,7 +4715,7 @@ button.vbox-link-btn:hover {
 }
 
 .thyroid-man {
-  left: 49%;
+  left: 50%;
   top: 10%;
 }
 
@@ -4713,26 +4724,26 @@ button.vbox-link-btn:hover {
 }
 
 .throat-man {
-  top: 14%;
-  left: 20%;
+  left: -18%;
+  top: 15%;
 }
 
 .breast-man {
-  left: 8%;
+  left: -8%;
   top: 22%;
 }
 
 .breast-man .line {
-  width: 10vw;
+  width: 5vw;
 }
 
 .lungs-man {
-  left: 24%;
+  left: 0%;
   top: 28%;
 }
 
 .lungs-man .line {
-  width: 5vw;
+  width: 3vw;
 }
 
 .heart-man {
@@ -4750,16 +4761,16 @@ button.vbox-link-btn:hover {
 }
 
 .stomach-man .line {
-  width: 10vw;
+  width: 3vw;
 }
 
 .hand-man {
-  left: 8%;
+  left: -18%;
   top: 46%;
 }
 
 .hand-man .line {
-  width: 5vw;
+  width: 2vw;
 }
 
 .sexual-man {
@@ -4772,30 +4783,30 @@ button.vbox-link-btn:hover {
 }
 
 .foot-man {
-  left: 12%;
-  top: 54%;
+  left: -3%;
+  top: 58%;
 }
 
 .foot-man .line {
-  width: 8vw;
+  width: 4vw;
 }
 
 .knees-man {
-  left: 16%;
-  top: 68%;
+  left: 10%;
+  top: 70%;
 }
 
 .knees-man .line {
-  width: 5vw;
+  width: 1vw;
 }
 
 .nails-man {
-  left: 5%;
+  left: 0%;
   top: 97%;
 }
 
 .nails-man .line {
-  width: 7vw;
+  width: 2vw;
 }
 
 /*=======================================================================*/
@@ -7269,12 +7280,6 @@ button.swiper-pagination-bullet {
   }
 }
 
-@media (max-width: 1200px) {
-  .human-service {
-    width: 450px;
-  }
-}
-
 @media screen and (max-width: 1155px) {
   .submenu__top {
     -ms-flex-wrap: wrap;
@@ -7339,30 +7344,6 @@ button.swiper-pagination-bullet {
 
   .statistic-about:not(:last-child) {
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 992px) {
-  .human-service {
-    width: 350px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .lungs-man {
-    left: 14%;
-  }
-
-  .hand-man {
-    left: -5%;
-  }
-
-  .foot-man {
-    left: 5%;
-  }
-
-  .knees-man {
-    left: 10%;
   }
 }
 
@@ -7845,26 +7826,6 @@ button.swiper-pagination-bullet {
     width: 100%;
   }
 
-  .hand-man {
-    left: 0%;
-  }
-
-  .foot-man {
-    left: 14%;
-  }
-
-  .foot-man {
-    left: 8%;
-  }
-
-  .knees-man {
-    left: 16%;
-  }
-
-  .nails-man {
-    left: 12%;
-  }
-
   .service-promo__title {
     font-size: 50px;
   }
@@ -8036,22 +7997,6 @@ button.swiper-pagination-bullet {
   .vacancie__grid {
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 25px;
-  }
-
-  .human-service {
-    width: 100%;
-  }
-
-  .hand-man {
-    left: -10%;
-  }
-
-  .knees-man {
-    left: 10%;
-  }
-
-  .nails-man {
-    left: 4%;
   }
 
   .about__content {
