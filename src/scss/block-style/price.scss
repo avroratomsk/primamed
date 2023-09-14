@@ -1,3 +1,25 @@
+.page-price {
+    .spollers__title {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+
+        &._spoller-active {
+
+            .price__icon {
+                svg {
+                    fill: $white
+                }
+            }
+        }
+    }
+
+    .spollers__body {
+        padding: 0px 0px;
+    }
+
+}
+
 .price {
     position: relative;
     // .price__container
@@ -39,10 +61,10 @@
     // .price__caption
 
     &__caption {
-        display: grid;
+        display: none;
+        // display: grid;
         grid-template-columns: 10% 1fr 10% 15%;
         background-color: rgba($color: $blue, $alpha: .6);
-        border-radius: 5px 5px 0px 0px;
 
         @media screen and (max-width: 730px) {
             grid-template-columns: 1fr 20%;
@@ -126,11 +148,16 @@
     // .price__content
 
     &__content {}
+
+    // .price__icon
+    &__icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
 }
 
 .price-table {
-
-
     // .price-table__item
 
     &__item {

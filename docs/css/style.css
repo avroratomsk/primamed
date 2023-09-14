@@ -648,30 +648,23 @@ section {
           align-items: center;
   height: 70px;
   overflow: hidden;
-  width: 50px;
+  width: auto;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.blind:hover {
-  width: auto;
-  padding: 0px 20px;
-}
-
-.blind:hover .blind__icon {
-  margin-left: 10px;
-}
-
-.blind:hover .blind__icon svg {
-  margin-left: 5px;
-}
-
-.blind:hover .blind__text {
-  font-size: 17px;
-}
-
 .blind__icon {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
 }
 
 .blind__icon svg {
@@ -698,9 +691,21 @@ section {
 }
 
 .blind__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 0px;
+  overflow: hidden;
+  white-space: nowrap;
   font-family: "Oswald";
   color: #ffffff;
-  font-size: 0px;
+  font-size: 16px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -1904,6 +1909,24 @@ section {
   text-transform: uppercase;
 }
 
+.page-price .spollers__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 15px;
+}
+
+.page-price .spollers__title._spoller-active .price__icon svg {
+  fill: #ffffff;
+}
+
+.page-price .spollers__body {
+  padding: 0px 0px;
+}
+
 .price {
   position: relative;
 }
@@ -1930,12 +1953,10 @@ section {
 }
 
 .price__caption {
-  display: -ms-grid;
-  display: grid;
+  display: none;
   -ms-grid-columns: 10% 1fr 10% 15%;
   grid-template-columns: 10% 1fr 10% 15%;
   background-color: rgba(41, 79, 153, 0.6);
-  border-radius: 5px 5px 0px 0px;
 }
 
 .price__id {
@@ -1990,6 +2011,12 @@ section {
   letter-spacing: 0.5px;
   font-size: 18px;
   border-right: 1px solid rgba(46, 49, 70, 0.5);
+}
+
+.price__icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .price-table__item {
@@ -4075,6 +4102,10 @@ button.vbox-link-btn:hover {
   max-width: 100%;
 }
 
+.page-vacacie .breadcrumbs__container {
+  padding: 0px 0px;
+}
+
 .vacancie__inner {
   padding-top: 40px;
   border-top: 1px solid rgba(46, 49, 70, 0.1);
@@ -4769,9 +4800,9 @@ button.vbox-link-btn:hover {
   border: 3px solid white;
   -webkit-box-shadow: 0 0 0 3px #efefef;
           box-shadow: 0 0 0 3px #efefef;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 
 .human-service__link .line {
@@ -4787,9 +4818,9 @@ button.vbox-link-btn:hover {
   font-family: "Oswald";
   font-size: 15px;
   white-space: nowrap;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 /*=======================================================================*/
@@ -7353,6 +7384,16 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 920px) {
+  .blind__icon {
+    width: 35px;
+  }
+
+  .blind__icon svg {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+
   .bottom-header {
     position: fixed;
     top: 0;
@@ -8089,6 +8130,10 @@ button.swiper-pagination-bullet {
 
   .spollers__title:hover {
     background-color: rgba(41, 79, 153, 0.04);
+  }
+
+  .blind:hover .blind__text {
+    width: 200px;
   }
 
   .header-search__card:hover {

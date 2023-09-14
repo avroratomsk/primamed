@@ -125,7 +125,6 @@ section {
   left: 0%;
   top: 60%;
   transform: translateY(-50%);
-  // transform: translateX(-50%);
   z-index: 99;
   background-color: $accent;
   border-radius: 0px 10px 10px 0px;
@@ -133,37 +132,29 @@ section {
   align-items: center;
   height: 70px;
   overflow: hidden;
-  width: 50px;
+  width: auto;
   transition: $animation_fast;
 
-  &:hover {
-    width: auto;
-    padding: 0px 20px;
-
-    .blind__icon {
-      margin-left: 10px;
-
-      svg {
-        margin-left: 5px;
+  @media (hover:hover) {
+    &:hover {
+      .blind__text {
+        width: 200px;
       }
-    }
-
-    .blind__text {
-      font-size: 17px;
     }
   }
 
   // .blind__icon
 
   &__icon {
-    // padding-top: 15px;
     border-left: 1px solid rgba($color: $white, $alpha: 0.2);
-    // margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
 
     svg {
       width: 40px;
       margin-top: 7px;
-      // margin-left: 5px;
 
       .st0 {
         fill: $accent;
@@ -182,14 +173,28 @@ section {
         transition: $animation_fast;
       }
     }
+
+    @media screen and (max-width: 920px) {
+      width: 35px;
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
   }
 
   // .blind__text
 
   &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
     font-family: $fontSecondary;
     color: $white;
-    font-size: 0px;
+    font-size: 16px;
     transition: $animation_fast;
   }
 }
