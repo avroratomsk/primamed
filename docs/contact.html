@@ -6,12 +6,12 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230915093727">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230915172340">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230915093727" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230915093727" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230915172340" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?_v=20230915172340" />
 </head>
 
 <body>
@@ -332,6 +332,13 @@
 			<div class="footer__container">
 				<div class="footer__inner">
 					<div class="footer__menu menu-footer">
+						<div class="grid-footer__logo pc-hide-logo">
+							<img src="img/logo-1.svg" alt="">
+							<div class="grid-footer__logo--text">
+								Клиника<br>
+								<span>Прима-мед</span>
+							</div>
+						</div>
 						<ul class="menu-footer__list">
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">О клинике</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Новости</a></li>
@@ -345,7 +352,7 @@
 					</div>
 					<div class="footer__grid grid-footer">
 						<div class="grid-footer__col">
-							<div class="grid-footer__logo">
+							<div class="grid-footer__logo mb-hide-logo">
 								<img src="img/logo-1.svg" alt="">
 								<div class="grid-footer__logo--text">
 									Клиника<br>
@@ -412,7 +419,7 @@
 			</div>
 		</button>
 
-		<button type="button" class="blind">
+		<button type="button" class="blind" class="bvi-open" title="Версия сайта для слабовидящих">
 			<span class="blind__text">Версия для слабовидящих</span>
 			<div class="blind__icon">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
@@ -429,6 +436,8 @@
 				</svg>
 			</div>
 		</button>
+
+
 
 		<!-- <div class="search">
   <div class="search__container">
@@ -505,6 +514,22 @@
 		</div>
 	</div>
 
+	<!-- Всплывающее окно на кнопку "Задать вопрос" -->
+	<div id="popup" aria-hidden="true" class="popup popup-question">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+				<p class="popup__title">Заполните форму</p>
+				<form action="#" class="popup__form form-popup">
+					<input type="text" class="form-popup__input" placeholder="Ваше имя">
+					<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+					<textarea name="message" id="message" placeholder="Ваш вопрос" class="form-popup__textarea"></textarea>
+					<button type="submit" class="form-popup__submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<!-- Всплывающее окна кнопка "Читать подробнее" -->
 	<div id="popup" aria-hidden="true" class="popup popup-reviews">
 		<div class="popup__wrapper">
@@ -514,8 +539,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230915093727"></script>
-	<script src="js/app.min.js?_v=20230915093727"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?_v=20230915172340"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js?_v=20230915172340" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/app.min.js?_v=20230915172340"></script>
 
 </body>
 

@@ -134,7 +134,17 @@ window.addEventListener('DOMContentLoaded', function () {
       })
     }
   })
+
+  // let doctorSearchInput = document.querySelector('#doctor-search');
+  // doctorSearchInput.addEventListener('input', function (e) {
+  //   let value = this.value.trim().toLowerCase();
+  //   let list = document.querySelectorAll('.header-search__card');
+
+
+  // })
 })
+
+
 
 
 

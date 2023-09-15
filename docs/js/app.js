@@ -3889,7 +3889,7 @@
             modules: [ Navigation, Pagination ],
             observer: true,
             observeParents: true,
-            slidesPerView: 3.5,
+            slidesPerView: 2.5,
             spaceBetween: 30,
             autoHeight: true,
             speed: 800,
@@ -3921,7 +3921,7 @@
                     spaceBetween: 20
                 },
                 1268: {
-                    slidesPerView: 4,
+                    slidesPerView: 3.5,
                     spaceBetween: 30
                 }
             },

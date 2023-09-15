@@ -1,0 +1,17 @@
+.bvi-active {
+  .form-popup__input {
+    border: 1px solid #000;
+  }
+
+  .form-popup__textarea {
+    border: 1px solid #000;
+  }
+
+  .card-service__right {
+    display: none;
+  }
+
+  .card-service__left {
+    flex: 0 0 100%;
+  }
+}

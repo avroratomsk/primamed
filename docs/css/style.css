@@ -4283,6 +4283,84 @@ button.vbox-link-btn:hover {
   transition: 0.3s;
 }
 
+.text-block {
+  margin-top: 15px;
+}
+
+.text-block h2,
+.text-block h3,
+.text-block h4,
+.text-block h5,
+.text-block h6 {
+  font-family: "Oswald";
+}
+
+.text-block h2 {
+  font-size: 35px;
+}
+
+.text-block h3 {
+  font-size: 30px;
+}
+
+.text-block h4 {
+  font-size: 25px;
+}
+
+.text-block h5 {
+  font-size: 20px;
+}
+
+.text-block h6 {
+  font-size: 16px;
+}
+
+.text-block p {
+  line-height: 150%;
+}
+
+.text-block ul li,
+.text-block ol li {
+  position: relative;
+  padding-left: 16px;
+  line-height: 140%;
+}
+
+.text-block ul li:not(:last-child),
+.text-block ol li:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+.text-block ul li::before,
+.text-block ol li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #a50328;
+  border-radius: 50%;
+}
+
+.bvi-active .form-popup__input {
+  border: 1px solid #000;
+}
+
+.bvi-active .form-popup__textarea {
+  border: 1px solid #000;
+}
+
+.bvi-active .card-service__right {
+  display: none;
+}
+
+.bvi-active .card-service__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
 /*=======================================================================*/
 
 .utp__slider {
@@ -7191,6 +7269,12 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
+@media screen and (min-width: 620px) {
+  .pc-hide-logo {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   ._mb-btn {
     display: none !important;
@@ -7832,6 +7916,10 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 620px) {
+  .mb-hide-logo {
+    display: none !important;
+  }
+
   .card-doctors__top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

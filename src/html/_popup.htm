@@ -62,6 +62,22 @@
 	</div>
 </div>
 
+<!-- Всплывающее окно на кнопку "Задать вопрос" -->
+<div id="popup" aria-hidden="true" class="popup popup-question">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+			<p class="popup__title">Заполните форму</p>
+			<form action="#" class="popup__form form-popup">
+				<input type="text" class="form-popup__input" placeholder="Ваше имя">
+				<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+				<textarea name="message" id="message" placeholder="Ваш вопрос" class="form-popup__textarea"></textarea>
+				<button type="submit" class="form-popup__submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+
 <!-- Всплывающее окна кнопка "Читать подробнее" -->
 <div id="popup" aria-hidden="true" class="popup popup-reviews">
 	<div class="popup__wrapper">
