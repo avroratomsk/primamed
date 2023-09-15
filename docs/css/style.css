@@ -1919,8 +1919,14 @@ section {
   padding: 10px 15px;
 }
 
+.page-price .spollers__title .price__icon svg {
+  fill: #ffffff;
+  stroke: #294f99;
+}
+
 .page-price .spollers__title._spoller-active .price__icon svg {
   fill: #ffffff;
+  stroke: #294f99;
 }
 
 .page-price .spollers__body {
@@ -1953,7 +1959,8 @@ section {
 }
 
 .price__caption {
-  display: none;
+  display: -ms-grid;
+  display: grid;
   -ms-grid-columns: 10% 1fr 10% 15%;
   grid-template-columns: 10% 1fr 10% 15%;
   background-color: rgba(41, 79, 153, 0.6);
@@ -3850,8 +3857,8 @@ button.vbox-link-btn:hover {
 }
 
 .card-doctors__image {
-  height: 300px;
   min-width: 260px;
+  height: 300px;
   margin-right: 20px;
 }
 
@@ -4970,20 +4977,6 @@ button.vbox-link-btn:hover {
   margin-bottom: 40px;
 }
 
-.reviews .reviews-pagi {
-  width: auto !important;
-}
-
-.reviews .swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
-  background-color: #294f99;
-}
-
-.reviews .swiper-pagination-bullet-active {
-  background-color: #294f99 !important;
-}
-
 .reviews__wrapper {
   min-height: 280px !important;
   padding-left: 5px;
@@ -5211,6 +5204,28 @@ button.vbox-link-btn:hover {
           box-shadow: 0px 0px 10px rgba(46, 49, 70, 0.1);
 }
 
+.specialist .specialist-next,
+.specialist .specialist-prev {
+  background-color: #a50328;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.specialist .specialist-next::after,
+.specialist .specialist-prev::after {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.specialist .specialist-next {
+  right: 0;
+}
+
+.specialist .specialist-prev {
+  left: 0;
+}
+
 .specialist__image {
   height: 350px;
   display: -webkit-box;
@@ -5224,11 +5239,22 @@ button.vbox-link-btn:hover {
 }
 
 .specialist__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 230px;
   background-color: #ffffff;
   padding: 30px 20px;
 }
 
 .specialist__title--slide {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   color: #294f99;
   font-size: 23px;
   font-family: "Oswald";
@@ -7919,7 +7945,7 @@ button.swiper-pagination-bullet {
     grid-template-rows: auto;
   }
 
-  .reviews .reviews-pagi {
+  .reviews-slide .reviews-pagi {
     display: none;
   }
 }

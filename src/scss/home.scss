@@ -759,23 +759,15 @@
     margin-bottom: 40px;
   }
 
-  .reviews-pagi {
-    width: auto !important;
+  // .swiper-pagination-bullet {
+  //   width: 8px !important;
+  //   height: 8px !important;
+  //   background-color: $blue;
+  // }
 
-    @media screen and (max-width: 520px) {
-      display: none;
-    }
-  }
-
-  .swiper-pagination-bullet {
-    width: 8px !important;
-    height: 8px !important;
-    background-color: $blue;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: $blue !important;
-  }
+  // .swiper-pagination-bullet-active {
+  //   background-color: $blue !important;
+  // }
 
   // .reviews__inner
 
@@ -950,7 +942,12 @@
   }
 
   .reviews-pagi {
+    // width: auto !important;
     position: relative !important;
+
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
   }
 }
 
@@ -1037,6 +1034,29 @@
     box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
   }
 
+
+  .specialist-next,
+  .specialist-prev {
+    background-color: $accent;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    // display: flex;
+
+    &::after {
+      font-size: 20px;
+      color: $white;
+    }
+  }
+
+  .specialist-next {
+    right: 0;
+  }
+
+  .specialist-prev {
+    left: 0;
+  }
+
   // .specialist__image
 
   &__image {
@@ -1050,18 +1070,21 @@
 
     @media screen and (max-width: 991px) {
       height: 100%;
-      // min-height: 450px;
     }
   }
 
   // .specialist__bottom
   &__bottom {
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
     background-color: $white;
     padding: 30px 20px;
   }
 
   // .specialist__title--slide
   &__title--slide {
+    flex: 1 1 auto;
     color: $blue;
     font-size: 23px;
     font-family: $fontSecondary;

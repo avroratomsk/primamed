@@ -4,11 +4,18 @@
         align-items: center;
         padding: 10px 15px;
 
-        &._spoller-active {
+        .price__icon {
+            svg {
+                fill: $white;
+                stroke: $blue;
+            }
+        }
 
+        &._spoller-active {
             .price__icon {
                 svg {
-                    fill: $white
+                    fill: $white;
+                    stroke: $blue;
                 }
             }
         }
@@ -22,9 +29,8 @@
 
 .price {
     position: relative;
+
     // .price__container
-
-
     &__container {}
 
     // .price__inner
@@ -61,8 +67,7 @@
     // .price__caption
 
     &__caption {
-        display: none;
-        // display: grid;
+        display: grid;
         grid-template-columns: 10% 1fr 10% 15%;
         background-color: rgba($color: $blue, $alpha: .6);
 
