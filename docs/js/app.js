@@ -4028,22 +4028,6 @@
     new VenoBox({
         selector: ".gallery__item"
     });
-    let openSubmenuBtn = document.querySelector(".menu__btn");
-    let submenu = document.querySelector(".submenu");
-    if (openSubmenuBtn) openSubmenuBtn.addEventListener("click", (function(e) {
-        bodyLock();
-        openSubmenuBtn.classList.add("_active");
-        if (submenu) submenu.classList.add("_show-submenu");
-    }));
-    let submenuCloseBtn = document.querySelector(".submenu__btn");
-    if (submenuCloseBtn) submenuCloseBtn.addEventListener("click", (function(e) {
-        closeSubmenu();
-    }));
-    function closeSubmenu() {
-        bodyUnlock();
-        submenu.classList.remove("_show-submenu");
-        openSubmenuBtn.classList.remove("_active");
-    }
     let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
     trigerPopupReviews.forEach((btn => {
         btn.addEventListener("click", (function(e) {
@@ -4113,6 +4097,15 @@
             })); else list.forEach((item => {
                 item.classList.add("hidden-search-card");
             }));
+        }));
+    }));
+    let signUpButton = document.querySelectorAll('[data-popup=".popup-sign"]');
+    if (signUpButton) signUpButton.forEach((button => {
+        button.addEventListener("click", (function(e) {
+            let dataName = this.dataset.name;
+            let popupSign = document.querySelector(".popup-sign");
+            let inputService = popupSign.querySelector(".form-popup__input--service");
+            inputService.value = dataName;
         }));
     }));
     window["FLS"] = true;

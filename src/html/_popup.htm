@@ -87,3 +87,37 @@
 		</div>
 	</div>
 </div>
+
+<!-- Всплывающее окна кнопка "Записаться" в таблице цен -->
+<div id="popup" aria-hidden="true" class="popup popup-sign">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+			<p class="popup__title">Заполните форму</p>
+			<form action="#" class="popup__form form-popup">
+				<input type="text" class="form-popup__input" placeholder="Ваше имя">
+				<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+				<input type="text" class="form-popup__input" placeholder="Имя врача(необязательно)">
+				<input type="hidden" class="form-popup__input form-popup__input--service" name="service-name" id="service-name"
+					class="input-hidden" value="">
+				<button type="submit" class="form-popup__submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Всплывающее окно на кнопку "Оставить отзыв" страница контакты -->
+<div id="popup" aria-hidden="true" class="popup popup-reviews">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<div class="popup__close"><i class="fa-solid fa-x"></i></div>
+			<p class="popup__title">Заполните форму</p>
+			<form action="#" class="popup__form form-popup">
+				<input type="text" class="form-popup__input" placeholder="Ваше имя">
+				<input type="text" class="form-popup__input" placeholder="Ваш номер телефона" data-tel-input>
+				<textarea name="reviews" id="reviews" placeholder="Напишите отзыв" class="form-popup__textarea"></textarea>
+				<button type="submit" class="form-popup__submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>

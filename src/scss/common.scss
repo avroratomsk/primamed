@@ -92,6 +92,7 @@ section {
   height: 45px;
   background-color: $accent;
   padding: 12px;
+  border-radius: 7px;
   transition: $animation_fast;
   z-index: 99;
 
@@ -127,7 +128,7 @@ section {
   transform: translateY(-50%);
   z-index: 99;
   background-color: $accent;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 7px 7px 0px;
   display: flex;
   align-items: center;
   height: 70px;

@@ -4,7 +4,7 @@
 "title":"Главная"
 })
 
-<body class="bvi-active">
+<body class="">
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
@@ -30,7 +30,8 @@
                       corporis quasi magnam
                     </p>
                     <div class="utp__links">
-                      <a href="#" class="utp__more utp__link">Подробнее</a>
+                      <button type="button" class="utp__link" data-popup=".popup-sign"
+                        data-name="Медицинские анализы">Записаться</button>
                     </div>
                   </div>
                 </div>
@@ -815,7 +816,7 @@
               <div class="swiper-wrapper specialist__wrapper">
                 <div class="swiper-slide specialist__slide">
                   <a href="#" class="specialist__image">
-                    <img src="@img/doctor.jpg" alt="">
+                    <img src="@img/doctor/mitina.jpg" alt="">
                   </a>
                   <div class="specialist__bottom">
                     <a href="#" class="specialist__title--slide">
@@ -1558,7 +1559,7 @@
                 <div class="reviews-prev swiper-button-prev"></div>
                 <div class="reviews-next swiper-button-next"></div>
               </div>
-              <a href="#" class="reviews__link">Все отзывы</a>
+              <button type="button" class="reviews__link">Оставить отзыв</button>
             </div>
           </div>
         </div>

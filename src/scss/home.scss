@@ -147,8 +147,8 @@
     justify-content: center;
     width: 290px;
     height: 50px;
-    background-color: rgba($color: $blue, $alpha: 1);
-    border-radius: 5px;
+    background-color: rgba($color: $blue, $alpha: .9);
+    border-radius: 7px;
     color: $white;
     font-size: 14px;
     font-weight: 600;
@@ -220,7 +220,7 @@
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
     padding: 0px 0px 0px 20px;
-    border-radius: 5px;
+    border-radius: 7px;
     overflow: hidden;
     // box-shadow: 0 0 0 2px rgba(18,18,18,.02), 0 10px 10px 0 rgba(1,45,91,.07);
 
@@ -370,8 +370,7 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    // height: 150px;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 15px;
     transition: $animation_fast;
     box-shadow: 0px 0px 5px rgba($color: $mainColor, $alpha: 0.1);
@@ -473,7 +472,7 @@
   // .service-home__link
   &__link {
     padding: 15px 40px;
-    border-radius: 10px;
+    border-radius: 7px;
     color: $white;
     font-family: $fontSecondary;
     background-color: rgba($color: $blue, $alpha: 0.6);
@@ -600,150 +599,7 @@
 
 /*=======================================================================*/
 
-.about {
-  position: relative;
 
-  // .about__caption
-  &__caption {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-
-  &__container {}
-
-  &__inner {}
-
-  &__row {
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    gap: 40px;
-
-    @media screen and (max-width: 789px) {
-      grid-template-columns: 1fr;
-      gap: 0px;
-    }
-  }
-
-  &__col {}
-
-  &__title {}
-
-  &__link {
-    font-size: 18px;
-    font-family: $fontSecondary;
-    color: $white;
-    padding: 15px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: rgba($color: $blue, $alpha: 0.6);
-    transition: $animation_fast;
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: rgba($color: $blue, $alpha: 0.8);
-      }
-    }
-  }
-
-  &__text {
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 150%;
-    color: rgba($color: $mainColor, $alpha: 0.7);
-
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-
-    p {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  &__image {
-    position: relative;
-    width: 100%;
-    height: 500px;
-
-    @media screen and (max-width: 426px) {
-      display: none;
-    }
-
-    // overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      border-radius: 20px 20px 20px 20px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 200px;
-      height: 100%;
-      background-color: rgba($color: $blue, $alpha: 0.1);
-      border-radius: 20px 20px 20px 20px;
-    }
-  }
-
-  &__content {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-
-    @media screen and (max-width: 1024px) {
-      flex-wrap: wrap;
-    }
-
-    @media screen and (max-width: 425px) {
-      flex-direction: column;
-    }
-  }
-}
-
-.statistic-about {
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
-  &__number {
-    font-family: $fontSecondary;
-    font-size: 35px;
-    font-weight: 600;
-    color: $blue;
-    margin-bottom: 10px;
-  }
-
-  &__text {
-    font-size: 16px;
-    font-weight: 600;
-  }
-}
 
 /*=======================================================================*/
 
@@ -827,7 +683,7 @@
     font-family: $fontSecondary;
     background-color: rgba($color: $blue, $alpha: 0.6);
     color: $white;
-    border-radius: 5px;
+    border-radius: 7px;
     transition: $animation_fast;
 
     @media (hover: hover) {
@@ -850,7 +706,7 @@
     border: 1px solid $blue;
     width: 40px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 7px;
     margin-top: 0px;
 
     &::after {
@@ -868,7 +724,7 @@
   background-color: $white;
   box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 7px;
 
   // .reviews-slide__user
 
@@ -1014,7 +870,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 7px;
     background-color: rgba($color: $blue, $alpha: 0.6);
     transition: $animation_fast;
 
@@ -1040,7 +896,7 @@
 
   &__slide {
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 7px;
     box-shadow: 0px 0px 10px rgba($color: $mainColor, $alpha: 0.1);
   }
 
@@ -1070,12 +926,20 @@
   // .specialist__image
 
   &__image {
-    height: 350px;
     display: flex;
+    height: 350px;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
     @media screen and (max-width: 991px) {
@@ -1121,7 +985,7 @@
     background-color: rgba($color: $blue, $alpha: 0.6);
     padding: 15px 40px;
     color: $white;
-    border-radius: 10px;
+    border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1192,7 +1056,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 7px;
     background-color: rgba($color: $blue, $alpha: 0.6);
     transition: $animation_fast;
 
@@ -1251,7 +1115,7 @@
     }
 
     &__title {
-      border-radius: 10px;
+      border-radius: 7px;
       box-shadow: 0px 0px 5px rgba($color: $mainColor, $alpha: 0.1);
       background-color: $white;
       padding: 20px 40px 20px 20px;
@@ -1301,7 +1165,7 @@
     color: $white;
     font-family: $fontSecondary;
     padding: 15px 50px;
-    border-radius: 10px;
+    border-radius: 7px;
     background-color: rgba($color: $blue, $alpha: 0.6);
     transition: $animation_fast;
 
@@ -1430,7 +1294,7 @@
     background-color: $lightGrey;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 7px;
   }
 
   &__title {
@@ -1448,7 +1312,7 @@
     color: $white;
     font-weight: 600;
     background-color: $accent;
-    border-radius: 5px;
+    border-radius: 7px;
     transition: $animation_fast;
 
     @media (hover: hover) {
@@ -1515,7 +1379,7 @@
     cursor: pointer;
     transition: $animation_fast;
     margin-top: 0px;
-    border-radius: 5px;
+    border-radius: 7px;
 
     &::after {
       font-size: 18px;
@@ -1538,7 +1402,7 @@
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: #fff;
     cursor: pointer;
     transition: $animation_fast;
@@ -1573,7 +1437,7 @@
   &__slide {
     background-color: #fff;
     box-shadow: 0px 0px 7px rgba($color: $mainColor, $alpha: 0.1);
-    border-radius: 10px;
+    border-radius: 7px;
     overflow: hidden;
   }
 
@@ -1775,7 +1639,7 @@
     height: 250px;
     transition: $animation_fast;
     box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
-    border-radius: 10px;
+    border-radius: 7px;
     overflow: hidden;
 
     &:hover {
@@ -1963,7 +1827,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgba($color: $white, $alpha: 0.8);
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: 600;
     color: rgba($color: $blue, $alpha: 1);
@@ -2013,7 +1877,7 @@
     height: 250px;
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 7px;
   }
 
   // .card-info__image
@@ -2057,6 +1921,10 @@
 
 .license {}
 
+.license__title {
+  margin-bottom: 30px;
+}
+
 .license__container {}
 
 .license__inner {}
@@ -2071,7 +1939,7 @@
   display: flex;
   box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 7px;
   position: relative;
   border: 5px solid rgba($color: $white, $alpha: 1.0);
 
