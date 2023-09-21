@@ -132,6 +132,10 @@ body::after {
 			font-size: 14px;
 			color: rgba($color: $mainColor, $alpha: .5);
 		}
+
+		&.error {
+			outline: 1px solid rgba($color: $accent, $alpha: .9);
+		}
 	}
 
 	// .form-popup__input--service
@@ -152,6 +156,10 @@ body::after {
 		&::placeholder {
 			font-size: 14px;
 			color: rgba($color: $mainColor, $alpha: .5);
+		}
+
+		&.error {
+			outline: 1px solid rgba($color: $accent, $alpha: .9);
 		}
 	}
 

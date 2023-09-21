@@ -33,7 +33,7 @@ function initSliders() {
     new Swiper('.utp__slider', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
       observer: true,
       observeParents: true,
       slidesPerView: 1,

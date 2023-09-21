@@ -310,6 +310,10 @@ body::after {
   color: rgba(46, 49, 70, 0.5);
 }
 
+.form-popup__input.error {
+  outline: 1px solid rgba(165, 3, 40, 0.9);
+}
+
 .form-popup__textarea {
   height: 150px;
   padding: 20px;
@@ -344,6 +348,10 @@ body::after {
 .form-popup__textarea::placeholder {
   font-size: 14px;
   color: rgba(46, 49, 70, 0.5);
+}
+
+.form-popup__textarea.error {
+  outline: 1px solid rgba(165, 3, 40, 0.9);
 }
 
 .form-popup__submit {
@@ -513,7 +521,7 @@ body::after {
 }
 
 section {
-  padding: 60px 0px;
+  padding: 40px 0px;
 }
 
 ._title {
@@ -5411,6 +5419,8 @@ button.vbox-link-btn:hover {
   background-color: #ffffff;
   padding: 20px 40px 20px 20px;
   line-height: 130%;
+  overflow: hidden;
+  height: 90px;
 }
 
 .faq .spollers__title._spoller-active {

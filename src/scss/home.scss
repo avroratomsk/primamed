@@ -1120,6 +1120,8 @@
       background-color: $white;
       padding: 20px 40px 20px 20px;
       line-height: 130%;
+      overflow: hidden;
+      height: 90px;
 
       &._spoller-active {
         background-color: rgba($color: $blue, $alpha: 0.6);
