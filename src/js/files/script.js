@@ -7,6 +7,31 @@ new VenoBox({
   selector: ".gallery__item"
 });
 
+// Открытие подменю на экранах touch
+let submenuBtn = document.querySelector('.menu__btn');
+submenuBtn.addEventListener('click', function (e) {
+  this.classList.toggle('active-arrow');
+
+  let submenu = this.nextElementSibling;
+  submenu.classList.toggle('active-submenu');
+})
+
+// Прилипающие меню сайта при скролле
+window.addEventListener('scroll', function (e) {
+  const bottomHeaderBlock = document.querySelector('.bottom-header');
+  const heightBottomHeaderBlock = bottomHeaderBlock.clientHeight;
+  const main = document.querySelector('main');
+  if (window.pageYOffset > 1000) {
+    main.style.marginTop = `${heightBottomHeaderBlock}px`;
+    bottomHeaderBlock.classList.add('fixed');
+  } else {
+    main.style.marginTop = `0px`;
+    document.querySelector('.bottom-header').classList.remove('fixed');
+  }
+})
+
+
+
 // Всплывающие окно отзывов
 let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
 trigerPopupReviews.forEach(btn => {
@@ -120,6 +145,27 @@ if (signUpButton) {
     })
   })
 }
+
+// LazyLoad
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target.src) {
+        entry.target.src = entry.target.dataset.src;
+        observer.unobserve(entry.target);
+      } else {
+        entry.target.style = `background-image: url("${entry.target.dataset.src}")`;
+        observer.unobserve(entry.target);
+      }
+
+    }
+  })
+}, {
+  rootMargin: '50px 0px 0px'
+})
+
+document.querySelectorAll('.lazy').forEach((image) => imageObserver.observe(image))
 
 
 

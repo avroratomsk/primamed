@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Контакты"
 })
 
 <body>
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<div class="service-promo" style="background-image: url(../img/license-bg.jpg);">
-				<div class="square"></div>
-				<div class="square square--big"></div>
-				<div class="square square--small"></div>
-				<div class="service-promo__container">
-					<div class="service-promo__inner">
-						<h1 class="service-promo__title">Контакты</h1>
-					</div>
-				</div>
-			</div>
-			<div class="breadcrumbs">
-				<div class="breadcrumbs__container">
-					<div class="breadcrumbs__inner">
-						<a href="/" class="breadcrumbs__first">Главная</a>
-						<span class="breadcrumbs__separator"></span>
-						<p class="breadcrumbs__link">Контакты</p>
-					</div>
-				</div>
-			</div>
+			@@include('html/_service-promo.htm',{
+			"title":"Контакты"
+			})
+
+			<!-- хлебные крошки -->
+			@@include('html/_breadcrumb.htm',{
+			"title":"Контакты"
+			})
 
 			<section class="contact-page">
 				<div class="contact-page__container">
@@ -93,6 +82,7 @@
 					</div>
 				</div>
 			</section>
+
 			<section class="requisites">
 				<div class="requisites__container">
 					<div class="requisites__inner">

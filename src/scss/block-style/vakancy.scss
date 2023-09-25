@@ -38,6 +38,16 @@
   // .vacancie__item
 
   &__item {}
+
+  // .vacancie__text
+  &__text {
+    font-size: 27px;
+    line-height: 140%;
+    font-family: "Oswald";
+    color: rgba(46, 49, 70, 0.6);
+    margin: 150px auto;
+    text-transform: uppercase;
+  }
 }
 
 .item-vacancie {

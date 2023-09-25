@@ -50,10 +50,10 @@ function initSliders() {
 
       // Эффекты
       // effect: 'fade',
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
 
       // Пагинация
       pagination: {

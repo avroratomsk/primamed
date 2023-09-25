@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Услуги"
 })
 
 <body>
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
-      <div class="service-promo" style="background-image: url(../img/service-banner.jpg);">
-        <div class="square"></div>
-        <div class="square square--big"></div>
-        <div class="square square--small"></div>
-        <div class="service-promo__container">
-          <div class="service-promo__inner">
-            <h1 class="service-promo__title">Услуги</h1>
-          </div>
-        </div>
-      </div>
+      @@include('html/_service-promo.htm',{
+      "title":"Услуги"
+      })
 
-      <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
-          <div class="breadcrumbs__inner">
-            <a href="/" class="breadcrumbs__first">Главная</a>
-            <span class="breadcrumbs__separator"></span>
-            <p class="breadcrumbs__link">Контакты</p>
-          </div>
-        </div>
-      </div>
+      <!-- Хлебные крошки -->
+      @@include('html/_breadcrumb.htm',{
+      "title":"Услуги"
+      })
 
       <section class="service-card">
         <div class="service-card__container">
@@ -336,131 +324,12 @@
         </div>
       </section>
 
-      <section class="contact">
-        <div class="contact__container">
-          <div class="contact__inner">
-            <div class="contact__caption">
-              <h2 class="contact__title _title">Наши контакты</h2>
-              <a href="#" class="contact__link">Подробнее</a>
-            </div>
-          </div>
-          <div class="contact__grid">
-            <div class="contact__col">
-              <div class="contact__content content-contact">
-                <p class="content-contact__phone">
-                  Единая справочная г. Чита
-                  <a href="tel:8 (3022) 21-11-00">
-                    8 (3022) 21-11-00
-                  </a>
-                </p>
-                <div class="content-contact__row">
-                  <div class="content-contact__item">
-                    <div class="content-contact__item--top">
-                      <i class="fa-solid fa-map-pin"></i>
-                      Адрес
-                    </div>
-                    <div class="content-contact__item--bottom">
-                      г. Чита ул. Новобульварная, д. 113
-                    </div>
-                  </div>
-                  <div class="content-contact__item">
-                    <div class="content-contact__item--top">
-                      <i class="fa-regular fa-clock"></i>
-                      Рабочее время
-                    </div>
-                    <div class="content-contact__item--bottom">
-                      круглосуточно и без выходных
-                    </div>
-                  </div>
-                </div>
-                <div class="content-contact__row--bottom">
-                  <p><span>ОГРН</span> 1147536003053</p>
-                  <p><span>ИНН</span> 7536143204</p>
-                  <p><span>КПП</span> 753601001</p>
-                </div>
-                <div class="content-contact__action action-content">
-                  <div class="action-content__item">
-                    <p class="action-content__title">
-                      Записаться на онлайн-консультацию
-                    </p>
-                    <button type="button" class="action-content__btn">Записаться на консультацию</button>
-                  </div>
-                  <div class="action-content__item">
-                    <p class="action-content__title">
-                      Записаться на прием или обследование
-                    </p>
-                    <button type="button" class="action-content__btn">Записаться на прием</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="contact__col">
-              <div class="contact__map">
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A4cb2adbed2caeccf7055e6f4e358535bf1afe83dedb37fa74e4ff59aac00e21e&amp;source=constructor"
-                  width="100%" height="100%" frameborder="0"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Секция с контактами -->
+      @@include('html/_contact.htm',{})
 
-      <section class="partner">
-        <div class="partner__container">
-          <div class="partner__inner">
-            <div class="swiper partner__slider">
-              <div class="partner__top">
-                <div class="partner__top--left">
-                  <h2 class="partner__title _title">Партнеры</h2>
-                </div>
-                <div class="partner__top--right">
-                  <div class="partner__btn">
-                    <div class="partner-prev swiper-button-prev"></div>
-                    <div class="partner-next swiper-button-next"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-wrapper partner__wrapper">
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-                <div class="swiper-slide partner__slide">
-                  <a href="#" class="partner__item">
-                    <img src="@img/partner.jpg" alt="">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Секция с партнерами -->
+      @@include('html/_partners.htm',{})
+
     </main>
     @@include('html/_footer.htm',{})
   </div>
