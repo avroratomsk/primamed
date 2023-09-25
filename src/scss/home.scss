@@ -1221,6 +1221,8 @@
       color: $accent;
       font-weight: 700;
     }
+
+
   }
 
   // .content-contact__row
@@ -1253,10 +1255,9 @@
     margin-bottom: 10px;
     font-weight: 700;
 
-    i {
+    svg {
       font-size: 18px;
       margin-right: 1vw;
-      // color: $accent;
     }
   }
 

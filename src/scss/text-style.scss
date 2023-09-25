@@ -50,6 +50,7 @@
 
   ul,
   ol {
+    list-style: none;
 
     li {
       position: relative;
@@ -71,5 +72,10 @@
         border-radius: 50%;
       }
     }
+  }
+
+  a {
+    color: $blue;
+    font-weight: 600;
   }
 }

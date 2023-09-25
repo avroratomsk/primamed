@@ -162,21 +162,21 @@ body {
 @import "header";
 @import "footer";
 @import "pagging";
-@import "block-style/search";
-@import "block-style/contact-page";
-@import "block-style/price";
-@import "block-style/about";
-@import "block-style/venobox";
-@import "block-style/single";
-@import "block-style/doctors";
-@import "block-style/doctor";
-@import "block-style/blog";
-@import "block-style/single-blog";
-@import "block-style/vakancy";
-@import "block-style/stock";
-@import "block-style/text-style";
-@import "block-style/blind";
+@import "text-style";
 
 // Подключение стилей отдельных страниц
 @import "home";
 @import "base/select";
+
+@import "page-style/contact-page";
+@import "page-style/price";
+@import "page-style/about";
+@import "page-style/venobox";
+@import "page-style/single";
+@import "page-style/doctors";
+@import "page-style/doctor";
+@import "page-style/blog";
+@import "page-style/single-blog";
+@import "page-style/vakancy";
+@import "page-style/stock";
+@import "page-style/blind";
