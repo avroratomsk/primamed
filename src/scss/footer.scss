@@ -257,3 +257,25 @@
     }
   }
 }
+
+.author {
+  background-color: rgba($color: $blue, $alpha: .03);
+
+  // .author__container
+
+  &__container {}
+
+  // .author__inner
+
+  &__inner {
+    font-size: 20px;
+    padding: 20px 0px;
+    text-align: center;
+    // font-weight: 600;
+    font-family: $fontSecondary;
+
+    a {
+      font-weight: 800;
+    }
+  }
+}

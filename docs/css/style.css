@@ -1596,6 +1596,21 @@ section {
   width: 25px;
 }
 
+.author {
+  background-color: rgba(41, 79, 153, 0.03);
+}
+
+.author__inner {
+  font-size: 20px;
+  padding: 20px 0px;
+  text-align: center;
+  font-family: "Oswald";
+}
+
+.author__inner a {
+  font-weight: 800;
+}
+
 .pagging {
   display: -webkit-box;
   display: -ms-flexbox;
