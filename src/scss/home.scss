@@ -1936,49 +1936,89 @@
 
 // Страница лицензия
 
-.license {}
+.license {
 
-.license__title {
-  margin-bottom: 30px;
-}
+  // .license__container
+  &__container {}
 
-.license__container {}
+  // .license__inner
+  &_inner {}
 
-.license__inner {}
+  // .license__title
+  &__title {
+    margin-bottom: 30px;
+  }
 
-.license__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 30px;
-}
+  // .license__grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+  }
 
-.license__item {
-  display: flex;
-  box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
-  overflow: hidden;
-  border-radius: 7px;
-  position: relative;
-  border: 5px solid rgba($color: $white, $alpha: 1.0);
+  // .license__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &:hover {
-    &::before {
-      opacity: 1;
+  // .license__image
+  &__image {
+    overflow: hidden;
+    display: block;
+
+    img {
+      max-width: 100%;
+      max-height: 450px;
+      transition: $animation_fast;
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        img {
+          transform: scale(1.005);
+        }
+      }
     }
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($color: $blue, $alpha: .2);
-    opacity: 0;
-    transition: $animation_fast;
+  // .license__text
+  &__text {
+    margin-top: 20px;
+    flex: 1 1 auto;
+
+    p {
+      font-size: 13px;
+      line-height: 150%;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
   }
 
-  img {
-    max-width: 100%;
+  // .license__download
+  &__download {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: rgba($color: $blue, $alpha: .6);
+    height: 40px;
+    width: 200px;
+    border-radius: 7px;
+    transition: $animation_fast;
+
+    i {
+      margin-left: 10px;
+      margin-top: -3px;
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: .8);
+      }
+    }
   }
 }

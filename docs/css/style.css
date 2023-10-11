@@ -3551,33 +3551,63 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
-          box-shadow: 0px 0px 5px rgba(46, 49, 70, 0.1);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.license__image {
   overflow: hidden;
-  border-radius: 7px;
-  position: relative;
-  border: 5px solid white;
+  display: block;
 }
 
-.license__item:hover::before {
-  opacity: 1;
-}
-
-.license__item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(41, 79, 153, 0.2);
-  opacity: 0;
+.license__image img {
+  max-width: 100%;
+  max-height: 450px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.license__item img {
-  max-width: 100%;
+.license__text {
+  margin-top: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.license__text p {
+  font-size: 13px;
+  line-height: 150%;
+}
+
+.license__text p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.license__download {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  background-color: rgba(41, 79, 153, 0.6);
+  height: 40px;
+  width: 200px;
+  border-radius: 7px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.license__download i {
+  margin-left: 10px;
+  margin-top: -3px;
 }
 
 /* *******************
@@ -8354,6 +8384,16 @@ button.swiper-pagination-bullet {
 
   .partner .partner-next:hover {
     border-color: #294f99;
+  }
+
+  .license__image:hover img {
+    -webkit-transform: scale(1.005);
+        -ms-transform: scale(1.005);
+            transform: scale(1.005);
+  }
+
+  .license__download:hover {
+    background-color: rgba(41, 79, 153, 0.8);
   }
 
   .about__link:hover {
