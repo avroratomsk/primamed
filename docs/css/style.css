@@ -1267,7 +1267,6 @@ section {
 
 .bottom-header__submenu {
   height: 67vh;
-  overflow-y: auto;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1301,6 +1300,33 @@ section {
 .bottom-header__submenu::-webkit-scrollbar-thumb {
   background-color: rgba(41, 79, 153, 0.6);
   border-radius: 7px;
+}
+
+.bottom-header__submenu li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bottom-header__submenu li button {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.bottom-header__submenu li:hover .submenu {
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .bottom-header__submenu a {
@@ -1392,6 +1418,21 @@ section {
       -ms-transform: translateY(0px);
           transform: translateY(0px);
   pointer-events: all;
+}
+
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 200px;
+  background-color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(100px);
+      -ms-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .icon-menu {

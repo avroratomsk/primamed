@@ -779,6 +779,10 @@
         extend(win, ssrWindow);
         return win;
     }
+    function utils_classesToTokens(classes) {
+        if (classes === void 0) classes = "";
+        return classes.trim().split(" ").filter((c => !!c.trim()));
+    }
     function deleteProps(obj) {
         const object = obj;
         Object.keys(object).forEach((key => {
@@ -894,10 +898,16 @@
         if (selector === void 0) selector = "";
         return [ ...element.children ].filter((el => el.matches(selector)));
     }
+    function showWarning(text) {
+        try {
+            console.warn(text);
+            return;
+        } catch (err) {}
+    }
     function utils_createElement(tag, classes) {
         if (classes === void 0) classes = [];
         const el = document.createElement(tag);
-        el.classList.add(...Array.isArray(classes) ? classes : [ classes ]);
+        el.classList.add(...Array.isArray(classes) ? classes : utils_classesToTokens(classes));
         return el;
     }
     function elementPrevAll(el, selector) {
@@ -1237,21 +1247,8 @@
     }
     function updateSlides() {
         const swiper = this;
-        function getDirectionLabel(property) {
-            if (swiper.isHorizontal()) return property;
-            return {
-                width: "height",
-                "margin-top": "margin-left",
-                "margin-bottom ": "margin-right",
-                "margin-left": "margin-top",
-                "margin-right": "margin-bottom",
-                "padding-left": "padding-top",
-                "padding-right": "padding-bottom",
-                marginRight: "marginBottom"
-            }[property];
-        }
         function getDirectionPropertyValue(node, label) {
-            return parseFloat(node.getPropertyValue(getDirectionLabel(label)) || 0);
+            return parseFloat(node.getPropertyValue(swiper.getDirectionLabel(label)) || 0);
         }
         const params = swiper.params;
         const {wrapperEl, slidesEl, size: swiperSize, rtlTranslate: rtl, wrongRTL} = swiper;
@@ -1285,17 +1282,17 @@
             utils_setCSSProperty(wrapperEl, "--swiper-centered-offset-after", "");
         }
         const gridEnabled = params.grid && params.grid.rows > 1 && swiper.grid;
-        if (gridEnabled) swiper.grid.initSlides(slidesLength);
+        if (gridEnabled) swiper.grid.initSlides(slides); else if (swiper.grid) swiper.grid.unsetSlides();
         let slideSize;
         const shouldResetSlideSize = params.slidesPerView === "auto" && params.breakpoints && Object.keys(params.breakpoints).filter((key => typeof params.breakpoints[key].slidesPerView !== "undefined")).length > 0;
         for (let i = 0; i < slidesLength; i += 1) {
             slideSize = 0;
             let slide;
             if (slides[i]) slide = slides[i];
-            if (gridEnabled) swiper.grid.updateSlide(i, slide, slidesLength, getDirectionLabel);
+            if (gridEnabled) swiper.grid.updateSlide(i, slide, slides);
             if (slides[i] && elementStyle(slide, "display") === "none") continue;
             if (params.slidesPerView === "auto") {
-                if (shouldResetSlideSize) slides[i].style[getDirectionLabel("width")] = ``;
+                if (shouldResetSlideSize) slides[i].style[swiper.getDirectionLabel("width")] = ``;
                 const slideStyles = getComputedStyle(slide);
                 const currentTransform = slide.style.transform;
                 const currentWebKitTransform = slide.style.webkitTransform;
@@ -1319,7 +1316,7 @@
             } else {
                 slideSize = (swiperSize - (params.slidesPerView - 1) * spaceBetween) / params.slidesPerView;
                 if (params.roundLengths) slideSize = Math.floor(slideSize);
-                if (slides[i]) slides[i].style[getDirectionLabel("width")] = `${slideSize}px`;
+                if (slides[i]) slides[i].style[swiper.getDirectionLabel("width")] = `${slideSize}px`;
             }
             if (slides[i]) slides[i].swiperSlideSize = slideSize;
             slidesSizesGrid.push(slideSize);
@@ -1343,8 +1340,8 @@
         }
         swiper.virtualSize = Math.max(swiper.virtualSize, swiperSize) + offsetAfter;
         if (rtl && wrongRTL && (params.effect === "slide" || params.effect === "coverflow")) wrapperEl.style.width = `${swiper.virtualSize + spaceBetween}px`;
-        if (params.setWrapperSize) wrapperEl.style[getDirectionLabel("width")] = `${swiper.virtualSize + spaceBetween}px`;
-        if (gridEnabled) swiper.grid.updateWrapperSize(slideSize, snapGrid, getDirectionLabel);
+        if (params.setWrapperSize) wrapperEl.style[swiper.getDirectionLabel("width")] = `${swiper.virtualSize + spaceBetween}px`;
+        if (gridEnabled) swiper.grid.updateWrapperSize(slideSize, snapGrid);
         if (!params.centeredSlides) {
             const newSlidesGrid = [];
             for (let i = 0; i < snapGrid.length; i += 1) {
@@ -1370,7 +1367,7 @@
         }
         if (snapGrid.length === 0) snapGrid = [ 0 ];
         if (spaceBetween !== 0) {
-            const key = swiper.isHorizontal() && rtl ? "marginLeft" : getDirectionLabel("marginRight");
+            const key = swiper.isHorizontal() && rtl ? "marginLeft" : swiper.getDirectionLabel("marginRight");
             slides.filter(((_, slideIndex) => {
                 if (!params.cssMode || params.loop) return true;
                 if (slideIndex === slides.length - 1) return false;
@@ -1477,7 +1474,7 @@
         let offsetCenter = -translate;
         if (rtl) offsetCenter = translate;
         slides.forEach((slideEl => {
-            slideEl.classList.remove(params.slideVisibleClass);
+            slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass);
         }));
         swiper.visibleSlidesIndexes = [];
         swiper.visibleSlides = [];
@@ -1491,12 +1488,14 @@
             const originalSlideProgress = (offsetCenter - snapGrid[0] + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + spaceBetween);
             const slideBefore = -(offsetCenter - slideOffset);
             const slideAfter = slideBefore + swiper.slidesSizesGrid[i];
+            const isFullyVisible = slideBefore >= 0 && slideBefore <= swiper.size - swiper.slidesSizesGrid[i];
             const isVisible = slideBefore >= 0 && slideBefore < swiper.size - 1 || slideAfter > 1 && slideAfter <= swiper.size || slideBefore <= 0 && slideAfter >= swiper.size;
             if (isVisible) {
                 swiper.visibleSlides.push(slide);
                 swiper.visibleSlidesIndexes.push(i);
                 slides[i].classList.add(params.slideVisibleClass);
             }
+            if (isFullyVisible) slides[i].classList.add(params.slideFullyVisibleClass);
             slide.progress = rtl ? -slideProgress : slideProgress;
             slide.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
         }
@@ -1551,25 +1550,37 @@
         const swiper = this;
         const {slides, params, slidesEl, activeIndex} = swiper;
         const isVirtual = swiper.virtual && params.virtual.enabled;
+        const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
         const getFilteredSlide = selector => utils_elementChildren(slidesEl, `.${params.slideClass}${selector}, swiper-slide${selector}`)[0];
         slides.forEach((slideEl => {
             slideEl.classList.remove(params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
         }));
         let activeSlide;
+        let prevSlide;
+        let nextSlide;
         if (isVirtual) if (params.loop) {
             let slideIndex = activeIndex - swiper.virtual.slidesBefore;
             if (slideIndex < 0) slideIndex = swiper.virtual.slides.length + slideIndex;
             if (slideIndex >= swiper.virtual.slides.length) slideIndex -= swiper.virtual.slides.length;
             activeSlide = getFilteredSlide(`[data-swiper-slide-index="${slideIndex}"]`);
-        } else activeSlide = getFilteredSlide(`[data-swiper-slide-index="${activeIndex}"]`); else activeSlide = slides[activeIndex];
+        } else activeSlide = getFilteredSlide(`[data-swiper-slide-index="${activeIndex}"]`); else if (gridEnabled) {
+            activeSlide = slides.filter((slideEl => slideEl.column === activeIndex))[0];
+            nextSlide = slides.filter((slideEl => slideEl.column === activeIndex + 1))[0];
+            prevSlide = slides.filter((slideEl => slideEl.column === activeIndex - 1))[0];
+        } else activeSlide = slides[activeIndex];
         if (activeSlide) {
             activeSlide.classList.add(params.slideActiveClass);
-            let nextSlide = elementNextAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
-            if (params.loop && !nextSlide) nextSlide = slides[0];
-            if (nextSlide) nextSlide.classList.add(params.slideNextClass);
-            let prevSlide = elementPrevAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
-            if (params.loop && !prevSlide === 0) prevSlide = slides[slides.length - 1];
-            if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+            if (gridEnabled) {
+                if (nextSlide) nextSlide.classList.add(params.slideNextClass);
+                if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+            } else {
+                nextSlide = elementNextAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+                if (params.loop && !nextSlide) nextSlide = slides[0];
+                if (nextSlide) nextSlide.classList.add(params.slideNextClass);
+                prevSlide = elementPrevAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+                if (params.loop && !prevSlide === 0) prevSlide = slides[slides.length - 1];
+                if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+            }
         }
         swiper.emitSlidesClasses();
     }
@@ -1578,7 +1589,13 @@
         const slideSelector = () => swiper.isElement ? `swiper-slide` : `.${swiper.params.slideClass}`;
         const slideEl = imageEl.closest(slideSelector());
         if (slideEl) {
-            const lazyEl = slideEl.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+            let lazyEl = slideEl.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+            if (!lazyEl && swiper.isElement) if (slideEl.shadowRoot) lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`); else requestAnimationFrame((() => {
+                if (slideEl.shadowRoot) {
+                    lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+                    if (lazyEl) lazyEl.remove();
+                }
+            }));
             if (lazyEl) lazyEl.remove();
         }
     };
@@ -1640,16 +1657,28 @@
             snapIndex = skip + Math.floor((activeIndex - skip) / params.slidesPerGroup);
         }
         if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
-        if (activeIndex === previousIndex) {
+        if (activeIndex === previousIndex && !swiper.params.loop) {
             if (snapIndex !== previousSnapIndex) {
                 swiper.snapIndex = snapIndex;
                 swiper.emit("snapIndexChange");
             }
-            if (swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) swiper.realIndex = getVirtualRealIndex(activeIndex);
             return;
         }
+        if (activeIndex === previousIndex && swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) {
+            swiper.realIndex = getVirtualRealIndex(activeIndex);
+            return;
+        }
+        const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
         let realIndex;
-        if (swiper.virtual && params.virtual.enabled && params.loop) realIndex = getVirtualRealIndex(activeIndex); else if (swiper.slides[activeIndex]) realIndex = parseInt(swiper.slides[activeIndex].getAttribute("data-swiper-slide-index") || activeIndex, 10); else realIndex = activeIndex;
+        if (swiper.virtual && params.virtual.enabled && params.loop) realIndex = getVirtualRealIndex(activeIndex); else if (gridEnabled) {
+            const firstSlideInColumn = swiper.slides.filter((slideEl => slideEl.column === activeIndex))[0];
+            let activeSlideIndex = parseInt(firstSlideInColumn.getAttribute("data-swiper-slide-index"), 10);
+            if (Number.isNaN(activeSlideIndex)) activeSlideIndex = Math.max(swiper.slides.indexOf(firstSlideInColumn), 0);
+            realIndex = Math.floor(activeSlideIndex / params.grid.rows);
+        } else if (swiper.slides[activeIndex]) {
+            const slideIndex = swiper.slides[activeIndex].getAttribute("data-swiper-slide-index");
+            if (slideIndex) realIndex = parseInt(slideIndex, 10); else realIndex = activeIndex;
+        } else realIndex = activeIndex;
         Object.assign(swiper, {
             previousSnapIndex,
             snapIndex,
@@ -1661,13 +1690,18 @@
         if (swiper.initialized) preload(swiper);
         swiper.emit("activeIndexChange");
         swiper.emit("snapIndexChange");
-        if (previousRealIndex !== realIndex) swiper.emit("realIndexChange");
-        if (swiper.initialized || swiper.params.runCallbacksOnInit) swiper.emit("slideChange");
+        if (swiper.initialized || swiper.params.runCallbacksOnInit) {
+            if (previousRealIndex !== realIndex) swiper.emit("realIndexChange");
+            swiper.emit("slideChange");
+        }
     }
-    function updateClickedSlide(e) {
+    function updateClickedSlide(el, path) {
         const swiper = this;
         const params = swiper.params;
-        const slide = e.closest(`.${params.slideClass}, swiper-slide`);
+        let slide = el.closest(`.${params.slideClass}, swiper-slide`);
+        if (!slide && swiper.isElement && path && path.length > 1 && path.includes(el)) [ ...path.slice(path.indexOf(el) + 1, path.length) ].forEach((pathEl => {
+            if (!slide && pathEl.matches && pathEl.matches(`.${params.slideClass}, swiper-slide`)) slide = pathEl;
+        }));
         let slideFound = false;
         let slideIndex;
         if (slide) for (let i = 0; i < swiper.slides.length; i += 1) if (swiper.slides[i] === slide) {
@@ -1805,7 +1839,10 @@
     };
     function setTransition(duration, byController) {
         const swiper = this;
-        if (!swiper.params.cssMode) swiper.wrapperEl.style.transitionDuration = `${duration}ms`;
+        if (!swiper.params.cssMode) {
+            swiper.wrapperEl.style.transitionDuration = `${duration}ms`;
+            swiper.wrapperEl.style.transitionDelay = duration === 0 ? `0ms` : "";
+        }
         swiper.emit("setTransition", duration, byController);
     }
     function transitionEmit(_ref) {
@@ -1960,9 +1997,41 @@
             index = indexAsNumber;
         }
         const swiper = this;
+        const gridEnabled = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
         let newIndex = index;
-        if (swiper.params.loop) if (swiper.virtual && swiper.params.virtual.enabled) newIndex += swiper.virtual.slidesBefore; else newIndex = swiper.getSlideIndexByData(newIndex);
-        return swiper.slideTo(newIndex, speed, runCallbacks, internal);
+        if (swiper.params.loop) if (swiper.virtual && swiper.params.virtual.enabled) newIndex += swiper.virtual.slidesBefore; else {
+            let targetSlideIndex;
+            if (gridEnabled) {
+                const slideIndex = newIndex * swiper.params.grid.rows;
+                targetSlideIndex = swiper.slides.filter((slideEl => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex))[0].column;
+            } else targetSlideIndex = swiper.getSlideIndexByData(newIndex);
+            const cols = gridEnabled ? Math.ceil(swiper.slides.length / swiper.params.grid.rows) : swiper.slides.length;
+            const {centeredSlides} = swiper.params;
+            let slidesPerView = swiper.params.slidesPerView;
+            if (slidesPerView === "auto") slidesPerView = swiper.slidesPerViewDynamic(); else {
+                slidesPerView = Math.ceil(parseFloat(swiper.params.slidesPerView, 10));
+                if (centeredSlides && slidesPerView % 2 === 0) slidesPerView += 1;
+            }
+            let needLoopFix = cols - targetSlideIndex < slidesPerView;
+            if (centeredSlides) needLoopFix = needLoopFix || targetSlideIndex < Math.ceil(slidesPerView / 2);
+            if (needLoopFix) {
+                const direction = centeredSlides ? targetSlideIndex < swiper.activeIndex ? "prev" : "next" : targetSlideIndex - swiper.activeIndex - 1 < swiper.params.slidesPerView ? "next" : "prev";
+                swiper.loopFix({
+                    direction,
+                    slideTo: true,
+                    activeSlideIndex: direction === "next" ? targetSlideIndex + 1 : targetSlideIndex - cols + 1,
+                    slideRealIndex: direction === "next" ? swiper.realIndex : void 0
+                });
+            }
+            if (gridEnabled) {
+                const slideIndex = newIndex * swiper.params.grid.rows;
+                newIndex = swiper.slides.filter((slideEl => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex))[0].column;
+            } else newIndex = swiper.getSlideIndexByData(newIndex);
+        }
+        requestAnimationFrame((() => {
+            swiper.slideTo(newIndex, speed, runCallbacks, internal);
+        }));
+        return swiper;
     }
     function slideNext(speed, runCallbacks, internal) {
         if (speed === void 0) speed = this.params.speed;
@@ -1980,6 +2049,12 @@
                 direction: "next"
             });
             swiper._clientLeft = swiper.wrapperEl.clientLeft;
+            if (swiper.activeIndex === swiper.slides.length - 1 && params.cssMode) {
+                requestAnimationFrame((() => {
+                    swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
+                }));
+                return true;
+            }
         }
         if (params.rewind && swiper.isEnd) return swiper.slideTo(0, speed, runCallbacks, internal);
         return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
@@ -2025,6 +2100,11 @@
         if (params.rewind && swiper.isBeginning) {
             const lastIndex = swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
             return swiper.slideTo(lastIndex, speed, runCallbacks, internal);
+        } else if (params.loop && swiper.activeIndex === 0 && params.cssMode) {
+            requestAnimationFrame((() => {
+                swiper.slideTo(prevIndex, speed, runCallbacks, internal);
+            }));
+            return true;
         }
         return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
     }
@@ -2094,10 +2174,39 @@
         const swiper = this;
         const {params, slidesEl} = swiper;
         if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
-        const slides = utils_elementChildren(slidesEl, `.${params.slideClass}, swiper-slide`);
-        slides.forEach(((el, index) => {
-            el.setAttribute("data-swiper-slide-index", index);
-        }));
+        const initSlides = () => {
+            const slides = utils_elementChildren(slidesEl, `.${params.slideClass}, swiper-slide`);
+            slides.forEach(((el, index) => {
+                el.setAttribute("data-swiper-slide-index", index);
+            }));
+        };
+        const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+        const slidesPerGroup = params.slidesPerGroup * (gridEnabled ? params.grid.rows : 1);
+        const shouldFillGroup = swiper.slides.length % slidesPerGroup !== 0;
+        const shouldFillGrid = gridEnabled && swiper.slides.length % params.grid.rows !== 0;
+        const addBlankSlides = amountOfSlides => {
+            for (let i = 0; i < amountOfSlides; i += 1) {
+                const slideEl = swiper.isElement ? utils_createElement("swiper-slide", [ params.slideBlankClass ]) : utils_createElement("div", [ params.slideClass, params.slideBlankClass ]);
+                swiper.slidesEl.append(slideEl);
+            }
+        };
+        if (shouldFillGroup) {
+            if (params.loopAddBlankSlides) {
+                const slidesToAdd = slidesPerGroup - swiper.slides.length % slidesPerGroup;
+                addBlankSlides(slidesToAdd);
+                swiper.recalcSlides();
+                swiper.updateSlides();
+            } else showWarning("Swiper Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)");
+            initSlides();
+        } else if (shouldFillGrid) {
+            if (params.loopAddBlankSlides) {
+                const slidesToAdd = params.grid.rows - swiper.slides.length % params.grid.rows;
+                addBlankSlides(slidesToAdd);
+                swiper.recalcSlides();
+                swiper.updateSlides();
+            } else showWarning("Swiper Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)");
+            initSlides();
+        } else initSlides();
         swiper.loopFix({
             slideRealIndex,
             direction: params.centeredSlides ? void 0 : "next"
@@ -2109,6 +2218,7 @@
         if (!swiper.params.loop) return;
         swiper.emit("beforeLoopFix");
         const {slides, allowSlidePrev, allowSlideNext, slidesEl, params} = swiper;
+        const {centeredSlides} = params;
         swiper.allowSlidePrev = true;
         swiper.allowSlideNext = true;
         if (swiper.virtual && params.virtual.enabled) {
@@ -2118,43 +2228,65 @@
             swiper.emit("loopFix");
             return;
         }
-        const slidesPerView = params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10));
-        let loopedSlides = params.loopedSlides || slidesPerView;
-        if (loopedSlides % params.slidesPerGroup !== 0) loopedSlides += params.slidesPerGroup - loopedSlides % params.slidesPerGroup;
+        let slidesPerView = params.slidesPerView;
+        if (slidesPerView === "auto") slidesPerView = swiper.slidesPerViewDynamic(); else {
+            slidesPerView = Math.ceil(parseFloat(params.slidesPerView, 10));
+            if (centeredSlides && slidesPerView % 2 === 0) slidesPerView += 1;
+        }
+        const slidesPerGroup = params.slidesPerGroupAuto ? slidesPerView : params.slidesPerGroup;
+        let loopedSlides = slidesPerGroup;
+        if (loopedSlides % slidesPerGroup !== 0) loopedSlides += slidesPerGroup - loopedSlides % slidesPerGroup;
+        loopedSlides += params.loopAdditionalSlides;
         swiper.loopedSlides = loopedSlides;
+        const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+        if (slides.length < slidesPerView + loopedSlides) showWarning("Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"); else if (gridEnabled && params.grid.fill === "row") showWarning("Swiper Loop Warning: Loop mode is not compatible with grid.fill = `row`");
         const prependSlidesIndexes = [];
         const appendSlidesIndexes = [];
         let activeIndex = swiper.activeIndex;
-        if (typeof activeSlideIndex === "undefined") activeSlideIndex = swiper.getSlideIndex(swiper.slides.filter((el => el.classList.contains(params.slideActiveClass)))[0]); else activeIndex = activeSlideIndex;
+        if (typeof activeSlideIndex === "undefined") activeSlideIndex = swiper.getSlideIndex(slides.filter((el => el.classList.contains(params.slideActiveClass)))[0]); else activeIndex = activeSlideIndex;
         const isNext = direction === "next" || !direction;
         const isPrev = direction === "prev" || !direction;
         let slidesPrepended = 0;
         let slidesAppended = 0;
-        if (activeSlideIndex < loopedSlides) {
-            slidesPrepended = Math.max(loopedSlides - activeSlideIndex, params.slidesPerGroup);
-            for (let i = 0; i < loopedSlides - activeSlideIndex; i += 1) {
-                const index = i - Math.floor(i / slides.length) * slides.length;
-                prependSlidesIndexes.push(slides.length - index - 1);
+        const cols = gridEnabled ? Math.ceil(slides.length / params.grid.rows) : slides.length;
+        const activeColIndex = gridEnabled ? slides[activeSlideIndex].column : activeSlideIndex;
+        const activeColIndexWithShift = activeColIndex + (centeredSlides && typeof setTranslate === "undefined" ? -slidesPerView / 2 + .5 : 0);
+        if (activeColIndexWithShift < loopedSlides) {
+            slidesPrepended = Math.max(loopedSlides - activeColIndexWithShift, slidesPerGroup);
+            for (let i = 0; i < loopedSlides - activeColIndexWithShift; i += 1) {
+                const index = i - Math.floor(i / cols) * cols;
+                if (gridEnabled) {
+                    const colIndexToPrepend = cols - index - 1;
+                    for (let i = slides.length - 1; i >= 0; i -= 1) if (slides[i].column === colIndexToPrepend) prependSlidesIndexes.push(i);
+                } else prependSlidesIndexes.push(cols - index - 1);
             }
-        } else if (activeSlideIndex > swiper.slides.length - loopedSlides * 2) {
-            slidesAppended = Math.max(activeSlideIndex - (swiper.slides.length - loopedSlides * 2), params.slidesPerGroup);
+        } else if (activeColIndexWithShift + slidesPerView > cols - loopedSlides) {
+            slidesAppended = Math.max(activeColIndexWithShift - (cols - loopedSlides * 2), slidesPerGroup);
             for (let i = 0; i < slidesAppended; i += 1) {
-                const index = i - Math.floor(i / slides.length) * slides.length;
-                appendSlidesIndexes.push(index);
+                const index = i - Math.floor(i / cols) * cols;
+                if (gridEnabled) slides.forEach(((slide, slideIndex) => {
+                    if (slide.column === index) appendSlidesIndexes.push(slideIndex);
+                })); else appendSlidesIndexes.push(index);
             }
         }
+        swiper.__preventObserver__ = true;
+        requestAnimationFrame((() => {
+            swiper.__preventObserver__ = false;
+        }));
         if (isPrev) prependSlidesIndexes.forEach((index => {
-            swiper.slides[index].swiperLoopMoveDOM = true;
-            slidesEl.prepend(swiper.slides[index]);
-            swiper.slides[index].swiperLoopMoveDOM = false;
+            slides[index].swiperLoopMoveDOM = true;
+            slidesEl.prepend(slides[index]);
+            slides[index].swiperLoopMoveDOM = false;
         }));
         if (isNext) appendSlidesIndexes.forEach((index => {
-            swiper.slides[index].swiperLoopMoveDOM = true;
-            slidesEl.append(swiper.slides[index]);
-            swiper.slides[index].swiperLoopMoveDOM = false;
+            slides[index].swiperLoopMoveDOM = true;
+            slidesEl.append(slides[index]);
+            slides[index].swiperLoopMoveDOM = false;
         }));
         swiper.recalcSlides();
-        if (params.slidesPerView === "auto") swiper.updateSlides();
+        if (params.slidesPerView === "auto") swiper.updateSlides(); else if (gridEnabled && (prependSlidesIndexes.length > 0 && isPrev || appendSlidesIndexes.length > 0 && isNext)) swiper.slides.forEach(((slide, slideIndex) => {
+            swiper.grid.updateSlide(slideIndex, slide, swiper.slides);
+        }));
         if (params.watchSlidesProgress) swiper.updateSlidesOffset();
         if (slideTo) if (prependSlidesIndexes.length > 0 && isPrev) {
             if (typeof slideRealIndex === "undefined") {
@@ -2164,12 +2296,13 @@
                 if (byMousewheel) swiper.setTranslate(swiper.translate - diff); else {
                     swiper.slideTo(activeIndex + slidesPrepended, 0, false, true);
                     if (setTranslate) {
-                        swiper.touches[swiper.isHorizontal() ? "startX" : "startY"] += diff;
-                        swiper.touchEventsData.currentTranslate = swiper.translate;
+                        swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
+                        swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
                     }
                 }
             } else if (setTranslate) {
-                swiper.slideToLoop(slideRealIndex, 0, false, true);
+                const shift = gridEnabled ? prependSlidesIndexes.length / params.grid.rows : prependSlidesIndexes.length;
+                swiper.slideTo(swiper.activeIndex + shift, 0, false, true);
                 swiper.touchEventsData.currentTranslate = swiper.translate;
             }
         } else if (appendSlidesIndexes.length > 0 && isNext) if (typeof slideRealIndex === "undefined") {
@@ -2179,25 +2312,33 @@
             if (byMousewheel) swiper.setTranslate(swiper.translate - diff); else {
                 swiper.slideTo(activeIndex - slidesAppended, 0, false, true);
                 if (setTranslate) {
-                    swiper.touches[swiper.isHorizontal() ? "startX" : "startY"] += diff;
-                    swiper.touchEventsData.currentTranslate = swiper.translate;
+                    swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
+                    swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
                 }
             }
-        } else swiper.slideToLoop(slideRealIndex, 0, false, true);
+        } else {
+            const shift = gridEnabled ? appendSlidesIndexes.length / params.grid.rows : appendSlidesIndexes.length;
+            swiper.slideTo(swiper.activeIndex - shift, 0, false, true);
+        }
         swiper.allowSlidePrev = allowSlidePrev;
         swiper.allowSlideNext = allowSlideNext;
         if (swiper.controller && swiper.controller.control && !byController) {
             const loopParams = {
                 slideRealIndex,
-                slideTo: false,
                 direction,
                 setTranslate,
                 activeSlideIndex,
                 byController: true
             };
             if (Array.isArray(swiper.controller.control)) swiper.controller.control.forEach((c => {
-                if (!c.destroyed && c.params.loop) c.loopFix(loopParams);
-            })); else if (swiper.controller.control instanceof swiper.constructor && swiper.controller.control.params.loop) swiper.controller.control.loopFix(loopParams);
+                if (!c.destroyed && c.params.loop) c.loopFix({
+                    ...loopParams,
+                    slideTo: c.params.slidesPerView === params.slidesPerView ? slideTo : false
+                });
+            })); else if (swiper.controller.control instanceof swiper.constructor && swiper.controller.control.params.loop) swiper.controller.control.loopFix({
+                ...loopParams,
+                slideTo: swiper.controller.control.params.slidesPerView === params.slidesPerView ? slideTo : false
+            });
         }
         swiper.emit("loopFix");
     }
@@ -2260,26 +2401,46 @@
         }
         return __closestFrom(base);
     }
+    function preventEdgeSwipe(swiper, event, startX) {
+        const window = ssr_window_esm_getWindow();
+        const {params} = swiper;
+        const edgeSwipeDetection = params.edgeSwipeDetection;
+        const edgeSwipeThreshold = params.edgeSwipeThreshold;
+        if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) {
+            if (edgeSwipeDetection === "prevent") {
+                event.preventDefault();
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
     function onTouchStart(event) {
         const swiper = this;
         const document = ssr_window_esm_getDocument();
-        const window = ssr_window_esm_getWindow();
-        const data = swiper.touchEventsData;
-        data.evCache.push(event);
-        const {params, touches, enabled} = swiper;
-        if (!enabled) return;
-        if (!params.simulateTouch && event.pointerType === "mouse") return;
-        if (swiper.animating && params.preventInteractionOnTransition) return;
-        if (!swiper.animating && params.cssMode && params.loop) swiper.loopFix();
         let e = event;
         if (e.originalEvent) e = e.originalEvent;
+        const data = swiper.touchEventsData;
+        if (e.type === "pointerdown") {
+            if (data.pointerId !== null && data.pointerId !== e.pointerId) return;
+            data.pointerId = e.pointerId;
+        } else if (e.type === "touchstart" && e.targetTouches.length === 1) data.touchId = e.targetTouches[0].identifier;
+        if (e.type === "touchstart") {
+            preventEdgeSwipe(swiper, e, e.targetTouches[0].pageX);
+            return;
+        }
+        const {params, touches, enabled} = swiper;
+        if (!enabled) return;
+        if (!params.simulateTouch && e.pointerType === "mouse") return;
+        if (swiper.animating && params.preventInteractionOnTransition) return;
+        if (!swiper.animating && params.cssMode && params.loop) swiper.loopFix();
         let targetEl = e.target;
         if (params.touchEventsTarget === "wrapper") if (!swiper.wrapperEl.contains(targetEl)) return;
         if ("which" in e && e.which === 3) return;
         if ("button" in e && e.button > 0) return;
         if (data.isTouched && data.isMoved) return;
         const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== "";
-        const eventPath = event.composedPath ? event.composedPath() : event.path;
+        const eventPath = e.composedPath ? e.composedPath() : e.path;
         if (swipingClassHasValue && e.target && e.target.shadowRoot && eventPath) targetEl = eventPath[0];
         const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
         const isTargetShadow = !!(e.target && e.target.shadowRoot);
@@ -2292,9 +2453,7 @@
         touches.currentY = e.pageY;
         const startX = touches.currentX;
         const startY = touches.currentY;
-        const edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
-        const edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
-        if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) if (edgeSwipeDetection === "prevent") event.preventDefault(); else return;
+        if (!preventEdgeSwipe(swiper, e, startX)) return;
         Object.assign(data, {
             isTouched: true,
             isMoved: false,
@@ -2329,13 +2488,20 @@
         if (!params.simulateTouch && event.pointerType === "mouse") return;
         let e = event;
         if (e.originalEvent) e = e.originalEvent;
+        if (e.type === "pointermove") {
+            if (data.touchId !== null) return;
+            const id = e.pointerId;
+            if (id !== data.pointerId) return;
+        }
+        let targetTouch;
+        if (e.type === "touchmove") {
+            targetTouch = [ ...e.changedTouches ].filter((t => t.identifier === data.touchId))[0];
+            if (!targetTouch || targetTouch.identifier !== data.touchId) return;
+        } else targetTouch = e;
         if (!data.isTouched) {
             if (data.startMoving && data.isScrolling) swiper.emit("touchMoveOpposite", e);
             return;
         }
-        const pointerIndex = data.evCache.findIndex((cachedEv => cachedEv.pointerId === e.pointerId));
-        if (pointerIndex >= 0) data.evCache[pointerIndex] = e;
-        const targetTouch = data.evCache.length > 1 ? data.evCache[0] : e;
         const pageX = targetTouch.pageX;
         const pageY = targetTouch.pageY;
         if (e.preventedByNestedSwiper) {
@@ -2349,8 +2515,6 @@
                 Object.assign(touches, {
                     startX: pageX,
                     startY: pageY,
-                    prevX: swiper.touches.currentX,
-                    prevY: swiper.touches.currentY,
                     currentX: pageX,
                     currentY: pageY
                 });
@@ -2371,7 +2535,8 @@
             return;
         }
         if (data.allowTouchCallbacks) swiper.emit("touchMove", e);
-        if (e.targetTouches && e.targetTouches.length > 1) return;
+        touches.previousX = touches.currentX;
+        touches.previousY = touches.currentY;
         touches.currentX = pageX;
         touches.currentY = pageY;
         const diffX = touches.currentX - touches.startX;
@@ -2386,7 +2551,7 @@
         }
         if (data.isScrolling) swiper.emit("touchMoveOpposite", e);
         if (typeof data.startMoving === "undefined") if (touches.currentX !== touches.startX || touches.currentY !== touches.startY) data.startMoving = true;
-        if (data.isScrolling || swiper.zoom && swiper.params.zoom && swiper.params.zoom.enabled && data.evCache.length > 1) {
+        if (data.isScrolling) {
             data.isTouched = false;
             return;
         }
@@ -2410,8 +2575,9 @@
         swiper.swipeDirection = diff > 0 ? "prev" : "next";
         swiper.touchesDirection = touchesDiff > 0 ? "prev" : "next";
         const isLoop = swiper.params.loop && !params.cssMode;
+        const allowLoopFix = swiper.touchesDirection === "next" && swiper.allowSlideNext || swiper.touchesDirection === "prev" && swiper.allowSlidePrev;
         if (!data.isMoved) {
-            if (isLoop) swiper.loopFix({
+            if (isLoop && allowLoopFix) swiper.loopFix({
                 direction: swiper.swipeDirection
             });
             data.startTranslate = swiper.getTranslate();
@@ -2428,12 +2594,18 @@
             swiper.emit("sliderFirstMove", e);
         }
         let loopFixed;
-        if (data.isMoved && prevTouchesDirection !== swiper.touchesDirection && isLoop && Math.abs(diff) >= 1) {
-            swiper.loopFix({
-                direction: swiper.swipeDirection,
-                setTranslate: true
+        (new Date).getTime();
+        if (data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+            Object.assign(touches, {
+                startX: pageX,
+                startY: pageY,
+                currentX: pageX,
+                currentY: pageY,
+                startTranslate: data.currentTranslate
             });
-            loopFixed = true;
+            data.loopSwapReset = true;
+            data.startTranslate = data.currentTranslate;
+            return;
         }
         swiper.emit("sliderMove", e);
         data.isMoved = true;
@@ -2442,7 +2614,7 @@
         let resistanceRatio = params.resistanceRatio;
         if (params.touchReleaseOnEdges) resistanceRatio = 0;
         if (diff > 0) {
-            if (isLoop && !loopFixed && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.size / 2 : swiper.minTranslate())) swiper.loopFix({
+            if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) swiper.loopFix({
                 direction: "prev",
                 setTranslate: true,
                 activeSlideIndex: 0
@@ -2452,7 +2624,7 @@
                 if (params.resistance) data.currentTranslate = swiper.minTranslate() - 1 + (-swiper.minTranslate() + data.startTranslate + diff) ** resistanceRatio;
             }
         } else if (diff < 0) {
-            if (isLoop && !loopFixed && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.size / 2 : swiper.maxTranslate())) swiper.loopFix({
+            if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) swiper.loopFix({
                 direction: "next",
                 setTranslate: true,
                 activeSlideIndex: swiper.slides.length - (params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10)))
@@ -2491,17 +2663,27 @@
     function onTouchEnd(event) {
         const swiper = this;
         const data = swiper.touchEventsData;
-        const pointerIndex = data.evCache.findIndex((cachedEv => cachedEv.pointerId === event.pointerId));
-        if (pointerIndex >= 0) data.evCache.splice(pointerIndex, 1);
-        if ([ "pointercancel", "pointerout", "pointerleave" ].includes(event.type)) {
-            const proceed = event.type === "pointercancel" && (swiper.browser.isSafari || swiper.browser.isWebView);
-            if (!proceed) return;
-        }
-        const {params, touches, rtlTranslate: rtl, slidesGrid, enabled} = swiper;
-        if (!enabled) return;
-        if (!params.simulateTouch && event.pointerType === "mouse") return;
         let e = event;
         if (e.originalEvent) e = e.originalEvent;
+        let targetTouch;
+        const isTouchEvent = e.type === "touchend" || e.type === "touchcancel";
+        if (!isTouchEvent) {
+            if (data.touchId !== null) return;
+            if (e.pointerId !== data.pointerId) return;
+            targetTouch = e;
+        } else {
+            targetTouch = [ ...e.changedTouches ].filter((t => t.identifier === data.touchId))[0];
+            if (!targetTouch || targetTouch.identifier !== data.touchId) return;
+        }
+        if ([ "pointercancel", "pointerout", "pointerleave", "contextmenu" ].includes(e.type)) {
+            const proceed = [ "pointercancel", "contextmenu" ].includes(e.type) && (swiper.browser.isSafari || swiper.browser.isWebView);
+            if (!proceed) return;
+        }
+        data.pointerId = null;
+        data.touchId = null;
+        const {params, touches, rtlTranslate: rtl, slidesGrid, enabled} = swiper;
+        if (!enabled) return;
+        if (!params.simulateTouch && e.pointerType === "mouse") return;
         if (data.allowTouchCallbacks) swiper.emit("touchEnd", e);
         data.allowTouchCallbacks = false;
         if (!data.isTouched) {
@@ -2515,7 +2697,7 @@
         const timeDiff = touchEndTime - data.touchStartTime;
         if (swiper.allowClick) {
             const pathTree = e.path || e.composedPath && e.composedPath();
-            swiper.updateClickedSlide(pathTree && pathTree[0] || e.target);
+            swiper.updateClickedSlide(pathTree && pathTree[0] || e.target, pathTree);
             swiper.emit("tap click", e);
             if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) swiper.emit("doubleTap doubleClick", e);
         }
@@ -2523,7 +2705,7 @@
         utils_nextTick((() => {
             if (!swiper.destroyed) swiper.allowClick = true;
         }));
-        if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 || data.currentTranslate === data.startTranslate) {
+        if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 && !data.loopSwapReset || data.currentTranslate === data.startTranslate && !data.loopSwapReset) {
             data.isTouched = false;
             data.isMoved = false;
             data.startMoving = false;
@@ -2635,20 +2817,38 @@
         if (swiper.params.cssMode || swiper.params.slidesPerView !== "auto" && !swiper.params.autoHeight) return;
         swiper.update();
     }
-    let dummyEventAttached = false;
-    function dummyEventListener() {}
+    function onDocumentTouchStart() {
+        const swiper = this;
+        if (swiper.documentTouchHandlerProceeded) return;
+        swiper.documentTouchHandlerProceeded = true;
+        if (swiper.params.touchReleaseOnEdges) swiper.el.style.touchAction = "auto";
+    }
     const events = (swiper, method) => {
         const document = ssr_window_esm_getDocument();
         const {params, el, wrapperEl, device} = swiper;
         const capture = !!params.nested;
         const domMethod = method === "on" ? "addEventListener" : "removeEventListener";
         const swiperMethod = method;
+        document[domMethod]("touchstart", swiper.onDocumentTouchStart, {
+            passive: false,
+            capture
+        });
+        el[domMethod]("touchstart", swiper.onTouchStart, {
+            passive: false
+        });
         el[domMethod]("pointerdown", swiper.onTouchStart, {
             passive: false
+        });
+        document[domMethod]("touchmove", swiper.onTouchMove, {
+            passive: false,
+            capture
         });
         document[domMethod]("pointermove", swiper.onTouchMove, {
             passive: false,
             capture
+        });
+        document[domMethod]("touchend", swiper.onTouchEnd, {
+            passive: true
         });
         document[domMethod]("pointerup", swiper.onTouchEnd, {
             passive: true
@@ -2656,10 +2856,16 @@
         document[domMethod]("pointercancel", swiper.onTouchEnd, {
             passive: true
         });
+        document[domMethod]("touchcancel", swiper.onTouchEnd, {
+            passive: true
+        });
         document[domMethod]("pointerout", swiper.onTouchEnd, {
             passive: true
         });
         document[domMethod]("pointerleave", swiper.onTouchEnd, {
+            passive: true
+        });
+        document[domMethod]("contextmenu", swiper.onTouchEnd, {
             passive: true
         });
         if (params.preventClicks || params.preventClicksPropagation) el[domMethod]("click", swiper.onClick, true);
@@ -2671,18 +2877,14 @@
     };
     function attachEvents() {
         const swiper = this;
-        const document = ssr_window_esm_getDocument();
         const {params} = swiper;
         swiper.onTouchStart = onTouchStart.bind(swiper);
         swiper.onTouchMove = onTouchMove.bind(swiper);
         swiper.onTouchEnd = onTouchEnd.bind(swiper);
+        swiper.onDocumentTouchStart = onDocumentTouchStart.bind(swiper);
         if (params.cssMode) swiper.onScroll = onScroll.bind(swiper);
         swiper.onClick = onClick.bind(swiper);
         swiper.onLoad = onLoad.bind(swiper);
-        if (!dummyEventAttached) {
-            document.addEventListener("touchstart", dummyEventListener);
-            dummyEventAttached = true;
-        }
         events(swiper, "on");
     }
     function detachEvents() {
@@ -2723,9 +2925,11 @@
         }));
         const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
         const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
+        const wasLoop = params.loop;
         if (directionChanged && initialized) swiper.changeDirection();
         utils_extend(swiper.params, breakpointParams);
         const isEnabled = swiper.params.enabled;
+        const hasLoop = swiper.params.loop;
         Object.assign(swiper, {
             allowTouchMove: swiper.params.allowTouchMove,
             allowSlideNext: swiper.params.allowSlideNext,
@@ -2734,11 +2938,14 @@
         if (wasEnabled && !isEnabled) swiper.disable(); else if (!wasEnabled && isEnabled) swiper.enable();
         swiper.currentBreakpoint = breakpoint;
         swiper.emit("_beforeBreakpoint", breakpointParams);
-        if (needsReLoop && initialized) {
+        if (initialized) if (needsReLoop) {
             swiper.loopDestroy();
             swiper.loopCreate(realIndex);
             swiper.updateSlides();
-        }
+        } else if (!wasLoop && hasLoop) {
+            swiper.loopCreate(realIndex);
+            swiper.updateSlides();
+        } else if (wasLoop && !hasLoop) swiper.loopDestroy();
         swiper.emit("breakpoint", breakpointParams);
     }
     function getBreakpoint(breakpoints, base, containerEl) {
@@ -2850,6 +3057,7 @@
         resizeObserver: true,
         nested: false,
         createElements: false,
+        eventsPrefix: "swiper",
         enabled: true,
         focusableElements: "input, select, option, textarea, button, video, label",
         width: null,
@@ -2901,7 +3109,8 @@
         preventClicksPropagation: true,
         slideToClickedSlide: false,
         loop: false,
-        loopedSlides: null,
+        loopAddBlankSlides: true,
+        loopAdditionalSlides: 0,
         loopPreventsSliding: true,
         rewind: false,
         allowSlidePrev: true,
@@ -2914,8 +3123,10 @@
         maxBackfaceHiddenSlides: 10,
         containerModifierClass: "swiper-",
         slideClass: "swiper-slide",
+        slideBlankClass: "swiper-slide-blank",
         slideActiveClass: "swiper-slide-active",
         slideVisibleClass: "swiper-slide-visible",
+        slideFullyVisibleClass: "swiper-slide-fully-visible",
         slideNextClass: "swiper-slide-next",
         slidePrevClass: "swiper-slide-prev",
         wrapperClass: "swiper-wrapper",
@@ -2933,16 +3144,15 @@
                 utils_extend(allModulesParams, obj);
                 return;
             }
-            if ([ "navigation", "pagination", "scrollbar" ].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) params[moduleParamName] = {
-                auto: true
+            if (params[moduleParamName] === true) params[moduleParamName] = {
+                enabled: true
             };
+            if (moduleParamName === "navigation" && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].prevEl && !params[moduleParamName].nextEl) params[moduleParamName].auto = true;
+            if ([ "pagination", "scrollbar" ].indexOf(moduleParamName) >= 0 && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].el) params[moduleParamName].auto = true;
             if (!(moduleParamName in params && "enabled" in moduleParams)) {
                 utils_extend(allModulesParams, obj);
                 return;
             }
-            if (params[moduleParamName] === true) params[moduleParamName] = {
-                enabled: true
-            };
             if (typeof params[moduleParamName] === "object" && !("enabled" in params[moduleParamName])) params[moduleParamName].enabled = true;
             if (!params[moduleParamName]) params[moduleParamName] = {
                 enabled: false
@@ -3058,7 +3268,8 @@
                     velocities: [],
                     allowMomentumBounce: void 0,
                     startMoving: void 0,
-                    evCache: []
+                    pointerId: null,
+                    touchId: null
                 },
                 allowClick: true,
                 allowTouchMove: swiper.params.allowTouchMove,
@@ -3075,6 +3286,19 @@
             swiper.emit("_swiper");
             if (swiper.params.init) swiper.init();
             return swiper;
+        }
+        getDirectionLabel(property) {
+            if (this.isHorizontal()) return property;
+            return {
+                width: "height",
+                "margin-top": "margin-left",
+                "margin-bottom ": "margin-right",
+                "margin-left": "margin-top",
+                "margin-right": "margin-bottom",
+                "padding-left": "padding-top",
+                "padding-right": "padding-bottom",
+                marginRight: "marginBottom"
+            }[property];
         }
         getSlideIndex(slideEl) {
             const {slidesEl, params} = this;
@@ -3145,6 +3369,7 @@
             const swiper = this;
             const {params, slides, slidesGrid, slidesSizesGrid, size: swiperSize, activeIndex} = swiper;
             let spv = 1;
+            if (typeof params.slidesPerView === "number") return params.slidesPerView;
             if (params.centeredSlides) {
                 let slideSize = slides[activeIndex] ? slides[activeIndex].swiperSlideSize : 0;
                 let breakLoop;
@@ -3282,7 +3507,9 @@
             if (swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) swiper.slideTo(swiper.params.initialSlide + swiper.virtual.slidesBefore, 0, swiper.params.runCallbacksOnInit, false, true); else swiper.slideTo(swiper.params.initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
             if (swiper.params.loop) swiper.loopCreate();
             swiper.attachEvents();
-            [ ...swiper.el.querySelectorAll('[loading="lazy"]') ].forEach((imageEl => {
+            const lazyElements = [ ...swiper.el.querySelectorAll('[loading="lazy"]') ];
+            if (swiper.isElement) lazyElements.push(...swiper.hostEl.querySelectorAll('[loading="lazy"]'));
+            lazyElements.forEach((imageEl => {
                 if (imageEl.complete) processLazyPreloader(swiper, imageEl); else imageEl.addEventListener("load", (e => {
                     processLazyPreloader(swiper, e.target);
                 }));
@@ -3309,7 +3536,7 @@
                 el.removeAttribute("style");
                 wrapperEl.removeAttribute("style");
                 if (slides && slides.length) slides.forEach((slideEl => {
-                    slideEl.classList.remove(params.slideVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
+                    slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
                     slideEl.removeAttribute("style");
                     slideEl.removeAttribute("data-swiper-slide-index");
                 }));
@@ -3482,7 +3709,11 @@
             let {nextEl, prevEl} = swiper.navigation;
             nextEl = makeElementsArray(nextEl);
             prevEl = makeElementsArray(prevEl);
-            [ ...nextEl, ...prevEl ].filter((el => !!el)).forEach((el => el.classList[swiper.enabled ? "remove" : "add"](swiper.params.navigation.lockClass)));
+            if (swiper.enabled) {
+                update();
+                return;
+            }
+            [ ...nextEl, ...prevEl ].filter((el => !!el)).forEach((el => el.classList.add(swiper.params.navigation.lockClass)));
         }));
         on("click", ((_s, e) => {
             let {nextEl, prevEl} = swiper.navigation;
@@ -3579,13 +3810,6 @@
             const index = utils_elementIndex(bulletEl) * swiper.params.slidesPerGroup;
             if (swiper.params.loop) {
                 if (swiper.realIndex === index) return;
-                const newSlideIndex = swiper.getSlideIndexByData(index);
-                const currentSlideIndex = swiper.getSlideIndexByData(swiper.realIndex);
-                if (newSlideIndex > swiper.slides.length - swiper.loopedSlides) swiper.loopFix({
-                    direction: newSlideIndex > currentSlideIndex ? "next" : "prev",
-                    activeSlideIndex: newSlideIndex,
-                    slideTo: false
-                });
                 swiper.slideToLoop(index);
             } else swiper.slideTo(index);
         }
@@ -3696,7 +3920,7 @@
         function render() {
             const params = swiper.params.pagination;
             if (isPaginationDisabled()) return;
-            const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.slides.length;
+            const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.grid && swiper.params.grid.rows > 1 ? swiper.slides.length / Math.ceil(swiper.params.grid.rows) : swiper.slides.length;
             let el = swiper.pagination.el;
             el = makeElementsArray(el);
             let paginationHTML = "";
@@ -3738,7 +3962,7 @@
             });
             el = makeElementsArray(el);
             el.forEach((subEl => {
-                if (params.type === "bullets" && params.clickable) subEl.classList.add(params.clickableClass);
+                if (params.type === "bullets" && params.clickable) subEl.classList.add(...(params.clickableClass || "").split(" "));
                 subEl.classList.add(params.modifierClass + params.type);
                 subEl.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
                 if (params.type === "bullets" && params.dynamicBullets) {
@@ -3761,7 +3985,10 @@
                     subEl.classList.remove(params.hiddenClass);
                     subEl.classList.remove(params.modifierClass + params.type);
                     subEl.classList.remove(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
-                    if (params.clickable) subEl.removeEventListener("click", onBulletClick);
+                    if (params.clickable) {
+                        subEl.classList.remove(...(params.clickableClass || "").split(" "));
+                        subEl.removeEventListener("click", onBulletClick);
+                    }
                 }));
             }
             if (swiper.pagination.bullets) swiper.pagination.bullets.forEach((subEl => subEl.classList.remove(...params.bulletActiveClass.split(" "))));
@@ -3857,7 +4084,7 @@
                 enabled: false,
                 delay: 3e3,
                 waitForTransition: true,
-                disableOnInteraction: true,
+                disableOnInteraction: false,
                 stopOnLastSlide: false,
                 reverseDirection: false,
                 pauseOnMouseEnter: false
@@ -3868,17 +4095,19 @@
         let autoplayDelayTotal = params && params.autoplay ? params.autoplay.delay : 3e3;
         let autoplayDelayCurrent = params && params.autoplay ? params.autoplay.delay : 3e3;
         let autoplayTimeLeft;
-        let autoplayStartTime = (new Date).getTime;
+        let autoplayStartTime = (new Date).getTime();
         let wasPaused;
         let isTouched;
         let pausedByTouch;
         let touchStartTimeout;
         let slideChanged;
         let pausedByInteraction;
+        let pausedByPointerEnter;
         function onTransitionEnd(e) {
             if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
             if (e.target !== swiper.wrapperEl) return;
             swiper.wrapperEl.removeEventListener("transitionend", onTransitionEnd);
+            if (pausedByPointerEnter) return;
             resume();
         }
         const calcTimeLeft = () => {
@@ -3951,6 +4180,7 @@
             return delay;
         };
         const start = () => {
+            autoplayStartTime = (new Date).getTime();
             swiper.autoplay.running = true;
             run();
             emit("autoplayStart");
@@ -4004,10 +4234,13 @@
         const onPointerEnter = e => {
             if (e.pointerType !== "mouse") return;
             pausedByInteraction = true;
+            pausedByPointerEnter = true;
+            if (swiper.animating || swiper.autoplay.paused) return;
             pause(true);
         };
         const onPointerLeave = e => {
             if (e.pointerType !== "mouse") return;
+            pausedByPointerEnter = false;
             if (swiper.autoplay.paused) resume();
         };
         const attachMouseEvents = () => {
@@ -4032,7 +4265,6 @@
             if (swiper.params.autoplay.enabled) {
                 attachMouseEvents();
                 attachDocumentEvents();
-                autoplayStartTime = (new Date).getTime();
                 start();
             }
         }));
@@ -4040,6 +4272,12 @@
             detachMouseEvents();
             detachDocumentEvents();
             if (swiper.autoplay.running) stop();
+        }));
+        on("_freeModeStaticRelease", (() => {
+            if (pausedByTouch || pausedByInteraction) resume();
+        }));
+        on("_freeModeNoMomentumRelease", (() => {
+            if (!swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
         }));
         on("beforeTransitionStart", ((_s, speed, internal) => {
             if (swiper.destroyed || !swiper.autoplay.running) return;

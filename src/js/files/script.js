@@ -31,7 +31,6 @@ window.addEventListener('scroll', function (e) {
 })
 
 
-
 // Всплывающие окно отзывов
 let trigerPopupReviews = document.querySelectorAll('[data-popup=".popup-reviews"]');
 trigerPopupReviews.forEach(btn => {

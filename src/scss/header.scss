@@ -1,20 +1,23 @@
 .header {
-
   // .header__container
 
-  &__container {}
+  &__container {
+  }
 
   // .header__inner
 
-  &__inner {}
+  &__inner {
+  }
 
   // .header__top
 
-  &__top {}
+  &__top {
+  }
 
   // .header__bottom
 
-  &__bottom {}
+  &__bottom {
+  }
 }
 
 .top-header {
@@ -22,7 +25,8 @@
   padding-bottom: 10px;
 
   // .top-header__container
-  &__container {}
+  &__container {
+  }
 
   // .top-header__inner
   &__inner {
@@ -83,7 +87,8 @@
 
   // .top-header__search
 
-  &__search {}
+  &__search {
+  }
 
   // .top-header__btn
 
@@ -107,7 +112,8 @@
 
   // .top-header__action
 
-  &__action {}
+  &__action {
+  }
 }
 
 .header-search {
@@ -116,7 +122,7 @@
   height: 45px;
   padding: 0px 10px 0px 20px;
   border-radius: 7px;
-  border: 1px solid rgba($color: $mainColor, $alpha: .1);
+  border: 1px solid rgba($color: $mainColor, $alpha: 0.1);
 
   @media screen and (max-width: 1215px) {
     width: 250px;
@@ -155,7 +161,7 @@
     font-size: 14px;
 
     &::placeholder {
-      color: rgba($color: $mainColor, $alpha: .5);
+      color: rgba($color: $mainColor, $alpha: 0.5);
       font-size: 14px;
       font-weight: 400;
     }
@@ -221,12 +227,12 @@
     align-items: center;
     padding: 20px 20px;
     font-size: 16px;
-    background-color: rgba($color: $white, $alpha: 1.0);
-    border: 1px solid rgba($color: $mainColor, $alpha: .05);
+    background-color: rgba($color: $white, $alpha: 1);
+    border: 1px solid rgba($color: $mainColor, $alpha: 0.05);
     pointer-events: all;
     transition: $animation_fast;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
         background-color: rgba($color: $lightGrey, $alpha: 1);
       }
@@ -237,15 +243,13 @@
       pointer-events: none;
     }
   }
-
-
 }
 
 .action-header {
   // .action-header__phone
 
   &__phone {
-    color: rgba($color: $mainColor, $alpha: 1.0);
+    color: rgba($color: $mainColor, $alpha: 1);
     font-size: 18px;
     font-weight: 500;
     line-height: normal;
@@ -254,7 +258,7 @@
     font-family: $fontSecondary;
     transition: $animation_fast;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
         color: $accent;
       }
@@ -314,7 +318,8 @@
   }
 
   // .bottom-header__container
-  &__container {}
+  &__container {
+  }
 
   // .bottom-header__inner
   &__inner {
@@ -403,9 +408,9 @@
     white-space: nowrap;
     transition: $animation_fast;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
-        background-color: rgba($color: $accent, $alpha: .9);
+        background-color: rgba($color: $accent, $alpha: 0.9);
       }
     }
 
@@ -427,7 +432,8 @@
 
   // .bottom-header__menu
 
-  &__menu {}
+  &__menu {
+  }
 
   // .bottom-header__login
 
@@ -437,15 +443,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba($color: $blue, $alpha: .6);
+    background-color: rgba($color: $blue, $alpha: 0.6);
     color: $white;
     font-size: 14px;
     font-weight: 600;
     transition: $animation_fast;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
-        background-color: rgba($color: $blue, $alpha: .8);
+        background-color: rgba($color: $blue, $alpha: 0.8);
       }
     }
 
@@ -476,7 +482,6 @@
     border-radius: 10px;
     transition: $animation_fast;
 
-
     svg {
       fill: $white;
     }
@@ -493,7 +498,6 @@
   // .bottom-header__submenu
   &__submenu {
     height: 67vh;
-    overflow-y: auto;
     position: absolute;
     top: 100%;
     left: 0;
@@ -517,28 +521,45 @@
     }
 
     &::-webkit-scrollbar-track {
-      background: rgba($color: $blue, $alpha: .1);
+      background: rgba($color: $blue, $alpha: 0.1);
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba($color: $blue, $alpha: .6);
+      background-color: rgba($color: $blue, $alpha: 0.6);
       border-radius: 7px;
     }
 
     li {
-      &:not(:last-child) {}
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        transform: rotate(90deg);
+      }
+      &:not(:last-child) {
+      }
+
+      &:hover {
+        .submenu {
+          pointer-events: all;
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
     }
 
     a {
-      color: rgba($color: $mainColor, $alpha: .8);
+      color: rgba($color: $mainColor, $alpha: 0.8);
       padding: 13px 24px;
       display: flex;
       width: 100%;
       transition: $animation_fast;
 
-      @media (hover:hover) {
+      @media (hover: hover) {
         &:hover {
-          background-color: rgba($color: $blue, $alpha: .1);
+          background-color: rgba($color: $blue, $alpha: 0.1);
         }
       }
     }
@@ -563,7 +584,6 @@
       flex-direction: column;
       align-items: flex-start;
     }
-
   }
 
   // .menu__item
@@ -573,14 +593,14 @@
     display: flex;
     align-items: center;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
         .menu__link {
           color: $accent;
         }
 
         i {
-          color: rgba($color: $accent, $alpha: 1.0);
+          color: rgba($color: $accent, $alpha: 1);
           transform: rotate(180deg);
         }
 
@@ -594,7 +614,7 @@
 
     i {
       transition: $animation_fast;
-      color: rgba($color: $mainColor, $alpha: .8);
+      color: rgba($color: $mainColor, $alpha: 0.8);
     }
   }
 
@@ -605,8 +625,8 @@
     align-items: center;
     padding: 25px 10px;
     font-weight: 600;
-    color: rgba($color: $mainColor, $alpha: .9);
-    letter-spacing: .05rem;
+    color: rgba($color: $mainColor, $alpha: 0.9);
+    letter-spacing: 0.05rem;
     transition: $animation_fast;
 
     svg {
@@ -615,7 +635,7 @@
       margin-left: 5px;
     }
 
-    @media (hover:hover) {
+    @media (hover: hover) {
       &:hover {
         color: $accent;
       }
@@ -669,6 +689,27 @@
   }
 }
 
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 200px;
+  background-color: $white;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100px);
+  transition: $animation_fast;
+
+  // .submenu__item
+
+  &__item {
+  }
+
+  // .submenu__link
+
+  &__link {
+  }
+}
 
 //====================================================================================================
 
@@ -715,7 +756,8 @@
       }
 
       &::before,
-      &::after {}
+      &::after {
+      }
 
       &::before {
         top: calc(50% - rem(1));
